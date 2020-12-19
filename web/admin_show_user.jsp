@@ -18,10 +18,10 @@
     <%@include file="block/top.jsp"%>
     <%@include file="block/searchblock.jsp"%>
     <%
-        Object user=request.getAttribute("user");
+        Object user1=request.getAttribute("user1");
         List<User> listUser=null;
-        if(user instanceof List){
-            listUser=(List<User>)user;
+        if(user1 instanceof List){
+            listUser=(List<User>)user1;
         }
         if(listUser!=null){
     %>
@@ -41,16 +41,16 @@
                 </tr>
                 <%
 
-                        for(User user1:listUser){
+                        for(User user2:listUser){
                 %>
                 <tr>
-                    <td class="td1"><%=user1.getUser_account()%></td>
-                    <td class="td1"><%=user1.getPassword()%></td>
-                    <td class="td1"><%=user1.getUser_name()%></td>
-                    <td class="td1"><%=user1.getTelephone()%></td>
-                    <td class="td2"><%=user1.getAddress()%></td>
+                    <td class="td1"><%=user2.getUser_account()%></td>
+                    <td class="td1"><%=user2.getPassword()%></td>
+                    <td class="td1"><%=user2.getUser_name()%></td>
+                    <td class="td1"><%=user2.getTelephone()%></td>
+                    <td class="td2"><%=user2.getAddress()%></td>
                     <td class="td1">
-                        <a href="AdminController?method=deleteUser&user_account=<%=user1.getUser_account()%>">删除该用户</a>
+                        <a href="AdminController?method=deleteUser&user_account=<%=user2.getUser_account()%>">删除该用户</a>
                     </td>
                 </tr>
                 <%
