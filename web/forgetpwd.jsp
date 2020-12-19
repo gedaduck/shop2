@@ -9,30 +9,28 @@
 <html>
 <head>
     <title>忘记密码</title>
+    <link rel="stylesheet" href="CSS/Login.css">
 </head>
 <body>
-    <div>
-        <h1 style="text-align: center">忘记密码</h1>
-    </div>
-    <div>
-        <form action="forgetPwdController">
-            <table>
-                <tr>
-                    <td>登录名：</td>
-                    <td><input type="text" name="user_account"></td>
-                </tr>
-                <tr>
-                    <td>姓&nbsp;名：</td>
-                    <td><input type="text" name="user_name"></td>
-                </tr>
-            </table>
-            登录名：<input type="text" name="user_account">
-            姓名：<input type="text" name="user_name">
-            新密码<input type="text" name="new_password">
-            <input type="submit" value="提交">
-        </form>
-    </div>
+<div class="box">
+    <h2>忘记密码</h2>
+    <form action="userController?method=forgetPwd" method="post">
+        <div class="inputBox">
+            <input type="text" name="user_account" required="">
+            <label>登录名：</label>
+        </div>
+        <div class="inputBox">
+            <input type="text" name="user_name" required="">
+            <label>用户名：</label>
+        </div>
+        <div class="inputBox">
+            <input type="password" name="new_password" required="">
+            <label>新密码：</label>
+        </div>
+        <input type="submit" value="修改密码">
+    </form>
 
+</div>
 
 </body>
 </html>

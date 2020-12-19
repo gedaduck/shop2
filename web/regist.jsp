@@ -9,43 +9,40 @@
 <html>
 <head>
     <title>注册</title>
+    <link rel="stylesheet" href="res/css/Login.css">
 </head>
 <body>
-    <div style="text-align: center">
-        <h1>注册</h1>
-    </div>
-    <div >
-        <form action="registController">
-            <table style="margin: auto;" border="1" cellpadding="10px">
-                <tr>
-                    <td>登陆名：</td>
-                    <td><input type="text" name="account"></td>
-                </tr>
-                <tr>
-                    <td>密 &nbsp;码：</td>
-                    <td><input type="password" name="password"></td>
-                </tr>
-                <tr>
-                    <td>用户名：</td>
-                    <td><input type="text" name="name"></td>
-                </tr>
-                <tr>
-                    <td>地 &nbsp;址：</td>
-                    <td><input type="text" name="address"></td>
-                </tr>
-                <tr>
-                    <td>电 &nbsp;话：</td>
-                    <td><input type="text" name="telephone"></td>
-                </tr>
-                <tr>
-                    <td>签 &nbsp;名：</td>
-                    <td><input type="text" name="id_card"></td>
-                </tr>
-                <tr>
-                    <td colspan="2" style="text-align: center"><input type="submit" value="注册"></td>
-                </tr>
-            </table>
-        </form>
-    </div>
+
+<div class="box">
+    <h2>注册会员</h2>
+    <form action="userController?method=regist" method="post">
+        <div class="inputBox">
+            <input type="text" name="account" required="">
+            <label>用户名</label>
+        </div>
+        <div class="inputBox">
+            <input type="password" name="password" required="">
+            <label>密码</label>
+        </div >
+        <div class="inputBox">
+            <input type="text" name="name" required="">
+            <label>姓名</label>
+        </div>
+        <div class="inputBox">
+            <input type="text" name="telephone" required="">
+            <label>联系方式</label>
+        </div>
+        <div class="inputBox">
+            <input type="text" name="address" required="">
+            <label>地址</label>
+        </div>
+        <div class="inputBox">
+            <input type="text" name="id_card" required>
+            <label>个人简介</label>
+        </div>
+        <input type="submit" value="注册">
+    </form>
+
+</div>
 </body>
 </html>

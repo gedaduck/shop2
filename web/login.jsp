@@ -14,7 +14,7 @@
 <body>
 <div class="box">
     <h2>用户登录</h2>
-    <form action="loginController">
+    <form action="userController?method=login" method="post">
         <div class="inputBox">
             <input type="text" name="account" required="">
             <label>用户名</label>
@@ -23,10 +23,9 @@
             <input type="password" name="password" required="">
             <label>密码</label>
         </div>
-        <input type="submit" name="" value="登录">。
+        <input type="submit" name="" value="登录">
         <input type="button"  value="注册" onclick="window.location.href='regist.jsp'">
         <input type="button"  value="忘记密码" onclick="window.location.href='forgetpwd.jsp'">
-
     </form>
 </div>
 </body>

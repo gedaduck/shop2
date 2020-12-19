@@ -1,7 +1,7 @@
 package dao.Impl;
 
-import dao.AdminDao;
 import dao.JDBCUtil;
+import dao.dao.AdminDao;
 import vo.Admin;
 import vo.Businessman;
 import vo.Goods;

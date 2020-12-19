@@ -1,6 +1,6 @@
-package service;
+package service.admin;
 
-import dao.AdminDao;
+import dao.dao.AdminDao;
 import dao.Impl.AdminDaoImpl;
 import vo.Admin;
 import vo.Businessman;

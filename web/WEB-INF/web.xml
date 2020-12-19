@@ -4,30 +4,6 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
     <servlet>
-        <servlet-name>LoginController</servlet-name>
-        <servlet-class>controller.LoginController</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>LoginController</servlet-name>
-        <url-pattern>/loginController</url-pattern>
-    </servlet-mapping>
-    <servlet>
-        <servlet-name>RegistController</servlet-name>
-        <servlet-class>controller.RegistController</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>RegistController</servlet-name>
-        <url-pattern>/registController</url-pattern>
-    </servlet-mapping>
-    <servlet>
-        <servlet-name>LogoutController</servlet-name>
-        <servlet-class>controller.LogoutController</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>LogoutController</servlet-name>
-        <url-pattern>/logoutController</url-pattern>
-    </servlet-mapping>
-    <servlet>
         <servlet-name>SearchController</servlet-name>
         <servlet-class>controller.SearchController</servlet-class>
     </servlet>
@@ -42,5 +18,21 @@
     <servlet-mapping>
         <servlet-name>AdminController</servlet-name>
         <url-pattern>/AdminController</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>UserController</servlet-name>
+        <servlet-class>controller.UserController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserController</servlet-name>
+        <url-pattern>/userController</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>GoodsController</servlet-name>
+        <servlet-class>controller.GoodsController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GoodsController</servlet-name>
+        <url-pattern>/goodsController</url-pattern>
     </servlet-mapping>
 </web-app>

@@ -1,4 +1,4 @@
-package service;
+package service.admin;
 
 import vo.Admin;
 import vo.Businessman;

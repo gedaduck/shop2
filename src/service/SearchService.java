@@ -1,7 +1,7 @@
 package service;
 
 import dao.Impl.SearchDaoImpl;
-import dao.SearchDao;
+import dao.dao.SearchDao;
 import vo.Goods;
 
 import java.util.List;

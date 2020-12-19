@@ -1,6 +1,6 @@
 package controller;
 
-import service.AdminServiceImpl;
+import service.admin.AdminServiceImpl;
 import vo.Admin;
 import vo.Businessman;
 import vo.Goods;
@@ -72,7 +72,7 @@ public class AdminController extends HttpServlet {
         AdminServiceImpl adminService=new AdminServiceImpl();
         List<User> list=new ArrayList<>();
         list=adminService.getAllUser();
-        request.setAttribute("user",list);
+        request.setAttribute("user1",list);
         request.getRequestDispatcher("admin_show_user.jsp").forward(request, response);
     }
     public void getAllBusinessman (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

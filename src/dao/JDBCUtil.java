@@ -5,14 +5,14 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class JDBCUtil {
-    private static String DB_URL="jdbc:mysql://localhost:3306/shop";
+    private static String DB_URL="jdbc:mysql://localhost:3306/shop?serverTimezone=UTC";
     private static String DB_DRIVER="com.mysql.cj.jdbc.Driver";
     private static Connection connection=null;
 
     public static Connection getConnection(){
         try {
             Class.forName(DB_DRIVER);
-            connection=DriverManager.getConnection(DB_URL,"root","cxl123123.");
+            connection=DriverManager.getConnection(DB_URL,"root","123456");
         } catch (ClassNotFoundException e) {
             System.out.println("ClassNotFoundException");
             e.printStackTrace();
