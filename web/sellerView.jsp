@@ -1,7 +1,7 @@
 <%@ page language="java" import="java.sql.*"  import="java.util.*"
 	contentType="text/html; charset=UTF-8" pageEncoding="GB2312"%>
 <%@page import="vo.Goods" %>
-<%@ page import="vo.Seller" %>
+<%@ page import="vo.Businessman" %>
 <%@ page import="com.mysql.cj.Session" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -147,7 +147,7 @@
 
 <body>
 	<%
-		Seller seller=(Seller)session.getAttribute("seller");
+		Businessman Businessman=(Businessman)session.getAttribute("Businessman");
 		Object object=session.getAttribute("goodsList");
 		List<Goods> goodsList=null;
 		if(object instanceof List){
@@ -158,13 +158,13 @@
 		<a class=p2 href="index.html">返回主页</a>
 		<h1>店铺主页</h1>
 		<a class=log1 href="business_log.html">登录</a>
-		<a class=log>用户名：<%=seller.getBusinessman_account() %></a>
+		<a class=log>用户名：<%=Businessman.getBusinessman_account() %></a>
 	</div>
 
 	<div id="nav">
 		<br><br><br><br><br><br><br>
-		<a class=href1 href="addGoods.jsp?name=<%=seller.getBusinessman_account() %>">添加商品</a><br><br>
-		<a class=href1 href="order_details.jsp?name=<%=seller.getBusinessman_account() %>">订单详情</a>
+		<a class=href1 href="addGoods.jsp?name=<%=Businessman.getBusinessman_account() %>">添加商品</a><br><br>
+		<a class=href1 href="order_details.jsp?name=<%=Businessman.getBusinessman_account() %>">订单详情</a>
 	</div>
 	<img class="img2" src="images/13.jpg">
 	<img class="img3" src="images/16.jpg">
@@ -174,9 +174,9 @@
 		Goods goods=goodsList.get(i);
 %>	
 	<div class="myclass">
-	<a class=href1 href="/sellerController?method=getaGood&goods_id=<%=goods.getGoods_id()%>"><img class="img1" src=<%=goods.getGoods_img()%> alt="无法加载!" /></a>
+	<a class=href1 href="/BusinessmanController?method=getaGood&goods_id=<%=goods.getGoods_id()%>"><img class="img1" src=<%=goods.getGoods_img()%> alt="无法加载!" /></a>
 	<p class="price2"><%=goods.getGoods_introduce()%></p>
-	<p class="price">￥<%=goods.getPrice()%>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="shop_s/delete_goods?ID=<%=goods.getGoods_id() %>&name=<%=seller.getBusinessman_account()%>">删除</a></p>
+	<p class="price">￥<%=goods.getPrice()%>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="shop_s/delete_goods?ID=<%=goods.getGoods_id() %>&name=<%=Businessman.getBusinessman_account()%>">删除</a></p>
 	</div>
 <%}%>
 	</div>

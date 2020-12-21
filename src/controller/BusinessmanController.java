@@ -2,11 +2,10 @@ package controller;
 
 import com.jspsmart.upload.SmartUpload;
 import com.jspsmart.upload.SmartUploadException;
-import com.mysql.cj.Session;
-import service.seller.SellerService;
-import service.seller.SellerServiceImpl;
+import service.Businessman.BusinessmanService;
+import service.Businessman.BusinessmanServiceImpl;
 import vo.Goods;
-import vo.Seller;
+import vo.Businessman;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -17,11 +16,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.io.UnsupportedEncodingException;
 import java.util.List;
 
-@WebServlet(name = "SellerController",urlPatterns = "/sellerController")
-public class SellerController extends HttpServlet {
+@WebServlet(name = "BusinessmanController",urlPatterns = "/BusinessmanController")
+public class BusinessmanController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String method=request.getParameter("method");
         System.out.println(method);
@@ -48,19 +46,19 @@ public class SellerController extends HttpServlet {
         HttpSession session=request.getSession();
         String name=request.getParameter("name");
         String password=request.getParameter("password");
-        SellerService sellerServiceImpl=new SellerServiceImpl();
+        BusinessmanService businessmanServiceImpl=new BusinessmanServiceImpl();
         PrintWriter out=response.getWriter();
         response.setContentType("text/html; charset=UTF-8");
         response.setCharacterEncoding("UTF-8");
-        Seller seller=sellerServiceImpl.sellerLogin(name,password);
-        List<Goods> goodsList=sellerServiceImpl.getGoods(name);
-        if(seller.getBusinessman_account()!=null){
-            session.setAttribute("seller",seller);
+        Businessman businessman=businessmanServiceImpl.BusinessmanLogin(name,password);
+        List<Goods> goodsList=businessmanServiceImpl.getGoods(name);
+        if(businessman.getBusinessman_account()!=null){
+            session.setAttribute("Businessman",businessman);
             session.setAttribute("goodsList",goodsList);
-            out.write("<script>alert('登陆成功！');window.location.href='sellerView.jsp';</script>");
+            out.write("<script>alert('登陆成功！');window.location.href='BusinessmanView.jsp';</script>");
         }
         else{
-            out.write("<script>alert('登陆失败！');window.location.href='html/seller_login.html';</script>");
+            out.write("<script>alert('登陆失败！');window.location.href='html/Businessman_login.html';</script>");
         }
     }
 
@@ -68,8 +66,8 @@ public class SellerController extends HttpServlet {
     public void getAGood(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         request.setCharacterEncoding("UTF-8");
         int goods_id=Integer.valueOf(request.getParameter("goods_id"));
-        SellerService sellerServiceImpl=new SellerServiceImpl();
-        Goods goods=sellerServiceImpl.getaGood(goods_id);
+        BusinessmanService BusinessmanServiceImpl=new BusinessmanServiceImpl();
+        Goods goods=BusinessmanServiceImpl.getaGood(goods_id);
         System.out.println(goods.toString());
         request.setAttribute("good",goods);
         request.getRequestDispatcher("/goods_modify.jsp").forward(request, response);
@@ -104,12 +102,12 @@ public class SellerController extends HttpServlet {
         goods.setGoods_category(Integer.valueOf(smartUpload.getRequest().getParameter("good_category")));
         goods.setGoods_introduce(smartUpload.getRequest().getParameter("good_introduce"));
         goods.setGoods_img(smartUpload.getRequest().getParameter(img));
-        SellerService sellerServiceImpl=new SellerServiceImpl();
-        if(sellerServiceImpl.addGoods(goods)){
-            response.sendRedirect("sellerView.jsp?name"+smartUpload.getRequest().getParameter("businessman_account"));
+        BusinessmanService BusinessmanServiceImpl=new BusinessmanServiceImpl();
+        if(BusinessmanServiceImpl.addGoods(goods)){
+            response.sendRedirect("BusinessmanView.jsp?name"+smartUpload.getRequest().getParameter("businessman_account"));
         }else {
             PrintWriter out= response.getWriter();
-            out.write("<body><script>alert('添加失败');window.location.href='sellerView.jsp?name="+smartUpload.getRequest().getParameter("businessman_account")+"';</script></body>");
+            out.write("<body><script>alert('添加失败');window.location.href='BusinessmanView.jsp?name="+smartUpload.getRequest().getParameter("businessman_account")+"';</script></body>");
         }
     }
 

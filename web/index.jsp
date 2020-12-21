@@ -164,7 +164,7 @@
                   if(user.getUser_name()!=null){
                 %>
                 <p>您好！<%=user.getUser_name()%>!</p>
-                <a href="logoutController">退出</a>
+                <a href="userController?method=logout">退出</a>
                 <%}else {%>
                 <a href="login.jsp" id="login">登录</a>
                 <a href="regist.jsp">注册</a>

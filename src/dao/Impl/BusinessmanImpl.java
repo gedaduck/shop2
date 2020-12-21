@@ -1,20 +1,20 @@
 package dao.Impl;
 
 import dao.JDBCUtil;
-import dao.dao.SellerDao;
+import dao.dao.BusinessmanDao;
 import vo.Goods;
 import vo.Orders;
-import vo.Seller;
+import vo.Businessman;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-public class SellerImpl implements SellerDao {
+public class BusinessmanImpl implements BusinessmanDao {
     @Override
-    public Seller login(String name, String password) {
-        Seller seller=new Seller();
+    public Businessman login(String name, String password) {
+        Businessman Businessman=new Businessman();
         Connection connection=null;
         PreparedStatement preparedStatement=null;
         ResultSet res=null;
@@ -26,14 +26,14 @@ public class SellerImpl implements SellerDao {
             preparedStatement.setString(2,password);
             res=preparedStatement.executeQuery();
             if(res.next()){
-                seller.setBusinessman_account(res.getString("businessman_account"));
-                seller.setBusinessman_name(res.getString("businessman_name"));
-                seller.setStore_id(res.getInt("store_id"));
-                seller.setStore_name(res.getString("store_name"));
-                seller.setBusinessman_address(res.getString("businessman_address"));
-                seller.setBusinessman_telephone(res.getInt("businessman_telephone"));
+                Businessman.setBusinessman_account(res.getString("businessman_account"));
+                Businessman.setBusinessman_name(res.getString("businessman_name"));
+                Businessman.setStore_id(res.getInt("store_id"));
+                Businessman.setStore_name(res.getString("store_name"));
+                Businessman.setBusinessman_address(res.getString("businessman_address"));
+                Businessman.setBusinessman_telephone(res.getInt("businessman_telephone"));
                 System.out.println("登陆成功");
-                return seller;
+                return Businessman;
             }
             System.out.println("登陆失败");
         } catch (SQLException e) {

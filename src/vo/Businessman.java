@@ -1,6 +1,6 @@
 package vo;
 
-public class Seller {
+public class Businessman {
     private String businessman_account;
     private String businessman_password;
     private String businessman_name;
@@ -9,10 +9,10 @@ public class Seller {
     private int store_id;
     private String store_name;
 
-    public Seller() {
+    public Businessman() {
     }
 
-    public Seller(String businessman_account, String businessman_password, String businessman_name, String businessman_address, int businessman_telephone, int store_id, String store_name) {
+    public Businessman(String businessman_account, String businessman_password, String businessman_name, String businessman_address, int businessman_telephone, int store_id, String store_name) {
         this.businessman_account = businessman_account;
         this.businessman_password = businessman_password;
         this.businessman_name = businessman_name;

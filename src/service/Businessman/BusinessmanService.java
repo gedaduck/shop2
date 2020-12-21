@@ -1,13 +1,13 @@
-package service.seller;
+package service.Businessman;
 
 import vo.Goods;
 import vo.Orders;
-import vo.Seller;
+import vo.Businessman;
 
 import java.util.List;
 
-public interface SellerService {
-    Seller sellerLogin(String name,String password);
+public interface BusinessmanService {
+    Businessman BusinessmanLogin(String name,String password);
     List<Goods> getGoods(String businessman_account);
     Goods getaGood(int goods_id);
     boolean addGoods(Goods goods);

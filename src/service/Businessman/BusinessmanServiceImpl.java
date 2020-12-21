@@ -1,26 +1,26 @@
-package service.seller;
+package service.Businessman;
 
-import dao.Impl.SellerImpl;
-import dao.dao.SellerDao;
+import dao.Impl.BusinessmanImpl;
+import dao.dao.BusinessmanDao;
 import service.goods.GoodsService;
 import service.goods.GoodsServiceImpl;
 import vo.Goods;
 import vo.Orders;
-import vo.Seller;
+import vo.Businessman;
 
 import java.util.List;
 
-public class SellerServiceImpl implements SellerService{
-    private SellerDao sellerImpl=new SellerImpl();
+public class BusinessmanServiceImpl implements service.Businessman.BusinessmanService {
+    private BusinessmanDao BusinessmanImpl=new BusinessmanImpl();
 
     @Override
-    public Seller sellerLogin(String name, String password) {
-        return sellerImpl.login(name,password);
+    public Businessman BusinessmanLogin(String name, String password) {
+        return BusinessmanImpl.login(name,password);
     }
 
     @Override
     public List<Goods> getGoods(String businessman_account) {
-        return sellerImpl.getGoods(businessman_account);
+        return BusinessmanImpl.getGoods(businessman_account);
     }
 
     @Override
