@@ -16,11 +16,11 @@
     <h2>管理员登录</h2>
     <form action="AdminController?method=adminLogin" method="post">
         <div class="inputBox">
-            <input type="text" name="account" required="">
+            <input type="text" name="admin_account" required="">
             <label>用户名</label>
         </div>
         <div class="inputBox">
-            <input type="password" name="password" required="">
+            <input type="password" name="admin_password" required="">
             <label>密码</label>
         </div>
         <input type="submit" name="" value="登录">。

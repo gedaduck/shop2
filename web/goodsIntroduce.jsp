@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="res/css/proList.css"/>
 </head>
 <body>
-<%@include file="block/top.jsp"%>
+<%@include file="block/top-main.jsp"%>
 <!-----------------address------------------------------->
 <div class="address">
     <div class="wrapper clearfix">

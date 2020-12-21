@@ -19,8 +19,7 @@ public class AdminDaoImpl implements AdminDao {
     public boolean deleteUser(String account) {
         Connection connection=null;
         PreparedStatement preparedStatement=null;
-        ResultSet res=null;
-
+        int res;
         try{
             connection= JDBCUtil.getConnection();
             String sql="delete from user where user_account=?";
@@ -42,15 +41,15 @@ public class AdminDaoImpl implements AdminDao {
     public boolean deleteBusinessman(String account) {
         Connection connection=null;
         PreparedStatement preparedStatement=null;
-        ResultSet res=null;
+        int res;
 
         try{
             connection= JDBCUtil.getConnection();
             String sql="delete from businessman where businessman_account=?";
             preparedStatement=connection.prepareStatement(sql);
             preparedStatement.setString(1,account);
-            res=preparedStatement.executeQuery();
-            if(preparedStatement.executeUpdate()==1){
+            res=preparedStatement.executeUpdate();
+            if(res==1){
                 System.out.println("删除商家成功");
                 return true;
             }
@@ -135,13 +134,12 @@ public class AdminDaoImpl implements AdminDao {
             //preparedStatement.setString(1, goods_introduce);
             res = preparedStatement.executeQuery();
             while(res.next()) {
-                System.out.println("查询所有商品成功！");
                 Goods goods=new Goods();
                 goods.setGoods_id(res.getInt("goods_id"));
                 goods.setGoods_name(res.getString("goods_name"));
                 goods.setGoods_img(res.getString("goods_img"));
                 goods.setGoods_introduce(res.getString("goods_introduce"));
-                goods.setGoods_category(res.getInt("category"));
+                goods.setGoods_category(res.getInt("goods_category"));
                 goods.setPrice(res.getDouble("price"));
                 goods.setBusinessman_account(res.getString("businessman_account"));
                 list.add(goods);
@@ -157,15 +155,15 @@ public class AdminDaoImpl implements AdminDao {
     public boolean deleteGoods(int goods_id) {
         Connection connection=null;
         PreparedStatement preparedStatement=null;
-        ResultSet res=null;
+        int res;
 
         try{
             connection= JDBCUtil.getConnection();
             String sql="delete from goods where goods_id=?";
             preparedStatement=connection.prepareStatement(sql);
             preparedStatement.setInt(1,goods_id);
-            res=preparedStatement.executeQuery();
-            if(preparedStatement.executeUpdate()==1){
+            res=preparedStatement.executeUpdate();
+            if(res==1){
                 System.out.println("删除商品成功");
                 return true;
             }

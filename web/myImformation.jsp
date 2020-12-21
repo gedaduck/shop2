@@ -14,7 +14,7 @@
 </head>
 <body>
 <!---------------------------head---------------------------->
-<%@include file="block/top.jsp"%>
+<%@include file="block/top-main.jsp"%>
 <!------------------------------idea------------------------------>
 <div class="address mt" id="add">
     <div class="wrapper clearfix"><a href="index.jsp" class="fl">首页</a><span>/</span><a href="myImformation.jsp" class="on">个人中心</a></div>

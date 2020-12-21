@@ -34,7 +34,7 @@ public class SearchDaoImpl implements SearchDao {
                 goods.setGoods_img(res.getString("goods_img"));
                 goods.setGoods_introduce(res.getString("goods_introduce"));
                 goods.setPrice(res.getDouble("price"));
-                goods.setBusinessman_account(res.getString("businessman_id"));
+                goods.setBusinessman_account(res.getString("businessman_account"));
                 System.out.println(goods.toString());
                 list.add(goods);
 

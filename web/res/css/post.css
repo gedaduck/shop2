@@ -1,0 +1,41 @@
+.PostMain{
+    background-color: #f3f3f3;
+    height: auto;
+}
+.PostMain .div5 .head1 .wrape{
+    display: flex;
+    flex-wrap: wrap;
+}
+.PostMain .div5 .head1 .wrape .logo .img{
+    height: 100%;
+    width: 100%;
+}
+.Post{
+    margin-left: 18%;
+    margin-top: 20px;
+    background-color: #fff;
+    width: 1000px;
+}
+.Post .SinglePost{
+    border-bottom: solid #f3f3f3 2px;
+    height: 200px;
+    padding-top: 15px;
+}
+.Post .SinglePost .PostId{
+    margin-left: 50px;
+    margin-right: 20px;
+}
+.Post .SinglePost .Content{
+    width: 400px;
+}
+.Post .SinglePost .Content .PostImg{
+    padding-top: 20px;
+}
+.Post .SinglePost .Poster{
+    position: relative;
+    left: 100px;
+}
+.Post .SinglePost .PostTime{
+    position: relative;
+    left: 200px;
+}

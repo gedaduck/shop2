@@ -53,7 +53,7 @@ public class UserController extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         PrintWriter out = response.getWriter();
         out.write("<body>");
-        if(user.getUser_name()!=null){
+        if(user!=null){
             session.setAttribute("user",user);
             out.write("<h3 style='color: red;text-align: center'><br>登陆成功，</br>三秒后自动跳转，若未跳转，请点击<a href='index.jsp'>链接</a></h3>");
             response.setHeader("Refresh","3,URL=index.jsp");
@@ -62,6 +62,7 @@ public class UserController extends HttpServlet {
             out.write("alert('登陆失败！');");
             out.write("window.location='login.jsp';");
             out.write("</script>");
+
         }
         out.write("</body>");
     }

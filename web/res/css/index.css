@@ -5,6 +5,7 @@
 	text-decoration: none;
 }
 a:visited{text-decoration: none; color: #262626}
+a:link{text-decoration: none; color: #262626}
 #myshop{
 	width: 720px;
 	height: 370px;
@@ -48,15 +49,31 @@ a:visited{text-decoration: none; color: #262626}
 }
 #div2{padding-top: 15px;}
 /*查看全部用户*/
-.td1{
+
+.table1 .td1{
 	width: 120px;
-
+	text-align: center;
 }
-.td2{
+.table1 .td2{
 	width: 250px;
-
+	text-align: center;
 }
-#table1{}
+.table2 .td1{
+	width: 120px;
+	text-align: center;
+}
+.table2 .td2{
+	width: 250px;
+	text-align: center;
+}
+.table3 .td1{
+	width: 120px;
+	text-align: center;
+}
+.table3 .td2{
+	width: 250px;
+	text-align: center;
+}
 /*顶部*/
 .cover{
 	margin: 0 auto;
