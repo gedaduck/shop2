@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="res/css/search.css">
 </head>
 <body>
-    <%@include file="block/top.jsp"%>
+    <%@include file="block/top-main.jsp"%>
     <%@include file="block/searchblock.jsp"%>
     <%
         Object goods=request.getAttribute("goods");

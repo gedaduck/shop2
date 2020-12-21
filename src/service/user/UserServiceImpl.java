@@ -9,7 +9,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User userLogin(String account, String password) {
-        return userImpl.UserLogin(account,password);
+        User user=userImpl.UserLogin(account,password);
+        return user;
     }
 
     @Override
