@@ -3,6 +3,7 @@ package controller;
 import service.goods.GoodsService;
 import service.goods.GoodsServiceImpl;
 import vo.Goods;
+import vo.Orders;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -14,14 +15,29 @@ import java.util.List;
 
 public class GoodsController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        String method=request.getParameter("method");
+        System.out.println(method);
+        selectFun(request,response,method);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String method=request.getParameter("method");
+        System.out.println(method);
+        selectFun(request,response,method);
+    }
+
+    public void selectFun(HttpServletRequest request, HttpServletResponse response,String method) throws ServletException, IOException {
+        if(method.equals("getGoods"))
+            getGoods(request,response);
+
+    }
+
+    public void getGoods(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id=Integer.valueOf(request.getParameter("goods_id"));
         GoodsService goodsService=new GoodsServiceImpl();
         Goods goods=goodsService.getGoods(id);
-        List<String> goodsEvaluationList=goodsService.getGoodsEvaluation(id);
+        List<Orders> goodsEvaluationList=goodsService.getGoodsEvaluation(id);
+        System.out.println(goodsEvaluationList.size());
         request.setAttribute("goods",goods);
         request.setAttribute("goodsEvaluationList",goodsEvaluationList);
         request.getRequestDispatcher("goodsIntroduce.jsp").forward(request, response);

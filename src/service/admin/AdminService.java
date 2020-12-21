@@ -1,7 +1,7 @@
 package service.admin;
 
 import vo.Admin;
-import vo.Businessman;
+import vo.Seller;
 import vo.Goods;
 import vo.User;
 
@@ -11,7 +11,7 @@ public interface AdminService {
     boolean deleteUser(String account);
     boolean deleteBusinessman(String account);
     List<User> getAllUser();
-    List<Businessman> getAllBusinessman();
+    List<Seller> getAllBusinessman();
     boolean deleteGoods(int goods_id);
     List<Goods> getAllGoods();
     Admin adminLogin(String account, String password);

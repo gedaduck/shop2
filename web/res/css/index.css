@@ -71,6 +71,9 @@ a:visited{text-decoration: none; color: #262626}
 	float: left;
 	margin-right: 7px;
 }
+.cover .cover-left .login a{
+	color: #1a1a1a;
+}
 .cover .cover-left .land{
 	margin-left: 7px;
 }

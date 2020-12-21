@@ -1,4 +1,4 @@
-<%@ page import="vo.Businessman" %>
+<%@ page import="vo.Seller" %>
 <%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: 陈旭龙
@@ -19,9 +19,9 @@
     <%@include file="block/searchblock.jsp"%>
     <%
         Object businessman=request.getAttribute("businessman");
-        List<Businessman> listBusinessman=null;
+        List<Seller> listBusinessman=null;
         if(businessman instanceof List){
-            listBusinessman=(List<Businessman>)businessman;
+            listBusinessman=(List<Seller>)businessman;
         }
         if(listBusinessman!=null){
     %>
@@ -43,7 +43,7 @@
                 </tr>
                 <%
 
-                    for(Businessman businessman1:listBusinessman){
+                    for(Seller businessman1:listBusinessman){
                 %>
                 <tr>
                     <td class="td1"><%=businessman1.getBusinessman_account()%></td>

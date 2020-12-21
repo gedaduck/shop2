@@ -10,7 +10,7 @@ public class EncodingFilter implements javax.servlet.Filter {
     }
 
     public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws ServletException, IOException {
-        req.setCharacterEncoding("UTF-8");
+        req.setCharacterEncoding("GB2312");
         chain.doFilter(req, resp);
     }
 

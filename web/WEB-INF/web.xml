@@ -35,4 +35,12 @@
         <servlet-name>GoodsController</servlet-name>
         <url-pattern>/goodsController</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>SellerController</servlet-name>
+        <servlet-class>controller.SellerController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SellerController</servlet-name>
+        <url-pattern>/sellerController</url-pattern>
+    </servlet-mapping>
 </web-app>

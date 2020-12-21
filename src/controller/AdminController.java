@@ -2,7 +2,7 @@ package controller;
 
 import service.admin.AdminServiceImpl;
 import vo.Admin;
-import vo.Businessman;
+import vo.Seller;
 import vo.Goods;
 import vo.User;
 
@@ -77,7 +77,7 @@ public class AdminController extends HttpServlet {
     }
     public void getAllBusinessman (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         AdminServiceImpl adminService=new AdminServiceImpl();
-        List<Businessman> list=new ArrayList<>();
+        List<Seller> list=new ArrayList<>();
         list=adminService.getAllBusinessman();
         request.setAttribute("businessman",list);
         request.getRequestDispatcher("admin_show_businessman.jsp").forward(request, response);

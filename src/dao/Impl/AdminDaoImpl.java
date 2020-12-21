@@ -3,7 +3,7 @@ package dao.Impl;
 import dao.JDBCUtil;
 import dao.dao.AdminDao;
 import vo.Admin;
-import vo.Businessman;
+import vo.Seller;
 import vo.Goods;
 import vo.User;
 
@@ -92,11 +92,11 @@ public class AdminDaoImpl implements AdminDao {
     }
 
     @Override
-    public List<Businessman> getAllBusinessman() {
+    public List<Seller> getAllBusinessman() {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         ResultSet res = null;
-        List<Businessman> list=new ArrayList<Businessman>();
+        List<Seller> list=new ArrayList<Seller>();
         try {
             connection = JDBCUtil.getConnection();
             String sql = "select* FROM businessman";
@@ -105,7 +105,7 @@ public class AdminDaoImpl implements AdminDao {
             res = preparedStatement.executeQuery();
             while(res.next()) {
                 System.out.println("查询所有商家成功！");
-                Businessman businessman=new Businessman();
+                Seller businessman=new Seller();
                 businessman.setBusinessman_account(res.getString("businessman_account"));
                 businessman.setBusinessman_password(res.getString("businessman_password"));
                 businessman.setBusinessman_name(res.getString("businessman_name"));

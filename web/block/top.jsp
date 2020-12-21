@@ -30,9 +30,9 @@
 
                     if(user.getUser_name()==null){
                 %>
-                        <a href="login.jsp">亲，请登录</a>
+                        <a style="color:black;" href="login.jsp">亲，请登录</a>
                     <%}else{%>
-                        <a href="myImformation.jsp"><%=user.getUser_name()%></a>
+                        <a style="color:black;" href="myImformation.jsp"><%=user.getUser_name()%></a>
                     <%}%>
 
             </li>
@@ -58,7 +58,7 @@
                 </div>
             </li>
             <li>
-                <a href="##">卖家中心</a>
+                <a href="html/business_log.html">卖家中心</a>
             </li>
 
             <li>|</li>

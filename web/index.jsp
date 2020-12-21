@@ -47,14 +47,14 @@
                 <li><a href="##">棉服</a></li>
                 <li><a href="##">阔腿裤</a></li>
                 <h5>平板</h5>
-                <li><a href="##">外套</li>
+                <li><a href="##">外套</a></li>
                 <li><a href="##">衬衣</a></li>
-                <li><a href="##">夹克</li>
+                <li><a href="##">夹克</a></li>
                 <li><a href="##">短裤</a></li>
                 <h5>笔记本</h5>
-                <li><a href="##">棉袜</li>
+                <li><a href="##">棉袜</a></li>
                 <li><a href="##">长筒袜</a></li>
-                <li><a href="##">秋裤</li>
+                <li><a href="##">秋裤</a></li>
                 <li><a href="##">内裤</a></li>
               </ul>
             </div>
@@ -64,19 +64,19 @@
             <div class="none">
               <ul>
                 <h5>手机</h5>
-                <li><a href="##">iPhone</li>
+                <li><a href="##">iPhone</a></li>
                 <li><a href="##">华为</a></li>
-                <li><a href="##">棉服</li>
+                <li><a href="##">棉服</a></li>
                 <li><a href="##">阔腿裤</a></li>
                 <h5>平板</h5>
-                <li><a href="##">外套</li>
+                <li><a href="##">外套</a></li>
                 <li><a href="##">衬衣</a></li>
-                <li><a href="##">夹克</li>
+                <li><a href="##">夹克</a></li>
                 <li><a href="##">短裤</a></li>
                 <h5>笔记本</h5>
-                <li><a href="##">棉袜</li>
+                <li><a href="##">棉袜</a></li>
                 <li><a href="##">长筒袜</a></li>
-                <li><a href="##">秋裤</li>
+                <li><a href="##">秋裤</a></li>
                 <li><a href="##">内裤</a></li>
               </ul>
             </div>
@@ -86,19 +86,19 @@
             <div class="none">
               <ul>
                 <h5>手机</h5>
-                <li><a href="##">iPhone</li>
+                <li><a href="##">iPhone</a></li>
                 <li><a href="##">华为</a></li>
-                <li><a href="##">棉服</li>
+                <li><a href="##">棉服</a></li>
                 <li><a href="##">阔腿裤</a></li>
                 <h5>平板</h5>
-                <li><a href="##">外套</li>
+                <li><a href="##">外套</a></li>
                 <li><a href="##">衬衣</a></li>
-                <li><a href="##">夹克</li>
+                <li><a href="##">夹克</a></li>
                 <li><a href="##">短裤</a></li>
                 <h5>笔记本</h5>
-                <li><a href="##">棉袜</li>
+                <li><a href="##">棉袜</a></li>
                 <li><a href="##">长筒袜</a></li>
-                <li><a href="##">秋裤</li>
+                <li><a href="##">秋裤</a></li>
                 <li><a href="##">内裤</a></li>
               </ul>
             </div>
@@ -131,7 +131,7 @@
         <div class="center-bot">
           <!-- 左 -->
           <div class="left">
-            <a href="goodsController?goods_id=1"><img src="./res/image/show2.jpg" id="img"></a>
+            <a href="goodsController?method=getGoods&goods_id=1"><img src="./res/image/show2.jpg" id="img"></a>
           </div>
           <!-- 中 -->
           <div class="center">
@@ -183,8 +183,8 @@
           </div>
         </div>
         <!-- 举报 -->
-        <div class="jubao">
-          <a href="##">
+        <div class="jubao" style="text-align: center;">
+          <a href="##" >
             <span id="jb">网上有害信息举报专区</span>
           </a>
         </div>

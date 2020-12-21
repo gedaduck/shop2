@@ -3,7 +3,7 @@ package service.admin;
 import dao.dao.AdminDao;
 import dao.Impl.AdminDaoImpl;
 import vo.Admin;
-import vo.Businessman;
+import vo.Seller;
 import vo.Goods;
 import vo.User;
 
@@ -28,7 +28,7 @@ public class AdminServiceImpl implements AdminService{
     }
 
     @Override
-    public List<Businessman> getAllBusinessman() {
+    public List<Seller> getAllBusinessman() {
         return admin.getAllBusinessman();
     }
 
