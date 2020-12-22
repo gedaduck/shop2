@@ -6,6 +6,7 @@ import service.Businessman.BusinessmanService;
 import service.Businessman.BusinessmanServiceImpl;
 import vo.Goods;
 import vo.Businessman;
+import vo.Orders;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -18,7 +19,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
-@WebServlet(name = "BusinessmanController",urlPatterns = "/BusinessmanController")
+@WebServlet(name = "BusinessmanController",urlPatterns = "/businessmanController")
 public class BusinessmanController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String method=request.getParameter("method");
@@ -39,6 +40,14 @@ public class BusinessmanController extends HttpServlet {
             getAGood(request,response);
         else if(method.equals("addGoods"))
             addGoods(request,response);
+        else if(method.equals("getOrders"))
+            getOrders(request,response);
+        else if(method.equals("sendGoods"))
+            sendGoods(request,response);
+        else if(method.equals("deleteGoods"))
+            deleteGoods(request,response);
+        else if(method.equals("regist"))
+            regist(request,response);
     }
 
 
@@ -47,15 +56,15 @@ public class BusinessmanController extends HttpServlet {
         String name=request.getParameter("name");
         String password=request.getParameter("password");
         BusinessmanService businessmanServiceImpl=new BusinessmanServiceImpl();
-        PrintWriter out=response.getWriter();
         response.setContentType("text/html; charset=UTF-8");
         response.setCharacterEncoding("UTF-8");
-        Businessman businessman=businessmanServiceImpl.BusinessmanLogin(name,password);
+        PrintWriter out=response.getWriter();
+        Businessman businessman=businessmanServiceImpl.businessmanLogin(name,password);
         List<Goods> goodsList=businessmanServiceImpl.getGoods(name);
         if(businessman.getBusinessman_account()!=null){
-            session.setAttribute("Businessman",businessman);
+            session.setAttribute("businessman",businessman);
             session.setAttribute("goodsList",goodsList);
-            out.write("<script>alert('登陆成功！');window.location.href='BusinessmanView.jsp';</script>");
+            out.write("<script>alert('登陆成功！');window.location.href='businessmanView.jsp';</script>");
         }
         else{
             out.write("<script>alert('登陆失败！');window.location.href='html/Businessman_login.html';</script>");
@@ -77,6 +86,8 @@ public class BusinessmanController extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         // 设置输出为中文
         response.setCharacterEncoding("UTF-8");
+        HttpSession session=request.getSession();
+        Businessman businessman=(Businessman)session.getAttribute("businessman");
         Goods goods=new Goods();
         SmartUpload smartUpload=new SmartUpload();
         ServletConfig config=this.getServletConfig();
@@ -101,14 +112,85 @@ public class BusinessmanController extends HttpServlet {
         goods.setPrice(Double.valueOf(smartUpload.getRequest().getParameter("good_price")));
         goods.setGoods_category(Integer.valueOf(smartUpload.getRequest().getParameter("good_category")));
         goods.setGoods_introduce(smartUpload.getRequest().getParameter("good_introduce"));
-        goods.setGoods_img(smartUpload.getRequest().getParameter(img));
-        BusinessmanService BusinessmanServiceImpl=new BusinessmanServiceImpl();
-        if(BusinessmanServiceImpl.addGoods(goods)){
-            response.sendRedirect("BusinessmanView.jsp?name"+smartUpload.getRequest().getParameter("businessman_account"));
+        goods.setGoods_img(img);
+        BusinessmanService businessmanServiceImpl=new BusinessmanServiceImpl();
+        if(businessmanServiceImpl.addGoods(goods)){
+            List<Goods> goodsList=businessmanServiceImpl.getGoods(businessman.getBusinessman_account());
+            session.setAttribute("goodsList",goodsList);
+            response.sendRedirect("businessmanView.jsp?name"+smartUpload.getRequest().getParameter("businessman_account"));
         }else {
             PrintWriter out= response.getWriter();
             out.write("<body><script>alert('添加失败');window.location.href='BusinessmanView.jsp?name="+smartUpload.getRequest().getParameter("businessman_account")+"';</script></body>");
         }
+    }
+
+    public void getOrders(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        request.setCharacterEncoding("UTF-8");
+        // 设置输出为中文
+        response.setCharacterEncoding("UTF-8");
+        HttpSession session=request.getSession();
+        Businessman businessman=(Businessman)session.getAttribute("businessman");
+        BusinessmanService businessmanServiceImpl=new BusinessmanServiceImpl();
+        List<Orders> ordersList=businessmanServiceImpl.getOrders(businessman.getBusinessman_account());
+        request.setAttribute("ordersList",ordersList);
+        request.setAttribute("name",businessman.getBusinessman_name());
+        request.getRequestDispatcher("order_details.jsp").forward(request, response);
+    }
+
+    public void sendGoods(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
+        request.setCharacterEncoding("UTF-8");
+        // 设置输出为中文
+        response.setCharacterEncoding("UTF-8");
+        HttpSession session=request.getSession();
+        Businessman businessman=(Businessman)session.getAttribute("businessman");
+        BusinessmanService businessmanServiceImpl=new BusinessmanServiceImpl();
+        int goods_id=Integer.parseInt(request.getParameter("goods_id"));
+        if(businessmanServiceImpl.order_send(goods_id)==1){
+            response.sendRedirect("businessmanController?method=getOrders&name="+businessman.getBusinessman_name()+"");
+        }
+
+    }
+
+    public void deleteGoods(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
+        request.setCharacterEncoding("UTF-8");
+        // 设置输出为中文
+        response.setCharacterEncoding("UTF-8");
+        HttpSession session=request.getSession();
+        Businessman businessman=(Businessman)session.getAttribute("businessman");
+        BusinessmanService businessmanServiceImpl=new BusinessmanServiceImpl();
+        System.out.println(request.getParameter("goods_id"));
+        int goods_id=Integer.parseInt(request.getParameter("goods_id"));
+        if(businessmanServiceImpl.order_delete(goods_id)==1){
+            List<Goods> goodsList=businessmanServiceImpl.getGoods(businessman.getBusinessman_account());
+            session.setAttribute("goodsList",goodsList);
+            request.getRequestDispatcher("businessmanView.jsp").forward(request, response);
+        }
+
+    }
+
+    public void regist(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
+        request.setCharacterEncoding("UTF-8");
+        HttpSession session=request.getSession();
+        String businessman_account=request.getParameter("businessman_account");
+        String businessman_name=request.getParameter("businessman_name");
+        int store_id=1233;
+        String store_name=request.getParameter("store_name");
+        String businessman_address=request.getParameter("businessman_address");
+        String businessman_telephone=request.getParameter("businessman_telephone");
+        String businessman_password=request.getParameter("password");
+        Businessman businessman=new Businessman(businessman_account,businessman_password,businessman_name,businessman_address,businessman_telephone,store_id,store_name);
+        businessman.toString();
+        BusinessmanService businessmanServiceImpl=new BusinessmanServiceImpl();
+        response.setContentType("text/html; charset=UTF-8");
+        response.setCharacterEncoding("UTF-8");
+        PrintWriter out=response.getWriter();
+        if(businessmanServiceImpl.regist(businessman)==1)
+            out.write("<body><script>alert('注册成功');window.location.href='html/business_login.html';</script></body>");
+        else
+            out.write("<body><script>alert('注册失败');window.location.href='html/business_regist.html';</script></body>");
+
+
+
     }
 
 }

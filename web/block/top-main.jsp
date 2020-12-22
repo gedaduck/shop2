@@ -44,7 +44,7 @@
                     <a href="admin_login.jsp">管理员登录</a>
                 </li>
                 <li>
-                    <a href="##">卖家中心</a>
+                    <a href="../html/business_login.html">卖家中心</a>
                 </li>
 
                 <li>|</li>

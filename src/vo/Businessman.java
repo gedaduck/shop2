@@ -5,14 +5,14 @@ public class Businessman {
     private String businessman_password;
     private String businessman_name;
     private String businessman_address;
-    private int businessman_telephone;
+    private String businessman_telephone;
     private int store_id;
     private String store_name;
 
     public Businessman() {
     }
 
-    public Businessman(String businessman_account, String businessman_password, String businessman_name, String businessman_address, int businessman_telephone, int store_id, String store_name) {
+    public Businessman(String businessman_account, String businessman_password, String businessman_name, String businessman_address, String businessman_telephone, int store_id, String store_name) {
         this.businessman_account = businessman_account;
         this.businessman_password = businessman_password;
         this.businessman_name = businessman_name;
@@ -54,11 +54,11 @@ public class Businessman {
         this.businessman_address = businessman_address;
     }
 
-    public int getBusinessman_telephone() {
+    public String getBusinessman_telephone() {
         return businessman_telephone;
     }
 
-    public void setBusinessman_telephone(int businessman_telephone) {
+    public void setBusinessman_telephone(String businessman_telephone) {
         this.businessman_telephone = businessman_telephone;
     }
 

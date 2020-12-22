@@ -10,17 +10,17 @@ import vo.Businessman;
 
 import java.util.List;
 
-public class BusinessmanServiceImpl implements service.Businessman.BusinessmanService {
-    private BusinessmanDao BusinessmanImpl=new BusinessmanImpl();
+public class BusinessmanServiceImpl implements BusinessmanService {
+    private BusinessmanDao businessmanImpl=new BusinessmanImpl();
 
     @Override
-    public Businessman BusinessmanLogin(String name, String password) {
-        return BusinessmanImpl.login(name,password);
+    public Businessman businessmanLogin(String name, String password) {
+        return businessmanImpl.login(name,password);
     }
 
     @Override
     public List<Goods> getGoods(String businessman_account) {
-        return BusinessmanImpl.getGoods(businessman_account);
+        return businessmanImpl.getGoods(businessman_account);
     }
 
     @Override
@@ -37,7 +37,22 @@ public class BusinessmanServiceImpl implements service.Businessman.BusinessmanSe
 
     @Override
     public List<Orders> getOrders(String businessman_account) {
+        return businessmanImpl.getOrders(businessman_account);
 
-        return null;
+    }
+
+    @Override
+    public int order_send(int goods_id) {
+        return businessmanImpl.goods_send(goods_id);
+    }
+
+    @Override
+    public int order_delete(int goods_id) {
+        return businessmanImpl.goods_delete(goods_id);
+    }
+
+    @Override
+    public int regist(Businessman businessman) {
+        return businessmanImpl.regist(businessman);
     }
 }

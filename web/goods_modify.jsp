@@ -35,9 +35,8 @@ table, td, th {
 <body>
 	<%
 	Goods goods=(Goods)request.getAttribute("good");
-	System.out.println(goods.toString());
 	%>
-	<a style="color:black" href="/sellerView.jsp?name=<%=goods.getBusinessman_account()%>">返回商品页</a>
+	<a style="color:black" href="/businessmanView.jsp?name=<%=goods.getBusinessman_account()%>">返回商品页</a>
 	<div class="class">
 		<div style="font-size:30px;color:blue">输入商品信息</div>
 		<form name="form1" method="post" action="update_goods" enctype ="multipart/form-data">
