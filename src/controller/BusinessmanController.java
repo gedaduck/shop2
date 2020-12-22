@@ -96,10 +96,13 @@ public class BusinessmanController extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         PrintWriter out=response.getWriter();
         Businessman businessman=businessmanServiceImpl.businessmanLogin(name,password);
-        List<Goods> goodsList=businessmanServiceImpl.getGoods(name);
         if(businessman.getBusinessman_account()!=null){
+            List<Goods> goodsList=businessmanServiceImpl.getGoods(name);
+            List<Orders> ordersList=businessmanServiceImpl.getOrders(name);
             session.setAttribute("businessman",businessman);
             session.setAttribute("goodsList",goodsList);
+            session.setAttribute("ordersList",ordersList);
+            out.write("<script>alert('登陆成功！');window.location.href='businessmanView.jsp';</script>");
             out.write("<script>alert('登陆成功！');window.location.href='businessman_menu.jsp';</script>");
         }
         else{
@@ -147,7 +150,6 @@ public class BusinessmanController extends HttpServlet {
         goods.setGoods_id(Integer.valueOf(smartUpload.getRequest().getParameter("good_id")));
         goods.setPrice(Double.valueOf(smartUpload.getRequest().getParameter("good_price")));
         goods.setGoods_category(Integer.valueOf(smartUpload.getRequest().getParameter("good_category")));
-        System.out.println(smartUpload.getRequest().getParameter("good_introduce"));
         goods.setGoods_introduce(smartUpload.getRequest().getParameter("good_introduce"));
         goods.setGoods_name(smartUpload.getRequest().getParameter("good_name"));
         goods.setGoods_img(img);
@@ -184,6 +186,8 @@ public class BusinessmanController extends HttpServlet {
         BusinessmanService businessmanServiceImpl=new BusinessmanServiceImpl();
         int goods_id=Integer.parseInt(request.getParameter("goods_id"));
         if(businessmanServiceImpl.order_send(goods_id)==1){
+            List<Orders> ordersList=businessmanServiceImpl.getOrders(businessman.getBusinessman_account());
+            session.setAttribute("orders",ordersList);
             response.sendRedirect("businessmanController?method=getOrders&name="+businessman.getBusinessman_name()+"");
         }
 
