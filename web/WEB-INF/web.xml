@@ -44,12 +44,4 @@
         <servlet-name>GoodsController</servlet-name>
         <url-pattern>/goodsController</url-pattern>
     </servlet-mapping>
-    <servlet>
-        <servlet-name>BusinessmanController</servlet-name>
-        <servlet-class>controller.BusinessmanController</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>BusinessmanController</servlet-name>
-        <url-pattern>/businessmanController</url-pattern>
-    </servlet-mapping>
 </web-app>

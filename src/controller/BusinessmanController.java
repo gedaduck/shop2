@@ -19,7 +19,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
-@WebServlet(name = "BusinessmanController",urlPatterns = "/businessmanController")
+@WebServlet(urlPatterns = "/businessmanController")
 public class BusinessmanController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String method=request.getParameter("method");
@@ -60,10 +60,12 @@ public class BusinessmanController extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         PrintWriter out=response.getWriter();
         Businessman businessman=businessmanServiceImpl.businessmanLogin(name,password);
-        List<Goods> goodsList=businessmanServiceImpl.getGoods(name);
         if(businessman.getBusinessman_account()!=null){
+            List<Goods> goodsList=businessmanServiceImpl.getGoods(name);
+            List<Orders> ordersList=businessmanServiceImpl.getOrders(name);
             session.setAttribute("businessman",businessman);
             session.setAttribute("goodsList",goodsList);
+            session.setAttribute("ordersList",ordersList);
             out.write("<script>alert('登陆成功！');window.location.href='businessmanView.jsp';</script>");
         }
         else{
@@ -146,6 +148,8 @@ public class BusinessmanController extends HttpServlet {
         BusinessmanService businessmanServiceImpl=new BusinessmanServiceImpl();
         int goods_id=Integer.parseInt(request.getParameter("goods_id"));
         if(businessmanServiceImpl.order_send(goods_id)==1){
+            List<Orders> ordersList=businessmanServiceImpl.getOrders(businessman.getBusinessman_account());
+            session.setAttribute("orders",ordersList);
             response.sendRedirect("businessmanController?method=getOrders&name="+businessman.getBusinessman_name()+"");
         }
 
