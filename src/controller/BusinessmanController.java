@@ -102,7 +102,6 @@ public class BusinessmanController extends HttpServlet {
             session.setAttribute("businessman",businessman);
             session.setAttribute("goodsList",goodsList);
             session.setAttribute("ordersList",ordersList);
-            out.write("<script>alert('登陆成功！');window.location.href='businessmanView.jsp';</script>");
             out.write("<script>alert('登陆成功！');window.location.href='businessman_menu.jsp';</script>");
         }
         else{
