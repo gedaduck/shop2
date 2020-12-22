@@ -15,4 +15,5 @@ public interface BusinessmanService {
     int order_send(int goods_id);
     int order_delete(int goods_id);
     int regist(Businessman businessman);
+    boolean goods_modify(Goods goods);
 }

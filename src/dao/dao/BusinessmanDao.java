@@ -13,4 +13,5 @@ public interface BusinessmanDao {
     List<Orders> getOrders(String business_account);
     int goods_send(int goods_id);
     int goods_delete(int goods_id);
+    boolean goods_modify(Goods goods);
 }

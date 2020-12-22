@@ -59,7 +59,6 @@
                     <div>联系方式：${sessionScope.user.telephone}</div>
                     <div>地&nbsp;&nbsp;址：${sessionScope.user.address}</div>
                     <div>个人简介：${sessionScope.user.id_card}</div>
-                    <h3>高级设置</h3>
                 </div>
             </div>
         </div>

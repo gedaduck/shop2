@@ -43,10 +43,10 @@
             </div>
             <div class="you fl">
                 <%
-                    Object businessman=request.getAttribute("businessman");
+                    object=request.getAttribute("businessman");
                     List<Businessman> listBusinessman=null;
-                    if(businessman instanceof List){
-                        listBusinessman=(List<Businessman>)businessman;
+                    if(object instanceof List){
+                        listBusinessman=(List<Businessman>)object;
                     }
                     if(listBusinessman!=null){
                 %>

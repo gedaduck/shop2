@@ -138,7 +138,7 @@
 		}
 	%>
 	<div id="header">
-		<a class=p2 href="index.html">返回主页</a>
+		<a class=p2 href="index.jsp">返回主页</a>
 		<h1>店铺主页</h1>
 		<a class=log>用户名：<%=businessman.getBusinessman_account() %></a>
 	</div>

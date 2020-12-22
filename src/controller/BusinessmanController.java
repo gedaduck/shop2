@@ -19,7 +19,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
-@WebServlet(urlPatterns = "/businessmanController")
+@WebServlet(name = "BusinessmanController",urlPatterns = "/businessmanController")
 public class BusinessmanController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String method=request.getParameter("method");
@@ -48,13 +48,49 @@ public class BusinessmanController extends HttpServlet {
             deleteGoods(request,response);
         else if(method.equals("regist"))
             regist(request,response);
-    }
+        else if(method.equals("loginOut"))
+            businessmanLoginOut(request,response);
+        else if(method.equals("modify"))
+            businessmanModifyGoods(request,response);
 
+
+    }
+    public void businessmanModifyGoods(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        Goods goods=new Goods();
+        BusinessmanServiceImpl businessmanService=new BusinessmanServiceImpl();
+        request.setCharacterEncoding("UTF-8");
+        goods.setGoods_name(request.getParameter("goods_name"));
+        goods.setGoods_introduce(request.getParameter("goods_introduce"));
+        goods.setGoods_category(Integer.parseInt(request.getParameter("goods_category")));
+        goods.setGoods_id(Integer.parseInt(request.getParameter("goods_id")));
+        goods.setPrice(Double.parseDouble(request.getParameter("price")));
+        response.setContentType("text/html;UTF-8");
+        response.setCharacterEncoding("UTF-8");
+        PrintWriter out = response.getWriter();
+        out.write("<body>");
+        out.write("<script>");
+        if(businessmanService.goods_modify(goods)) {
+            out.write("alert('修改成功！');");
+        }
+        else {
+            out.write("alert('修改失败！');");
+        }
+        out.write("window.location.href='businessman_store.jsp'");
+        out.write("</script>");
+        out.write("</body>");
+
+    }
+    public void businessmanLoginOut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session=request.getSession();
+        session.invalidate();
+        request.getRequestDispatcher("/index.jsp").forward(request, response);
+    }
 
     public void businessLogin(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
         HttpSession session=request.getSession();
         String name=request.getParameter("name");
         String password=request.getParameter("password");
+        System.out.println("商家登录中");
         BusinessmanService businessmanServiceImpl=new BusinessmanServiceImpl();
         response.setContentType("text/html; charset=UTF-8");
         response.setCharacterEncoding("UTF-8");
@@ -66,7 +102,7 @@ public class BusinessmanController extends HttpServlet {
             session.setAttribute("businessman",businessman);
             session.setAttribute("goodsList",goodsList);
             session.setAttribute("ordersList",ordersList);
-            out.write("<script>alert('登陆成功！');window.location.href='businessmanView.jsp';</script>");
+            out.write("<script>alert('登陆成功！');window.location.href='businessman_menu.jsp';</script>");
         }
         else{
             out.write("<script>alert('登陆失败！');window.location.href='html/Businessman_login.html';</script>");
@@ -85,9 +121,9 @@ public class BusinessmanController extends HttpServlet {
     }
 
     public void addGoods(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
-        request.setCharacterEncoding("UTF-8");
+        request.setCharacterEncoding("gb2312");
         // 设置输出为中文
-        response.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("gb2312");
         HttpSession session=request.getSession();
         Businessman businessman=(Businessman)session.getAttribute("businessman");
         Goods goods=new Goods();
@@ -114,15 +150,16 @@ public class BusinessmanController extends HttpServlet {
         goods.setPrice(Double.valueOf(smartUpload.getRequest().getParameter("good_price")));
         goods.setGoods_category(Integer.valueOf(smartUpload.getRequest().getParameter("good_category")));
         goods.setGoods_introduce(smartUpload.getRequest().getParameter("good_introduce"));
+        goods.setGoods_name(smartUpload.getRequest().getParameter("good_name"));
         goods.setGoods_img(img);
         BusinessmanService businessmanServiceImpl=new BusinessmanServiceImpl();
         if(businessmanServiceImpl.addGoods(goods)){
             List<Goods> goodsList=businessmanServiceImpl.getGoods(businessman.getBusinessman_account());
             session.setAttribute("goodsList",goodsList);
-            response.sendRedirect("businessmanView.jsp?name"+smartUpload.getRequest().getParameter("businessman_account"));
+            response.sendRedirect("businessman_store.jsp?name"+smartUpload.getRequest().getParameter("businessman_account"));
         }else {
             PrintWriter out= response.getWriter();
-            out.write("<body><script>alert('添加失败');window.location.href='BusinessmanView.jsp?name="+smartUpload.getRequest().getParameter("businessman_account")+"';</script></body>");
+            out.write("<body><script>alert('添加失败');window.location.href='businessman_store.jsp?name="+smartUpload.getRequest().getParameter("businessman_account")+"';</script></body>");
         }
     }
 
@@ -136,7 +173,7 @@ public class BusinessmanController extends HttpServlet {
         List<Orders> ordersList=businessmanServiceImpl.getOrders(businessman.getBusinessman_account());
         request.setAttribute("ordersList",ordersList);
         request.setAttribute("name",businessman.getBusinessman_name());
-        request.getRequestDispatcher("order_details.jsp").forward(request, response);
+        request.getRequestDispatcher("businessman_order.jsp").forward(request, response);
     }
 
     public void sendGoods(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
@@ -167,7 +204,7 @@ public class BusinessmanController extends HttpServlet {
         if(businessmanServiceImpl.order_delete(goods_id)==1){
             List<Goods> goodsList=businessmanServiceImpl.getGoods(businessman.getBusinessman_account());
             session.setAttribute("goodsList",goodsList);
-            request.getRequestDispatcher("businessmanView.jsp").forward(request, response);
+            request.getRequestDispatcher("businessman_store.jsp").forward(request, response);
         }
 
     }

@@ -55,4 +55,10 @@ public class BusinessmanServiceImpl implements BusinessmanService {
     public int regist(Businessman businessman) {
         return businessmanImpl.regist(businessman);
     }
+
+    @Override
+    public boolean goods_modify(Goods goods) {
+        return businessmanImpl.goods_modify(goods);
+    }
+
 }
