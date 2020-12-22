@@ -177,7 +177,7 @@
             <ul class="not">
               <li class="lli" style="border-bottom:2px solid #6ac1d4;">公告</li>
               <li class="lli">规则</li>
-              <li class="lli">论坛</li>
+              <li class="lli"><a href="/forumController?method=getForumView&page=1">论坛</a> </li>
               <li class="lli">安全</li>
               <li class="lli">公益</li>
             </ul>

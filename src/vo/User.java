@@ -7,7 +7,15 @@ public class User {
     private String address;
     private int telephone;
     private String id_card;
+    private String e_mail;
 
+    public String getE_mail() {
+        return e_mail;
+    }
+
+    public void setE_mail(String e_mail) {
+        this.e_mail = e_mail;
+    }
 
     public String getUser_account() {
         return user_account;
