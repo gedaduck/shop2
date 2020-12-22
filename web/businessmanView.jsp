@@ -24,7 +24,7 @@
 	width: 100px;
 	float: left;
 	padding: 5px;
-	margin:auto,auto;
+	margin:auto;
 }
 
 #section {
@@ -92,24 +92,7 @@
 	left: 1140px;
 	top:80px;
 }
-.log1{
-      border: 1px solid #f00;
-      position:absolute;  
-	  left: 1280px;
-	  top:80px;
-      background:#CC3300; 
-      width: 40px;
-      height: 20px;
-      line-height: 20px;
-      text-align: center; 
-      border-radius: 6px; 
-      font-size: 10px;
-      color: white;
-      text-decoration:none; 
-}
-.p1{
-      font-size: 20px;
-}
+
 .href1{
       text-decoration:none; 
       color: black;
@@ -147,7 +130,7 @@
 
 <body>
 	<%
-		Businessman Businessman=(Businessman)session.getAttribute("Businessman");
+		Businessman businessman=(Businessman)session.getAttribute("businessman");
 		Object object=session.getAttribute("goodsList");
 		List<Goods> goodsList=null;
 		if(object instanceof List){
@@ -157,14 +140,13 @@
 	<div id="header">
 		<a class=p2 href="index.html">返回主页</a>
 		<h1>店铺主页</h1>
-		<a class=log1 href="business_log.html">登录</a>
-		<a class=log>用户名：<%=Businessman.getBusinessman_account() %></a>
+		<a class=log>用户名：<%=businessman.getBusinessman_account() %></a>
 	</div>
 
 	<div id="nav">
 		<br><br><br><br><br><br><br>
-		<a class=href1 href="addGoods.jsp?name=<%=Businessman.getBusinessman_account() %>">添加商品</a><br><br>
-		<a class=href1 href="order_details.jsp?name=<%=Businessman.getBusinessman_account() %>">订单详情</a>
+		<a class=href1 href="addGoods.jsp?name=<%=businessman.getBusinessman_account() %>">添加商品</a><br><br>
+		<a class=href1 href="businessmanController?method=getOrders&name=<%=businessman.getBusinessman_account() %>">订单详情</a>
 	</div>
 	<img class="img2" src="images/13.jpg">
 	<img class="img3" src="images/16.jpg">
@@ -174,9 +156,9 @@
 		Goods goods=goodsList.get(i);
 %>	
 	<div class="myclass">
-	<a class=href1 href="/BusinessmanController?method=getaGood&goods_id=<%=goods.getGoods_id()%>"><img class="img1" src=<%=goods.getGoods_img()%> alt="无法加载!" /></a>
+	<a class=href1 href="/businessmanController?method=getaGood&goods_id=<%=goods.getGoods_id()%>"><img class="img1" src=<%=goods.getGoods_img()%> alt="无法加载!" /></a>
 	<p class="price2"><%=goods.getGoods_introduce()%></p>
-	<p class="price">￥<%=goods.getPrice()%>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="shop_s/delete_goods?ID=<%=goods.getGoods_id() %>&name=<%=Businessman.getBusinessman_account()%>">删除</a></p>
+	<p class="price">￥<%=goods.getPrice()%>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="businessmanController?method=deleteGoods&goods_id=<%=goods.getGoods_id() %>">删除</a></p>
 	</div>
 <%}%>
 	</div>

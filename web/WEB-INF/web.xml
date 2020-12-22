@@ -45,11 +45,11 @@
         <url-pattern>/goodsController</url-pattern>
     </servlet-mapping>
     <servlet>
-        <servlet-name>SellerController</servlet-name>
-        <servlet-class>controller.SellerController</servlet-class>
+        <servlet-name>BusinessmanController</servlet-name>
+        <servlet-class>controller.BusinessmanController</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>SellerController</servlet-name>
-        <url-pattern>/sellerController</url-pattern>
+        <servlet-name>BusinessmanController</servlet-name>
+        <url-pattern>/businessmanController</url-pattern>
     </servlet-mapping>
 </web-app>

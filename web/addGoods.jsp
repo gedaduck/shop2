@@ -33,10 +33,10 @@ table, td, th {
 </head>
 <body>
 	<%	String name=request.getParameter("name"); %>
-	<a style="color:black" href="/goods.jsp?name=<%=name%>">返回商品页</a>
+	<a style="color:black" href="/businessmanView.jsp?name=<%=name%>">返回商品页</a>
 	<div class="class">
 		<div style="font-size:30px;color:blue">输入商品信息</div>
-		<form name="form1" method="post" action="sellerController?method=addGoods" enctype ="multipart/form-data">
+		<form name="form1" method="post" action="businessmanController?method=addGoods" enctype ="multipart/form-data">
 			<table >
 				<tr>
 					<td>商品编号：</td>

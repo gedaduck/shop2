@@ -1,5 +1,6 @@
 <%@ page language="java" import="java.sql.*"  import="java.util.*"
 	contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="vo.Orders" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -58,19 +59,23 @@ td{
 </head>
 <body>
 	<%
-	String name = request.getParameter("name");
-	getOrder Order=new getOrder();
-	ArrayList orders=Order.All_order(name);
+	String name =(String)request.getAttribute("name");
+	Object object=request.getAttribute("ordersList");
+	List<Orders> ordersList=new ArrayList<>();
+	if(object instanceof List){
+		ordersList=(List<Orders>)object;
+	}
 	%>
 	<div id="header">
-		<a class=p2 href="goods.jsp?name=<%=name %>">返回主页</a>
+		<a class=p2 href="businessmanView.jsp?name=<%=name %>">返回主页</a>
 		<h1>店铺订单</h1>
 		<a class=log>用户名：<%=name %></a>
 	</div><br>
 	<div id="section">
 		<table class="a1"> 
-	<% for(int i=0;i<orders.size();i++){		
-	   		Order order=(Order)orders.get(i);
+	<% System.out.println(ordersList.size());
+		for(int i=0;i<ordersList.size();i++){
+	   		Orders order=ordersList.get(i);
 	 %>
 		<tr>
             <td>商品编号：<%=order.getGoods_id() %></td>
@@ -78,7 +83,7 @@ td{
             <td>商品价格：<%=order.getPrice() %> </td>
             <td>顾客名: <%=order.getUser_account() %></td>
             <td>订单时间：<%=order.getOrder_date() %> </td>
-            <td><a href="shop_s/order_send?ID=<%=order.getGoods_id() %>&name=<%=name%>"> <%=order.getOrder_send() %> </a></td>
+            <td><a href="businessmanController?method=sendGoods&goods_id=<%=order.getGoods_id()%>"> <%=order.getOrder_send() %> </a></td>
     	</tr>
 	<%}%>
     </table> 

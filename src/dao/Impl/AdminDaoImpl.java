@@ -111,7 +111,7 @@ public class AdminDaoImpl implements AdminDao {
                 businessman.setStore_id(res.getInt("store_id"));
                 businessman.setStore_name(res.getString("store_name"));
                 businessman.setBusinessman_address(res.getString("businessman_address"));
-                businessman.setBusinessman_telephone(res.getInt("businessman_telephone"));
+                businessman.setBusinessman_telephone(res.getString("businessman_telephone"));
                 list.add(businessman);
             }
         } catch (SQLException e) {
