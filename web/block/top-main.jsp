@@ -53,14 +53,14 @@
                 <%
                     String businessmanUrl;
                     if(businessman.getStore_name()==null){
-                        businessmanUrl="商家登录界面";
+                        businessmanUrl="html/business_login.html";
                     }else {
                         businessmanUrl="businessman_menu.jsp";
                     }
                 %>
 
                 <li>
-                    <a href="businessman_menu.jsp">卖家中心</a>
+                    <a href="<%=businessmanUrl%>">卖家中心</a>
                 </li>
 
                 <li>|</li>

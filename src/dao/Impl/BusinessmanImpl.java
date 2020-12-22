@@ -163,4 +163,29 @@ public class BusinessmanImpl implements BusinessmanDao {
         }
         return 0;
     }
+
+    @Override
+    public boolean goods_modify(Goods goods) {
+        Connection connection=null;
+        PreparedStatement preparedStatement=null;
+        try{
+            connection= JDBCUtil.getConnection();
+            String sql="update goods set goods_name=?,goods_introduce=?,goods_category=?,price=? where goods_id=?";
+            preparedStatement=connection.prepareStatement(sql);
+            preparedStatement.setString(1,goods.getGoods_name());
+            preparedStatement.setString(2,goods.getGoods_introduce());
+            preparedStatement.setInt(3,goods.getGoods_category());
+            preparedStatement.setDouble(4,goods.getPrice());
+            preparedStatement.setInt(5,goods.getGoods_id());
+            if(preparedStatement.executeUpdate()==1){
+                JDBCUtil.closeConnection(connection);
+                return true;
+            }
+            else JDBCUtil.closeConnection(connection);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
 }

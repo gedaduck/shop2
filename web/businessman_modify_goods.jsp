@@ -9,6 +9,7 @@
 <html>
 <head>
     <title>商品信息</title>
+    <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="res/css/public.css" />
     <link rel="stylesheet" type="text/css" href="res/css/mygxin.css" />
     <link rel="stylesheet" type="text/css" href="res/css/mygrxx.css"/>
@@ -28,43 +29,48 @@
         <div class="zuo fl">
             <h3>
                 <a href="#"><img style="width: 50px;height: 50px;" src="res/image/businessman.jpg" /></a>
-                <p class="clearfix"><span class="fl">[商家]</span><span class="fr"><a href="AdminController?method=adminLoginOut">[退出登录]</a></span></p>
+                <p class="clearfix"><span class="fl">[商家]</span>
+                    <span class="fr">
+                    <a href="businessmanController?method=loginOut">[退出登录]</a>
+                    </span></p>
             </h3>
             <div>
                 <h4>商家功能</h4>
                 <ul>
-                    <li><a href="#">查看店铺</a></li>
+                    <li><a href="businessman_store.jsp">查看店铺</a></li>
                     <li><a href="businessman_add_goods.jsp">添加商品</a></li>
-                    <li><a href="#">查看订单</a></li>
+                    <li><a href="businessman_order.jsp">查看订单</a></li>
                 </ul>
             </div>
         </div>
         <div class="you fl"><h2>修改商品信息</h2>
             <div class="gxin">
                 <div class="tx">
-                    <a href="#"><img src="img/tx.png" /></a>
+                    <a href="#"><img style="width: 120px;height: 120px;" src="res/image/modify.png" /></a>
                 </div>
                 <div class="xx">
                     <h3 class="clearfix">
                         <strong class="fl">输入商品资料</strong>
-                        <a href="businessman_modify_goods.jsp" class="fr" id="edit1">提交修改</a>
                     </h3>
 
-                    <form action="##">
+                    <form action="businessmanController?method=modify" method="post">
                         <div>
-                            商品名：<input type="text" name="goods_name">
+                            商品名：<input style="width: 400px" type="text" name="goods_name">
                         </div>
                         <div>
-                            商品介绍：<input type="text" name="goods_introduce">
+                            商品介绍：<input style="width: 400px" type="text" name="goods_introduce">
                         </div>
                         <div>
-                            商品种类：<input type="text" name="goods_category">
-                        </div>
-                        <div>
-                            商品图片：<input type="file" name="goods_img">
+                            商品种类：
+                            <input type="radio" name="goods_category" value="1" checked>手机
+                            <input type="radio" name="goods_category" value="2" >电脑
+                            <input type="radio" name="goods_category" value="3" >笔记本
+                            <input type="radio" name="goods_category" value="4" >键鼠外设
+                            <input type="radio" name="goods_category" value="5" >其他
                         </div>
                         <div>
                             商品价格：<input type="text" name="price">
+                            <input type="hidden" name="goods_id" value="<%=request.getParameter("goods_id")%>">
                         </div>
                         <div >
                             <div style="border-bottom:none; position: relative;top: 10px;left: 200px;">
@@ -74,7 +80,6 @@
                             </div>
                         </div>
                     </form>
-
                 </div>
             </div>
         </div>

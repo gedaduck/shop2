@@ -26,7 +26,7 @@ public class SearchDaoImpl implements SearchDao {
             //preparedStatement.setString(1, goods_introduce);
             res = preparedStatement.executeQuery();
             while(res.next()) {
-                System.out.println("查询成功！");
+                //System.out.println("查询成功！");
                 Goods goods=new Goods();
                 goods.setGoods_id(res.getInt("goods_id"));
                 goods.setGoods_name(res.getString("goods_name"));
@@ -35,7 +35,7 @@ public class SearchDaoImpl implements SearchDao {
                 goods.setGoods_introduce(res.getString("goods_introduce"));
                 goods.setPrice(res.getDouble("price"));
                 goods.setBusinessman_account(res.getString("businessman_account"));
-                System.out.println(goods.toString());
+                //System.out.println(goods.toString());
                 list.add(goods);
 
             }

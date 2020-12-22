@@ -60,4 +60,16 @@ public class User {
     public void setId_card(String id_card) {
         this.id_card = id_card;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "user_account='" + user_account + '\'' +
+                ", password='" + password + '\'' +
+                ", user_name='" + user_name + '\'' +
+                ", address='" + address + '\'' +
+                ", telephone=" + telephone +
+                ", id_card='" + id_card + '\'' +
+                '}';
+    }
 }

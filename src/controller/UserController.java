@@ -20,8 +20,6 @@ public class UserController extends HttpServlet {
         selectFun(request,response,method);
     }
 
-
-
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String method=request.getParameter("method");
         System.out.println(method);
@@ -75,11 +73,13 @@ public class UserController extends HttpServlet {
         HttpSession session=request.getSession();
         UserServiceImpl userService=new UserServiceImpl();
         User user=(User)session.getAttribute("user");
-        System.out.println(user.toString());
+        request.setCharacterEncoding("UTF-8");
         user.setUser_name(request.getParameter("name"));
         user.setAddress(request.getParameter("address"));
         user.setTelephone(Integer.valueOf(request.getParameter("telephone")));
         user.setId_card(request.getParameter("id_card"));
+
+        System.out.println(user.toString());
         session.setAttribute("user",user);
         response.setContentType("text/html;UTF-8");
         response.setCharacterEncoding("UTF-8");
@@ -137,9 +137,11 @@ public class UserController extends HttpServlet {
     }
     public void RegistController(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
         UserServiceImpl userService=new UserServiceImpl();
+        request.setCharacterEncoding("UTF-8");
         String account = request.getParameter("account");
         String password=request.getParameter("password");
         String name=request.getParameter("name");
+        System.out.println(name);
         String address=request.getParameter("address");
         int telephone=Integer.parseInt(request.getParameter("telephone"));
         String id_card=request.getParameter("id_card");

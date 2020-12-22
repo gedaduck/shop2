@@ -33,8 +33,8 @@
                     for(Goods goods1:listGoods){
             %>
             <div class="div1" style="display: block;margin:10px;">
-                <a href="goodsController?goods_id=<%=goods1.getGoods_id()%>">
-                    <img style="max-height: 280px;max-width: 280px;" src="res/image/<%=goods1.getGoods_img()%>"/>
+                <a href="goodsController?method=getGoods&goods_id=<%=goods1.getGoods_id()%>">
+                    <img style="max-height: 280px;max-width: 280px;" src="<%=goods1.getGoods_img()%>"/>
                 </a>
 
                 <div>

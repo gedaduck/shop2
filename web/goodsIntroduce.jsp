@@ -28,7 +28,7 @@
     <div class="proDet wrapper">
         <div class="proCon clearfix">
             <div class="proImg fl">
-                <img class="det" src="res/image/${requestScope.goods.goods_img}" />
+                <img class="det" src="${requestScope.goods.goods_img}" />
             </div>
             <div class="fr intro">
                 <div class="title">
@@ -56,7 +56,7 @@
         <div class="">
             <div class="eva">
                 <%
-                    Object object1=request.getAttribute("goodsEvaluationList");
+                    object1=request.getAttribute("goodsEvaluationList");
                     List<Orders> ordersList=null;
                     if(object1 instanceof List){
                         ordersList=(List<Orders>) object1;

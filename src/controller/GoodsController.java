@@ -33,7 +33,7 @@ public class GoodsController extends HttpServlet {
     }
 
     public void getGoods(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        int id=Integer.valueOf(request.getParameter("goods_id"));
+        int id=Integer.parseInt(request.getParameter("goods_id"));
         GoodsService goodsService=new GoodsServiceImpl();
         Goods goods=goodsService.getGoods(id);
         List<Orders> goodsEvaluationList=goodsService.getGoodsEvaluation(id);
