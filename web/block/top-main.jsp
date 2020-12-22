@@ -1,4 +1,6 @@
-<%@ page import="vo.User" %><%--
+<%@ page import="vo.User" %>
+<%@ page import="vo.Businessman" %>
+<%--
   Created by IntelliJ IDEA.
   User: 陈旭龙
   Date: 2020/12/15
@@ -26,8 +28,13 @@
                     <%
                         Object object=session.getAttribute("user");
                         User user=new User();
+                        Object object1=session.getAttribute("businessman");
+                        Businessman businessman=new Businessman();
                         if(object instanceof User){
                             user=(User)object;
+                        }
+                        if(object1 instanceof Businessman){
+                            businessman=(Businessman)object1;
                         }
 
                         if(user.getUser_name()==null){
@@ -43,8 +50,17 @@
                 <li>
                     <a href="admin_login.jsp">管理员登录</a>
                 </li>
+                <%
+                    String businessmanUrl;
+                    if(businessman.getStore_name()==null){
+                        businessmanUrl="商家登录界面";
+                    }else {
+                        businessmanUrl="businessman_menu.jsp";
+                    }
+                %>
+
                 <li>
-                    <a href="##">卖家中心</a>
+                    <a href="businessman_menu.jsp">卖家中心</a>
                 </li>
 
                 <li>|</li>
