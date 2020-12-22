@@ -1,10 +1,12 @@
 package dao.dao;
 
 import vo.Goods;
+import vo.Orders;
 
 import java.util.List;
 
 public interface GoodsDao {
-    public Goods getGoods(int goods_id);
-    public List<String> getGoodsEvaluation(int goods_id);
+    Goods getGoods(int goods_id);
+    List<Orders> getGoodsEvaluation(int goods_id);
+    boolean addGoods(Goods goods);
 }

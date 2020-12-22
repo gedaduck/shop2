@@ -1,4 +1,7 @@
-<%@ page import="vo.Goods" %><%--
+<%@ page import="vo.Goods" %>
+<%@ page import="java.util.List" %>
+<%@ page import="vo.Orders" %>
+<%@ page import="java.util.ArrayList" %><%--
   Created by IntelliJ IDEA.
   User: 张翔1
   Date: 2020/12/17
@@ -47,5 +50,47 @@
         </div>
     </div>
 </div>
+<div class="introMsg wrapper clearfix">
+    <div class="msgL fl">
+        <div class="msgTit clearfix"><p>所有评价</p></div>
+        <div class="">
+            <div class="eva">
+                <%
+                    Object object1=request.getAttribute("goodsEvaluationList");
+                    List<Orders> ordersList=null;
+                    if(object1 instanceof List){
+                        ordersList=(List<Orders>) object1;
+                    }
+                    for(Orders orders:ordersList){%>
+                <div class="per clearfix"><img class="fl" src="img/temp/per01.jpg">
+                    <div class="perR fl">
+                        <p><%=orders.getUser_account()%></p>
+                        <p><%=orders.getGoods_evaluation()%></p>
+                        <p><span><%=orders.getOrder_date()%></span></p>
+                    </div>
+                </div>
+                <%}%>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="res/js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="res/js/jquery.SuperSlide.2.1.1.js" type="text/javascript" charset="utf-8"></script>
+<script src="res/js/public.js" type="text/javascript" charset="utf-8"></script>
+<script src="res/js/nav.js" type="text/javascript" charset="utf-8"></script>
+<script src="res/js/pro.js" type="text/javascript" charset="utf-8"></script>
+<script src="res/js/cart.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+    jQuery(".bottom").slide({
+        titCell: ".hd ul",
+        mainCell: ".bd .likeList",
+        autoPage: true,
+        autoPlay: false,
+        effect: "leftLoop",
+        autoPlay: true,
+        vis: 1
+    });
+</script>
 </body>
 </html>

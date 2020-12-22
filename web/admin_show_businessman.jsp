@@ -67,6 +67,7 @@
                         </tr>
                         <%
 
+
                             for(Businessman businessman1:listBusinessman){
                         %>
                         <tr>
@@ -89,6 +90,7 @@
                 </div>
             </div>
         </div>
+
     </div>
     <!--返回顶部-->
     <div class="gotop">
@@ -127,5 +129,5 @@
 
 
     <%@include file="block/buttom.jsp"%>
-    </body>
+</body>
 </html>

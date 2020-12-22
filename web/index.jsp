@@ -34,70 +34,72 @@
           <ul class="item">
             <li>
               <a href="##" target="_blank">手机</a>
-              <div class="none">
-                <ul>
-                  <h5>手机</h5>
-                  <li><a href="##">iPhone</a></li>
-                  <li><a href="##">华为</a></li>
-                  <li><a href="##">棉服</a></li>
-                  <li><a href="##">阔腿裤</a></li>
-                  <h5>平板</h5>
-                  <li><a href="##">外套</li>
-                  <li><a href="##">衬衣</a></li>
-                  <li><a href="##">夹克</li>
-                  <li><a href="##">短裤</a></li>
-                  <h5>笔记本</h5>
-                  <li><a href="##">棉袜</li>
-                  <li><a href="##">长筒袜</a></li>
-                  <li><a href="##">秋裤</li>
-                  <li><a href="##">内裤</a></li>
-                </ul>
-              </div>
-            </li>
-            <li>
+
+            <div class="none">
+              <ul>
+                <h5>手机</h5>
+                <li><a href="##">iPhone</a></li>
+                <li><a href="##">华为</a></li>
+                <li><a href="##">棉服</a></li>
+                <li><a href="##">阔腿裤</a></li>
+                <h5>平板</h5>
+                <li><a href="##">外套</a></li>
+                <li><a href="##">衬衣</a></li>
+                <li><a href="##">夹克</a></li>
+                <li><a href="##">短裤</a></li>
+                <h5>笔记本</h5>
+                <li><a href="##">棉袜</a></li>
+                <li><a href="##">长筒袜</a></li>
+                <li><a href="##">秋裤</a></li>
+                <li><a href="##">内裤</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
               <a href="##">平板</a>
-              <div class="none">
-                <ul>
-                  <h5>手机</h5>
-                  <li><a href="##">iPhone</li>
-                  <li><a href="##">华为</a></li>
-                  <li><a href="##">棉服</li>
-                  <li><a href="##">阔腿裤</a></li>
-                  <h5>平板</h5>
-                  <li><a href="##">外套</li>
-                  <li><a href="##">衬衣</a></li>
-                  <li><a href="##">夹克</li>
-                  <li><a href="##">短裤</a></li>
-                  <h5>笔记本</h5>
-                  <li><a href="##">棉袜</li>
-                  <li><a href="##">长筒袜</a></li>
-                  <li><a href="##">秋裤</li>
-                  <li><a href="##">内裤</a></li>
-                </ul>
-              </div>
-            </li>
-            <li>
+
+            <div class="none">
+              <ul>
+                <h5>手机</h5>
+                <li><a href="##">iPhone</a></li>
+                <li><a href="##">华为</a></li>
+                <li><a href="##">棉服</a></li>
+                <li><a href="##">阔腿裤</a></li>
+                <h5>平板</h5>
+                <li><a href="##">外套</a></li>
+                <li><a href="##">衬衣</a></li>
+                <li><a href="##">夹克</a></li>
+                <li><a href="##">短裤</a></li>
+                <h5>笔记本</h5>
+                <li><a href="##">棉袜</a></li>
+                <li><a href="##">长筒袜</a></li>
+                <li><a href="##">秋裤</a></li>
+                <li><a href="##">内裤</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
               <a href="##">笔记本</a>
-              <div class="none">
-                <ul>
-                  <h5>手机</h5>
-                  <li><a href="##">iPhone</li>
-                  <li><a href="##">华为</a></li>
-                  <li><a href="##">棉服</li>
-                  <li><a href="##">阔腿裤</a></li>
-                  <h5>平板</h5>
-                  <li><a href="##">外套</li>
-                  <li><a href="##">衬衣</a></li>
-                  <li><a href="##">夹克</li>
-                  <li><a href="##">短裤</a></li>
-                  <h5>笔记本</h5>
-                  <li><a href="##">棉袜</li>
-                  <li><a href="##">长筒袜</a></li>
-                  <li><a href="##">秋裤</li>
-                  <li><a href="##">内裤</a></li>
-                </ul>
-              </div>
-            </li>
+            <div class="none">
+              <ul>
+                <h5>手机</h5>
+                <li><a href="##">iPhone</a></li>
+                <li><a href="##">华为</a></li>
+                <li><a href="##">棉服</a></li>
+                <li><a href="##">阔腿裤</a></li>
+                <h5>平板</h5>
+                <li><a href="##">外套</a></li>
+                <li><a href="##">衬衣</a></li>
+                <li><a href="##">夹克</a></li>
+                <li><a href="##">短裤</a></li>
+                <h5>笔记本</h5>
+                <li><a href="##">棉袜</a></li>
+                <li><a href="##">长筒袜</a></li>
+                <li><a href="##">秋裤</a></li>
+                <li><a href="##">内裤</a></li>
+              </ul>
+            </div>
+          </li>
 
           </ul>
         </div>
@@ -162,7 +164,7 @@
                   if(user.getUser_name()!=null){
                 %>
                 <p>您好！<%=user.getUser_name()%>!</p>
-                <a href="logoutController">退出</a>
+                <a href="userController?method=logout">退出</a>
                 <%}else {%>
                 <a href="login.jsp" id="login">登录</a>
                 <a href="regist.jsp">注册</a>
@@ -293,12 +295,10 @@
         </div>
       </div>
     </div>
-
     <!-- 固定滚动条 -->
     <div class="bar">
       <ul>
         <li><a href="#">返回顶部</a></li>
-
         <li><a href="##">购物车</a></li>
         <li><a href="##">个人中心</a></li>
       </ul>
