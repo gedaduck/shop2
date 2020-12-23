@@ -59,6 +59,9 @@
                         <span class="fly-list-nums">
                             <a href="##"><i class="iconfont" title="回答">&#xe60c;</i> <%=commentList.size()%></a>
                         </span>
+                        <div>
+                            <span><%=forum.getContent()%></span>
+                        </div>
                     </div>
                     <%for (Comment comment:commentList){%>
                     <div class="detail-about">

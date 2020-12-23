@@ -71,7 +71,6 @@ public class GoodsImpl implements GoodsDao {
                 orders.setOrder_date(res.getString("order_date"));
                 orders.setOrder_comment(res.getString("order_comment"));
                 goodsEvaluationList.add(orders);
-                System.out.println(orders.toString());
             }
             JDBCUtil.closeConnection(connection);
             return goodsEvaluationList;

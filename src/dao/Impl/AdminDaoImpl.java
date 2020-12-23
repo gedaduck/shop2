@@ -168,7 +168,6 @@ public class AdminDaoImpl implements AdminDao {
                 forum.setContent(res.getString("content"));
                 forum.setRelease_time(res.getString("time"));
                 forum.setUser_name(res.getString("user_name"));
-
                 list.add(forum);
             }
         } catch (SQLException e) {
@@ -205,7 +204,6 @@ public class AdminDaoImpl implements AdminDao {
                 orders.setBusinessman_account(res.getString("businessman_account"));
                 list.add(orders);
             }
-            System.out.println(list.size());
         } catch (SQLException e) {
             e.printStackTrace();
             System.out.println("数据库查询错误！");

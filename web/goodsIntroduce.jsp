@@ -42,7 +42,7 @@
                     <a href="#2">
                         <p class="buy fl">立即购买</p>
                     </a>
-                    <a href="Addservlet">
+                    <a href="Addservlet?goods_id=${requestScope.goods.goods_id}">
                         <p class="cart fr">加入购物车</p>
                     </a>
                 </div>
