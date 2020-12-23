@@ -114,12 +114,11 @@ public class BusinessmanImpl implements BusinessmanDao {
                 orders.setGoods_num(res.getInt("goods_num"));
                 orders.setPrice(res.getDouble("price"));
                 orders.setUser_account(res.getString("user_account"));
-                orders.setOrder_date(res.getDate("order_date"));
+                orders.setOrder_date(res.getString("order_date"));
                 orders.setOrder_send(res.getString("order_send"));
-                orders.setOrder_pay(null);
                 orders.setOrder_get(null);
                 orders.setOrder_id(res.getInt("order_id"));
-                orders.setGoods_evaluation(null);
+                orders.setGoods_comment(null);
                 ordersList.add(orders);
             }
             return ordersList;

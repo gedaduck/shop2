@@ -1,4 +1,3 @@
-<%@ page import="vo.User"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
@@ -34,73 +33,159 @@
           <ul class="item">
             <li>
               <a href="##" target="_blank">手机</a>
+              <div class="none">
+                <ul>
+                  <h5>手机</h5>
+                  <li><a href="/SearchController?keyword=iPhone">iPhone</a></li>
+                  <li><a href="/SearchController?keyword=华为">华为</a></li>
+                  <li><a href="/SearchController?keyword=小米">小米</a></li>
+                  <li><a href="/SearchController?keyword=OPPO">OPPO</a></li>
+                  <li><a href="/SearchController?keyword=vivo">vivo</a></li>
+                  <h5>平板</h5>
+                  <li><a href="/SearchController?keyword=ipad">ipad</a></li>
+                  <li><a href="/SearchController?keyword=MatePad">MatePad</a></li>
+                  <li><a href="/SearchController?keyword=安卓">安卓</a></li>
+                  <h5>笔记本</h5>
+                  <li><a href="/SearchController?keyword=MacBook">MacBook</a></li>
+                  <li><a href="/SearchController?keyword=MateBook">MateBook</a></li>
+                  <li><a href="/SearchController?keyword=华硕">华硕</a></li>
+                  <li><a href="SearchController?keyword=联想">联想</a></li>
+                  <li><a href="/SearchController?keyword=戴尔">戴尔</a></li>
+                  <h5>外设</h5>
+                  <li><a href="/SearchController?keyword=雷蛇">雷蛇</a></li>
+                  <li><a href="/SearchController?keyword=罗技">罗技</a></li>
+                  <li><a href="/SearchController?keyword=cherry">cherry</a></li>
+                  <li><a href="/SearchController?keyword=达尔优">达尔优</a></li>
+                  <h5>其他</h5>
+                  <li><a href="##">其他</a></li>
 
-            <div class="none">
-              <ul>
-                <h5>手机</h5>
-                <li><a href="##">iPhone</a></li>
-                <li><a href="##">华为</a></li>
-                <li><a href="##">棉服</a></li>
-                <li><a href="##">阔腿裤</a></li>
-                <h5>平板</h5>
-                <li><a href="##">外套</a></li>
-                <li><a href="##">衬衣</a></li>
-                <li><a href="##">夹克</a></li>
-                <li><a href="##">短裤</a></li>
-                <h5>笔记本</h5>
-                <li><a href="##">棉袜</a></li>
-                <li><a href="##">长筒袜</a></li>
-                <li><a href="##">秋裤</a></li>
-                <li><a href="##">内裤</a></li>
-              </ul>
-            </div>
-          </li>
-          <li>
-              <a href="##">平板</a>
+                </ul>
+              </div>
+            </li>
 
-            <div class="none">
-              <ul>
-                <h5>手机</h5>
-                <li><a href="##">iPhone</a></li>
-                <li><a href="##">华为</a></li>
-                <li><a href="##">棉服</a></li>
-                <li><a href="##">阔腿裤</a></li>
-                <h5>平板</h5>
-                <li><a href="##">外套</a></li>
-                <li><a href="##">衬衣</a></li>
-                <li><a href="##">夹克</a></li>
-                <li><a href="##">短裤</a></li>
-                <h5>笔记本</h5>
-                <li><a href="##">棉袜</a></li>
-                <li><a href="##">长筒袜</a></li>
-                <li><a href="##">秋裤</a></li>
-                <li><a href="##">内裤</a></li>
-              </ul>
-            </div>
-          </li>
-          <li>
+            <li>
+              <a href="##" target="_blank">平板</a>
+              <div class="none">
+                <ul>
+                  <h5>手机</h5>
+                  <li><a href="/SearchController?keyword=iPhone">iPhone</a></li>
+                  <li><a href="/SearchController?keyword=华为">华为</a></li>
+                  <li><a href="/SearchController?keyword=小米">小米</a></li>
+                  <li><a href="/SearchController?keyword=OPPO">OPPO</a></li>
+                  <li><a href="/SearchController?keyword=vivo">vivo</a></li>
+                  <h5>平板</h5>
+                  <li><a href="/SearchController?keyword=ipad">ipad</a></li>
+                  <li><a href="/SearchController?keyword=MatePad">MatePad</a></li>
+                  <li><a href="/SearchController?keyword=安卓">安卓</a></li>
+                  <h5>笔记本</h5>
+                  <li><a href="/SearchController?keyword=MacBook">MacBook</a></li>
+                  <li><a href="/SearchController?keyword=MateBook">MateBook</a></li>
+                  <li><a href="/SearchController?keyword=华硕">华硕</a></li>
+                  <li><a href="SearchController?keyword=联想">联想</a></li>
+                  <li><a href="/SearchController?keyword=戴尔">戴尔</a></li>
+                  <h5>外设</h5>
+                  <li><a href="/SearchController?keyword=雷蛇">雷蛇</a></li>
+                  <li><a href="/SearchController?keyword=罗技">罗技</a></li>
+                  <li><a href="/SearchController?keyword=cherry">cherry</a></li>
+                  <li><a href="/SearchController?keyword=达尔优">达尔优</a></li>
+                  <h5>其他</h5>
+                  <li><a href="##">其他</a></li>
+                </ul>
+              </div>
+            </li>
+
+            <li>
               <a href="##">笔记本</a>
-            <div class="none">
-              <ul>
-                <h5>手机</h5>
-                <li><a href="##">iPhone</a></li>
-                <li><a href="##">华为</a></li>
-                <li><a href="##">棉服</a></li>
-                <li><a href="##">阔腿裤</a></li>
-                <h5>平板</h5>
-                <li><a href="##">外套</a></li>
-                <li><a href="##">衬衣</a></li>
-                <li><a href="##">夹克</a></li>
-                <li><a href="##">短裤</a></li>
-                <h5>笔记本</h5>
-                <li><a href="##">棉袜</a></li>
-                <li><a href="##">长筒袜</a></li>
-                <li><a href="##">秋裤</a></li>
-                <li><a href="##">内裤</a></li>
-              </ul>
-            </div>
-          </li>
+              <div class="none">
+                <ul>
+                  <h5>手机</h5>
+                  <li><a href="/SearchController?keyword=iPhone">iPhone</a></li>
+                  <li><a href="/SearchController?keyword=华为">华为</a></li>
+                  <li><a href="/SearchController?keyword=小米">小米</a></li>
+                  <li><a href="/SearchController?keyword=OPPO">OPPO</a></li>
+                  <li><a href="/SearchController?keyword=vivo">vivo</a></li>
+                  <h5>平板</h5>
+                  <li><a href="/SearchController?keyword=ipad">ipad</a></li>
+                  <li><a href="/SearchController?keyword=MatePad">MatePad</a></li>
+                  <li><a href="/SearchController?keyword=安卓">安卓</a></li>
+                  <h5>笔记本</h5>
+                  <li><a href="/SearchController?keyword=MacBook">MacBook</a></li>
+                  <li><a href="/SearchController?keyword=MateBook">MateBook</a></li>
+                  <li><a href="/SearchController?keyword=华硕">华硕</a></li>
+                  <li><a href="SearchController?keyword=联想">联想</a></li>
+                  <li><a href="/SearchController?keyword=戴尔">戴尔</a></li>
+                  <h5>外设</h5>
+                  <li><a href="/SearchController?keyword=雷蛇">雷蛇</a></li>
+                  <li><a href="/SearchController?keyword=罗技">罗技</a></li>
+                  <li><a href="/SearchController?keyword=cherry">cherry</a></li>
+                  <li><a href="/SearchController?keyword=达尔优">达尔优</a></li>
+                  <h5>其他</h5>
+                  <li><a href="##">其他</a></li>
+                </ul>
+              </div>
+            </li>
 
+            <li>
+              <a href="##">外设</a>
+              <div class="none">
+                <ul>
+                  <h5>手机</h5>
+                  <li><a href="/SearchController?keyword=iPhone">iPhone</a></li>
+                  <li><a href="/SearchController?keyword=华为">华为</a></li>
+                  <li><a href="/SearchController?keyword=小米">小米</a></li>
+                  <li><a href="/SearchController?keyword=OPPO">OPPO</a></li>
+                  <li><a href="/SearchController?keyword=vivo">vivo</a></li>
+                  <h5>平板</h5>
+                  <li><a href="/SearchController?keyword=ipad">ipad</a></li>
+                  <li><a href="/SearchController?keyword=MatePad">MatePad</a></li>
+                  <li><a href="/SearchController?keyword=安卓">安卓</a></li>
+                  <h5>笔记本</h5>
+                  <li><a href="/SearchController?keyword=MacBook">MacBook</a></li>
+                  <li><a href="/SearchController?keyword=MateBook">MateBook</a></li>
+                  <li><a href="/SearchController?keyword=华硕">华硕</a></li>
+                  <li><a href="SearchController?keyword=联想">联想</a></li>
+                  <li><a href="/SearchController?keyword=戴尔">戴尔</a></li>
+                  <h5>外设</h5>
+                  <li><a href="/SearchController?keyword=雷蛇">雷蛇</a></li>
+                  <li><a href="/SearchController?keyword=罗技">罗技</a></li>
+                  <li><a href="/SearchController?keyword=cherry">cherry</a></li>
+                  <li><a href="/SearchController?keyword=达尔优">达尔优</a></li>
+                  <h5>其他</h5>
+                  <li><a href="##">其他</a></li>
+                </ul>
+              </div>
+            </li>
+
+            <li>
+              <a href="##">其他</a>
+                <div class="none">
+                  <ul>
+                    <h5>手机</h5>
+                    <li><a href="/SearchController?keyword=iPhone">iPhone</a></li>
+                    <li><a href="/SearchController?keyword=华为">华为</a></li>
+                    <li><a href="/SearchController?keyword=小米">小米</a></li>
+                    <li><a href="/SearchController?keyword=OPPO">OPPO</a></li>
+                    <li><a href="/SearchController?keyword=vivo">vivo</a></li>
+                    <h5>平板</h5>
+                    <li><a href="/SearchController?keyword=ipad">ipad</a></li>
+                    <li><a href="/SearchController?keyword=MatePad">MatePad</a></li>
+                    <li><a href="/SearchController?keyword=安卓">安卓</a></li>
+                    <h5>笔记本</h5>
+                    <li><a href="/SearchController?keyword=MacBook">MacBook</a></li>
+                    <li><a href="/SearchController?keyword=MateBook">MateBook</a></li>
+                    <li><a href="/SearchController?keyword=华硕">华硕</a></li>
+                    <li><a href="SearchController?keyword=联想">联想</a></li>
+                    <li><a href="/SearchController?keyword=戴尔">戴尔</a></li>
+                    <h5>外设</h5>
+                    <li><a href="/SearchController?keyword=雷蛇">雷蛇</a></li>
+                    <li><a href="/SearchController?keyword=罗技">罗技</a></li>
+                    <li><a href="/SearchController?keyword=cherry">cherry</a></li>
+                    <li><a href="/SearchController?keyword=达尔优">达尔优</a></li>
+                    <h5>其他</h5>
+                    <li><a href="##">其他</a></li>
+                  </ul>
+                </div>
+              </li>
           </ul>
         </div>
         <!-- 中部展示区 -->
@@ -121,7 +206,7 @@
           <div class="center-bot">
             <!-- 左 -->
             <div class="left">
-              <a href="goodsController?goods_id=1"><img src="res/image/show2.jpg" id="img"></a>
+              <a href="goodsController?method=getGoods&goods_id=1"><img src="res/image/show2.jpg" id="img"></a>
             </div>
             <!-- 中 -->
             <div class="center">

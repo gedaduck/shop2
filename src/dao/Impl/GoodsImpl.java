@@ -62,8 +62,8 @@ public class GoodsImpl implements GoodsDao {
                 orders.setUser_account(res.getString("user_account"));
                 orders.setGoods_id(res.getInt("goods_id"));
                 orders.setGoods_num(res.getInt("goods_num"));
-                orders.setOrder_date(res.getDate("order_date"));
-                orders.setGoods_evaluation(res.getString("goods_evaluation"));
+                orders.setOrder_date(res.getString("order_date"));
+                orders.setGoods_comment(res.getString("order_comment"));
                 goodsEvaluationList.add(orders);
                 System.out.println(orders.toString());
             }

@@ -30,4 +30,9 @@ public class ForumServiceImpl implements ForumService{
         return forumDaoImpl.addComment(comment);
     }
 
+    @Override
+    public Forum getOneForum(int forum_id) {
+        return forumDaoImpl.getOneForum(forum_id);
+    }
+
 }

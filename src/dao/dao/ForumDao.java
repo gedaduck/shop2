@@ -10,4 +10,5 @@ public interface ForumDao {
     int addForum(Forum forum);
     List<Comment> getComment(int forum_id);
     int addComment(Comment comment);
+    Forum getOneForum(int forum_id);
 }

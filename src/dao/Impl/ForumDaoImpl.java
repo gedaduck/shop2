@@ -111,4 +111,32 @@ public class ForumDaoImpl implements ForumDao {
         }
         return 0;
     }
+
+    @Override
+    public Forum getOneForum(int forum_id) {
+        Connection connection=null;
+        PreparedStatement preparedStatement=null;
+        ResultSet res=null;
+        try{
+            connection= JDBCUtil.getConnection();
+            String sql="select* from discuss where forum_id=?";
+            preparedStatement=connection.prepareStatement(sql);
+            preparedStatement.setInt(1,forum_id);
+            res=preparedStatement.executeQuery();
+            Forum forum=new Forum();
+            if(res.next()){
+                forum.setUser_name(res.getString("user_name"));
+                forum.setUser_email(res.getString("user_email"));
+                forum.setTitle(res.getString("title"));
+                forum.setContent(res.getString("content"));
+                forum.setRelease_time(res.getString("time"));
+                forum.setForum_id(res.getInt("forum_id"));
+                forum.setUser_account(res.getString("user_account"));
+                return forum;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }

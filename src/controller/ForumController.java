@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.awt.desktop.SystemSleepEvent;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.nio.charset.IllegalCharsetNameException;
@@ -20,6 +21,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.concurrent.ForkJoinPool;
 
 @WebServlet(urlPatterns = "/forumController")
 public class ForumController extends HttpServlet {
@@ -51,16 +53,18 @@ public class ForumController extends HttpServlet {
         int page=Integer.valueOf(request.getParameter("page"));
         ForumService forumServiceImpl=new ForumServiceImpl();
         List<Forum> forumList=forumServiceImpl.getForum();
-        int maxPage=forumList.size()/8+1;
+        int maxPage=(int)Math.ceil(forumList.size()/8d);
+        System.out.println(forumList.size()/8d);
+        System.out.println((int)Math.ceil(forumList.size()/8d));
         List<Forum> forumList1=new ArrayList<>();
         if(page==maxPage)
-            forumList1=forumList.subList((page-1)*8,forumList.size()-(page-1)*8);
+            forumList1=forumList.subList((page-1)*8,forumList.size());
         else
             forumList1=forumList.subList((page-1)*8,page*8);
         request.setAttribute("nowPage",page);
         request.setAttribute("maxPage",maxPage);
         request.setAttribute("forumList",forumList1);
-        request.getRequestDispatcher("forum.jsp").forward(request, response);
+        request.getRequestDispatcher("post.jsp").forward(request, response);
     }
 
     public void addForum(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
@@ -83,11 +87,12 @@ public class ForumController extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         ForumService forumServiceImpl=new ForumServiceImpl();
         int forum_id=Integer.valueOf(request.getParameter("forum_id"));
-        System.out.println(forum_id);
         List<Comment> commentList=forumServiceImpl.getComment(forum_id);
+        Forum forum=forumServiceImpl.getOneForum(forum_id);
+        request.setAttribute("forum",forum);
         request.setAttribute("commentList",commentList);
         request.setAttribute("forum_id",forum_id);
-        request.getRequestDispatcher("forum_details.jsp").forward(request, response);
+        request.getRequestDispatcher("post_content.jsp").forward(request, response);
     }
 
     public void addComment(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -103,9 +108,8 @@ public class ForumController extends HttpServlet {
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String time = df.format(new Date());
         comment.setComment_time(time);
-        if (forumServiceImpl.addComment(comment) == 1) {
-            System.out.println("评论成功！");
-            request.getRequestDispatcher("/forumController?method=getCView&forum_id="+forum_id).forward(request, response);
-        }
+        if (forumServiceImpl.addComment(comment) == 1)
+            response.sendRedirect("/forumController?method=getCView&forum_id="+forum_id);
+
     }
 }
