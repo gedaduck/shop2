@@ -9,7 +9,7 @@ public class Orders {
     private int goods_num;
     private double price;
     private String goods_name;
-    private Date order_date;
+    private String order_date;
     private String order_send;
     private String order_get;
     private String order_comment;
@@ -18,7 +18,7 @@ public class Orders {
     public Orders() {
     }
 
-    public Orders(int order_id, String user_account, int goods_id, int goods_num, double price, String goods_name, Date order_date, String order_send, String order_get, String order_comment, String businessman_account) {
+    public Orders(int order_id, String user_account, int goods_id, int goods_num, double price, String goods_name, String order_date, String order_send, String order_get, String order_comment, String businessman_account) {
         this.order_id = order_id;
         this.user_account = user_account;
         this.goods_id = goods_id;
@@ -48,6 +48,14 @@ public class Orders {
         this.user_account = user_account;
     }
 
+    public String getGoods_name() {
+        return goods_name;
+    }
+
+    public void setGoods_name(String goods_name) {
+        this.goods_name = goods_name;
+    }
+
     public int getGoods_id() {
         return goods_id;
     }
@@ -72,19 +80,11 @@ public class Orders {
         this.price = price;
     }
 
-    public String getGoods_name() {
-        return goods_name;
-    }
-
-    public void setGoods_name(String goods_name) {
-        this.goods_name = goods_name;
-    }
-
-    public Date getOrder_date() {
+    public String getOrder_date() {
         return order_date;
     }
 
-    public void setOrder_date(Date order_date) {
+    public void setOrder_date(String order_date) {
         this.order_date = order_date;
     }
 

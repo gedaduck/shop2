@@ -198,7 +198,7 @@ public class AdminDaoImpl implements AdminDao {
                 orders.setGoods_num(res.getInt("goods_num"));
                 orders.setPrice(res.getDouble("price"));
                 orders.setGoods_name(res.getString("goods_name"));
-                orders.setOrder_date(res.getDate("order_date"));
+                orders.setOrder_date(res.getString("order_date"));
                 orders.setOrder_send(res.getString("order_send"));
                 orders.setOrder_get(res.getString("order_get"));
                 orders.setOrder_comment(res.getString("order_comment"));

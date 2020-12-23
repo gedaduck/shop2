@@ -65,13 +65,13 @@
 
                 <li>|</li>
                 <li>
-                    <a href="##" id="cars">购物车</a>
+                    <a href="cart.jsp" id="cars">购物车</a>
                 </li>
                 <li>
-                    <a href="##">我的订单</a>
+                    <a href="order.jsp">我的订单</a>
                 </li>
                 <li>
-                    <a href="post.jsp">讨论中心</a>
+                    <a href="/forumController?method=getForumView&page=1">讨论中心</a>
                 </li>
             </ul>
         </div>

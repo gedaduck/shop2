@@ -1,4 +1,6 @@
-<%--
+<%@ page import="vo.Forum" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.ArrayList" %><%--
   Created by IntelliJ IDEA.
   User: 陈旭龙
   Date: 2020/12/21
@@ -27,8 +29,6 @@
                     <!-- 搜索框 -->
                     <div class="search" style="margin-left: 100px;">
                         <h2>购物论坛</h2>
-                        用户：<em>100</em>
-                        帖子：<em>20</em>
                     </div>
                 </div>
             </div>
@@ -47,22 +47,28 @@
                         </div>
 
                         <ul class="fly-list">
-                            <%
-                                for(int i=0;i<10;i++){
-                            %>
+                            <%  int nowPage=(Integer) request.getAttribute("nowPage");
+                                int maxPage=(Integer) request.getAttribute("maxPage");
+                                Object object2=request.getAttribute("forumList");
+                                List<Forum> forumList=new ArrayList<>();
+                                if(object2 instanceof List) {
+                                    forumList=(List<Forum>)object2;
+                                }
+                                for(Forum forum:forumList){
+                                %>
                             <li>
                                 <a href="post_content.jsp" class="fly-avatar">
                                     <img src="res/image/user_icon.jpg" alt="用户">
                                 </a>
                                 <h2>
                                     <a class="layui-badge">动态</a>
-                                    <a href="post_content.jsp">帖子标题2</a>
+                                    <a href="/forumController?method=getCView&forum_id=<%=forum.getForum_id()%>"><%=forum.getTitle()%></a>
                                 </h2>
                                 <div class="fly-list-info">
                                     <a href="post_content.jsp" link>
-                                        <cite>用户名</cite>
+                                        <cite><%=forum.getUser_name()%></cite>
                                     </a>
-                                    <span>发表时间：2021-1-1</span>
+                                    <span>发表时间：<%=forum.getRelease_time()%></span>
 
                                     <span class="fly-list-kiss layui-hide-xs" title="discuss"><i class="iconfont icon-pinglun1"></i>帖子回复数</span>
 
@@ -73,9 +79,22 @@
                             </li>
                             <%}%>
                         </ul>
-
                         <!-- <div class="fly-none">没有相关数据</div> -->
-
+                        <div style="text-align: center">
+                            <div class="laypage-main">
+                                <span class="laypage-curr">
+                                    <%if(nowPage!=1){%>
+                                        <a href="/forumController?method=getForumView&page=<%=nowPage-1%>">上一页</a>
+                                    <%}%>
+                                    <a href="##">第<%=nowPage%>页</a>
+                                    <%if(nowPage!=maxPage){%>
+                                    <a href="/forumController?method=getForumView&page=<%=nowPage+1%>">下一页</a>
+                                    <%}%>
+                                    <a href="/forumController?method=getForumView&page=1">首页</a>
+                                    <a href="/forumController?method=getForumView&page=<%=maxPage%>">尾页</a>
+                                </span>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="layui-col-md4">
@@ -110,7 +129,7 @@
 
                     <div class="fly-panel">
                         <div class="fly-panel-main">
-                            <a href="" target="_blank" class="fly-zanzhu" style="background-color: #393D49;">我要发帖</a>
+                            <a href="post_add.jsp" target="_blank" class="fly-zanzhu" style="background-color: #393D49;">我要发帖</a>
                         </div>
                     </div>
 

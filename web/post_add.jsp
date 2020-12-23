@@ -32,12 +32,13 @@
         <!--<div class="fly-none">没有权限</div>-->
         <div class="layui-form layui-form-pane">
             <div class="layui-tab layui-tab-brief" lay-filter="user">
+                <a href="/forumController?method=getForumView&page=1">返回</a>
                 <ul class="layui-tab-title">
                     <li class="layui-this">发表新帖<!-- 编辑帖子 --></li>
                 </ul>
                 <div class="layui-form layui-tab-content" id="LAY_ucm" style="padding: 20px 0;">
                     <div class="layui-tab-item layui-show">
-                        <form action="" method="post">
+                        <form action="/forumController?method=addForum" method="post">
                             <div class="layui-row layui-col-space15 layui-form-item">
 
                                 <div class="layui-col-md9">

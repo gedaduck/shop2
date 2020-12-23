@@ -42,7 +42,7 @@
                     <a href="#2">
                         <p class="buy fl">立即购买</p>
                     </a>
-                    <a href="#2">
+                    <a href="Addservlet">
                         <p class="cart fr">加入购物车</p>
                     </a>
                 </div>
