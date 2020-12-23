@@ -3,88 +3,88 @@ package dao;
 import java.sql.*;
 
 public class DB {
-	private Connection con;
-	private Statement sta;
-	private ResultSet rs;
-	/********************¾²Ì¬¿é¿ÉÒÔÌá¸ßĞ§ÂÊ***********/
-	static {
-		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-	/**
-	 * ¼ÓÔØÇı¶¯³ÌĞò
-	 */
-	
-	public Connection getConnection(){
-/****1433ÊÇÄã×Ô¼ºµÄSQLserver¶Ë¿ÚºÅ(Ä¬ÈÏÊÇ1433)*********/
-/**************DatabaseNameÊÇÄãÒªÁ¬½ÓµÄÊı¾İ¿âÃû³Æ*********/
-		String url = "jdbc:mysql://localhost:3306/shop?serverTimezone=UTC";
-		try {
-/**µÚÒ»¸ösaÊÇÄãµÄSQLserverÓÃ»§Ãû,µÚ¶ş¸öÊÇ´ËÓÃ»§ÃûËù¶ÔÓ¦µÄÃÜÂë***/
-			con = DriverManager.getConnection(url, "root", "123456");
-			sta = con.createStatement();
-			System.out.println("Á¬½Ó³É¹¦");
-		} catch (SQLException e) {
-			System.out.println("Á¬½ÓÊ§°Ü");
-			e.printStackTrace();
-		}
-		
-		return con;
-	}
-	
-	/*public DBManager() {
-		List<Connection> list = new ArrayList<Connection>();
-		for (int i = 0; i < 5; i++) {
-			list.add(this.getConnection());
-		}
-		this.con = list.get(0);
-	}*/
-	public int update(String sql){
-		int row = -1;
-		con = getConnection();
-		try {
-			row = sta.executeUpdate(sql);
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} finally{
-			this.close();
-		}
-		return row;
-	}
-	
-	public ResultSet query(String sql){
-		con = getConnection();
-		try {
-			rs = sta.executeQuery(sql);
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return rs;
-	}
-	
-	public void close(){
-		try {
-			if (rs != null) {
-				rs.close();
-				rs = null;
-			}
-			if (sta != null) {
-				sta.close();
-				sta = null;
-			}
-			if (con != null) {
-				con.close();
-				con = null;
-			}
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+    private Connection con;
+    private Statement sta;
+    private ResultSet rs;
+    /********************é™æ€å—å¯ä»¥æé«˜æ•ˆç‡***********/
+    static {
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+    /**
+     * åŠ è½½é©±åŠ¨ç¨‹åº
+     */
+
+    public Connection getConnection(){
+/****1433æ˜¯ä½ è‡ªå·±çš„SQLserverç«¯å£å·(é»˜è®¤æ˜¯1433)*********/
+/**************DatabaseNameæ˜¯ä½ è¦è¿æ¥çš„æ•°æ®åº“åç§°*********/
+        String url = "jdbc:mysql://localhost:3306/shop?serverTimezone=UTC";
+        try {
+/**ç¬¬ä¸€ä¸ªsaæ˜¯ä½ çš„SQLserverç”¨æˆ·å,ç¬¬äºŒä¸ªæ˜¯æ­¤ç”¨æˆ·åæ‰€å¯¹åº”çš„å¯†ç ***/
+            con = DriverManager.getConnection(url, "root", "cxl123123.");
+            sta = con.createStatement();
+            System.out.println("è¿æ¥æˆåŠŸ");
+        } catch (SQLException e) {
+            System.out.println("è¿æ¥å¤±è´¥");
+            e.printStackTrace();
+        }
+
+        return con;
+    }
+
+    /*public DBManager() {
+        List<Connection> list = new ArrayList<Connection>();
+        for (int i = 0; i < 5; i++) {
+            list.add(this.getConnection());
+        }
+        this.con = list.get(0);
+    }*/
+    public int update(String sql){
+        int row = -1;
+        con = getConnection();
+        try {
+            row = sta.executeUpdate(sql);
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } finally{
+            this.close();
+        }
+        return row;
+    }
+
+    public ResultSet query(String sql){
+        con = getConnection();
+        try {
+            rs = sta.executeQuery(sql);
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return rs;
+    }
+
+    public void close(){
+        try {
+            if (rs != null) {
+                rs.close();
+                rs = null;
+            }
+            if (sta != null) {
+                sta.close();
+                sta = null;
+            }
+            if (con != null) {
+                con.close();
+                con = null;
+            }
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
 }

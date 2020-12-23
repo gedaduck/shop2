@@ -26,15 +26,16 @@
         <div style="margin-left: 160px;margin-top: 20px;margin-bottom: 20px;">
             已搜索到<em style="color: red"><%=listGoods.size()%></em> 件商品
         </div>
-        <div style="display: flex; flex-wrap: wrap; margin-left: 155px;margin-right: 155px;">
+        <div style="display: flex; flex-wrap: wrap; margin-left: 155px;margin-right: 155px;margin-bottom: 20px;">
 
             <%
                 if(listGoods!=null){
                     for(Goods goods1:listGoods){
             %>
-            <div class="div1" style="display: block;margin:10px;">
+
+            <div class="div1" style="display: block; margin: 10px;padding:10px; background-color: #f3f3f3;">
                 <a href="goodsController?method=getGoods&goods_id=<%=goods1.getGoods_id()%>">
-                    <img style="max-height: 280px;max-width: 280px;" src="<%=goods1.getGoods_img()%>"/>
+                    <img style="height: 240px;width: 240px;" src="<%=goods1.getGoods_img()%>"/>
                 </a>
 
                 <div>

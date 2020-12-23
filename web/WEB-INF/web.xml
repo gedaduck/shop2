@@ -20,6 +20,16 @@
         <servlet-name>SearchController</servlet-name>
         <url-pattern>/SearchController</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SearchByCategoryController</servlet-name>
+        <servlet-class>controller.SearchByCategoryController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SearchByCategoryController</servlet-name>
+        <url-pattern>/SearchByCategoryController</url-pattern>
+    </servlet-mapping>
+
     <servlet>
         <servlet-name>AdminController</servlet-name>
         <servlet-class>controller.AdminController</servlet-class>

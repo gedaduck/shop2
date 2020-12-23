@@ -13,4 +13,7 @@ public class SearchService {
         List<Goods> list=goods.Search(goods_introduce);
         return list;
     }
+    public List<Goods> searchByCategory(int goods_category){
+        return goods.searchByCategory(goods_category);
+    }
 }

@@ -20,7 +20,7 @@
 <!-----------------address------------------------------->
 <div class="address">
     <div class="wrapper clearfix">
-        <a href="index.html">首页</a><span>/${requestScope.goods.goods_name}</span></a>
+        <a href="index.jsp">首页</a><span>/${requestScope.goods.goods_name}</span></a>
     </div>
 </div>
 <!-----------------------Detail------------------------------>

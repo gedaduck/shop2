@@ -47,6 +47,7 @@ public class UserController extends HttpServlet {
         String account = request.getParameter("account");
         String password = request.getParameter("password");
         User user=userService.userLogin(account,password);
+        request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset=UTF-8");
         response.setCharacterEncoding("UTF-8");
         PrintWriter out = response.getWriter();

@@ -17,11 +17,15 @@
         <ul class="nav">
           <li class="mall">主题市场</li>
 
-          <li><a href="##">电器城</a></li>
-
+          <li><a href="SearchByCategoryController?goods_category=1">手机</a></li>
           <li class="fgf">|</li>
-
-          <li><a href="admin_login.jsp">其他</a></li>
+          <li><a href="#">电脑</a></li>
+          <li class="fgf">|</li>
+          <li><a href="#">笔记本</a></li>
+          <li class="fgf">|</li>
+          <li><a href="#">外设</a></li>
+          <li class="fgf">|</li>
+          <li><a href="#">其他</a></li>
         </ul>
       </div>
     </div>

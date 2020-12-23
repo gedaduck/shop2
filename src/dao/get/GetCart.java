@@ -26,6 +26,7 @@ public class GetCart {
 			cart.setBusinessman_id(rs.getInt(7));
 			lists.add(cart);
 		}
+		System.out.println(lists.size());
 		return lists;
 	}
 }
