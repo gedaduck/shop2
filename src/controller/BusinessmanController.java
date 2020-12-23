@@ -58,24 +58,33 @@ public class BusinessmanController extends HttpServlet {
     public void businessmanModifyGoods(HttpServletRequest request, HttpServletResponse response) throws IOException {
         Goods goods=new Goods();
         BusinessmanServiceImpl businessmanService=new BusinessmanServiceImpl();
+        HttpSession session=request.getSession();
         request.setCharacterEncoding("UTF-8");
         goods.setGoods_name(request.getParameter("goods_name"));
         goods.setGoods_introduce(request.getParameter("goods_introduce"));
         goods.setGoods_category(Integer.parseInt(request.getParameter("goods_category")));
         goods.setGoods_id(Integer.parseInt(request.getParameter("goods_id")));
         goods.setPrice(Double.parseDouble(request.getParameter("price")));
+        boolean isModify=businessmanService.goods_modify(goods);
+
+        String businessman_account=request.getParameter("businessman_account");
+        int list_id=Integer.parseInt(request.getParameter("list_id"));
+        List<Goods> goodsList=businessmanService.getGoods(businessman_account);
+        List<Orders> ordersList=businessmanService.getOrders(businessman_account);
+        session.setAttribute("goodsList",goodsList);
+        session.setAttribute("ordersList",ordersList);
         response.setContentType("text/html;UTF-8");
         response.setCharacterEncoding("UTF-8");
         PrintWriter out = response.getWriter();
         out.write("<body>");
         out.write("<script>");
-        if(businessmanService.goods_modify(goods)) {
+        if(isModify) {
             out.write("alert('修改成功！');");
         }
         else {
             out.write("alert('修改失败！');");
         }
-        out.write("window.location.href='businessman_store.jsp'");
+        out.write("window.location.href='businessman_modify_goods.jsp?list_id="+list_id+"'");
         out.write("</script>");
         out.write("</body>");
 
@@ -87,6 +96,8 @@ public class BusinessmanController extends HttpServlet {
     }
 
     public void businessLogin(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+        HttpSession session1=request.getSession();
+        session1.invalidate();
         HttpSession session=request.getSession();
         String name=request.getParameter("name");
         String password=request.getParameter("password");
@@ -96,7 +107,7 @@ public class BusinessmanController extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         PrintWriter out=response.getWriter();
         Businessman businessman=businessmanServiceImpl.businessmanLogin(name,password);
-        if(businessman.getBusinessman_account()!=null){
+        if(businessman!=null){
             List<Goods> goodsList=businessmanServiceImpl.getGoods(name);
             List<Orders> ordersList=businessmanServiceImpl.getOrders(name);
             session.setAttribute("businessman",businessman);
@@ -105,7 +116,7 @@ public class BusinessmanController extends HttpServlet {
             out.write("<script>alert('登陆成功！');window.location.href='businessman_menu.jsp';</script>");
         }
         else{
-            out.write("<script>alert('登陆失败！');window.location.href='html/Businessman_login.html';</script>");
+            out.write("<script>alert('登陆失败！');window.location.href='html/business_login.html';</script>");
         }
     }
 
@@ -183,11 +194,13 @@ public class BusinessmanController extends HttpServlet {
         HttpSession session=request.getSession();
         Businessman businessman=(Businessman)session.getAttribute("businessman");
         BusinessmanService businessmanServiceImpl=new BusinessmanServiceImpl();
-        int goods_id=Integer.parseInt(request.getParameter("goods_id"));
-        if(businessmanServiceImpl.order_send(goods_id)==1){
-            List<Orders> ordersList=businessmanServiceImpl.getOrders(businessman.getBusinessman_account());
-            session.setAttribute("orders",ordersList);
-            response.sendRedirect("businessmanController?method=getOrders&name="+businessman.getBusinessman_name()+"");
+        System.out.println(request.getParameter("order_id"));
+        int goods_id=Integer.parseInt(request.getParameter("order_id"));
+        int isSend=businessmanServiceImpl.order_send(goods_id);
+        List<Orders> ordersList=businessmanServiceImpl.getOrders(businessman.getBusinessman_account());
+        session.setAttribute("ordersList",ordersList);
+        if(isSend==1){
+            response.sendRedirect("businessman_order.jsp");
         }
 
     }
@@ -229,9 +242,6 @@ public class BusinessmanController extends HttpServlet {
             out.write("<body><script>alert('注册成功');window.location.href='html/business_login.html';</script></body>");
         else
             out.write("<body><script>alert('注册失败');window.location.href='html/business_regist.html';</script></body>");
-
-
-
     }
 
 }

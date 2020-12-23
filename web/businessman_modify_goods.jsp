@@ -1,4 +1,6 @@
-<%--
+<%@ page import="vo.Goods" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.ArrayList" %><%--
   Created by IntelliJ IDEA.
   User: 陈旭龙
   Date: 2020/12/22
@@ -20,16 +22,29 @@
 <!------------------------------idea------------------------------>
 <div class="address mt" id="add">
     <div class="wrapper clearfix">
-        <a href="index.jsp" class="fl">首页</a><span>/</span><a href="admin_menu.jsp" class="on">商家中心</a>
+        <a href="index.jsp" class="fl">首页</a><span>/</span><a href="businessman_menu.jsp" class="on">商家中心</a>
     </div>
 </div>
 <!------------------------------Bott------------------------------>
+<%
+    Object object2=session.getAttribute("businessman");
+    Object object3=session.getAttribute("goodsList");
+    Object object4=session.getAttribute("ordersList");
+    businessman=new Businessman();
+    List<Goods> goodsList=new ArrayList<Goods>();
+    if(object3 instanceof List ){
+        goodsList=(List<Goods>)object3;
+    }
+    if(object2 instanceof Businessman) {
+        businessman=(Businessman)object2;
+    }
+%>
 <div class="Bott">
     <div class="wrapper clearfix">
         <div class="zuo fl">
             <h3>
                 <a href="#"><img style="width: 50px;height: 50px;" src="res/image/businessman.jpg" /></a>
-                <p class="clearfix"><span class="fl">[商家]</span>
+                <p class="clearfix"><span class="fl">[<%=businessman.getBusinessman_name()%>]</span>
                     <span class="fr">
                     <a href="businessmanController?method=loginOut">[退出登录]</a>
                     </span></p>
@@ -52,13 +67,17 @@
                     <h3 class="clearfix">
                         <strong class="fl">输入商品资料</strong>
                     </h3>
+                    <%
+                        int i;
+                        i=Integer.parseInt(request.getParameter("list_id"));
+                    %>
 
                     <form action="businessmanController?method=modify" method="post">
                         <div>
-                            商品名：<input style="width: 400px" type="text" name="goods_name">
+                            商品名：<input style="width: 400px" type="text" name="goods_name" value="<%=goodsList.get(i).getGoods_name()%>">
                         </div>
                         <div>
-                            商品介绍：<input style="width: 400px" type="text" name="goods_introduce">
+                            商品介绍：<input style="width: 400px" type="text" name="goods_introduce" value="<%=goodsList.get(i).getGoods_introduce()%>">
                         </div>
                         <div>
                             商品种类：
@@ -69,8 +88,10 @@
                             <input type="radio" name="goods_category" value="5" >其他
                         </div>
                         <div>
-                            商品价格：<input type="text" name="price">
-                            <input type="hidden" name="goods_id" value="<%=request.getParameter("goods_id")%>">
+                            商品价格：<input type="text" name="price" value="<%=goodsList.get(i).getPrice()%>">
+                            <input type="hidden" name="goods_id" value="<%=goodsList.get(i).getGoods_id()%>" >
+                            <input type="hidden" name="list_id" value="<%=i%>" >
+                            <input type="hidden" name="businessman_account" value="<%=businessman.getBusinessman_account()%>" >
                         </div>
                         <div >
                             <div style="border-bottom:none; position: relative;top: 10px;left: 200px;">
@@ -85,6 +106,22 @@
         </div>
 
     </div>
+</div>
+<div class="gotop">
+
+    <a href="#" class="toptop">
+        <dl>
+            <dt><img src="res/image/gt4.png"/></dt>
+            <dd>返回<br/>顶部</dd>
+        </dl>
+    </a>
+    <a href="#" class="dh">
+        <dl>
+            <dt><img src="res/image/gt2.png"/></dt>
+            <dd>联系<br/>客服</dd>
+        </dl>
+    </a>
+    <p>400-800-8200</p>
 </div>
 <div class="footer">
 </div>

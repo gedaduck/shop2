@@ -20,7 +20,10 @@
     <%@include file="block/top-main.jsp"%>
     <!------------------------------idea------------------------------>
     <div class="address mt" id="add">
-        <div class="wrapper clearfix"><a href="index.jsp" class="fl">首页</a><span>/</span><a href="admin_menu.jsp" class="on">商家中心</a></div>
+        <div class="wrapper clearfix">
+            <a href="index.jsp" class="fl">首页</a><span>/</span>
+            <a href="businessman_menu.jsp" class="on">商家中心</a>
+        </div>
     </div>
     <!------------------------------Bott------------------------------>
     <%
@@ -34,7 +37,7 @@
             goodsList=(List<Goods>)object3;
         }
         if(object4 instanceof List ){
-            ordersList=(List<Orders>)object3;
+            ordersList=(List<Orders>)object4;
         }
         if(object2 instanceof Businessman) {
             businessman=(Businessman)object2;
@@ -55,7 +58,7 @@
                     <ul>
                         <li><a href="businessman_store.jsp">查看店铺</a></li>
                         <li><a href="businessman_add_goods.jsp">添加商品</a></li>
-                        <li><a href="#">查看订单</a></li>
+                        <li><a href="businessman_order.jsp">查看订单</a></li>
                     </ul>
                 </div>
             </div>
@@ -80,6 +83,22 @@
             </div>
 
         </div>
+    </div>
+    <div class="gotop">
+
+        <a href="#" class="toptop">
+            <dl>
+                <dt><img src="res/image/gt4.png"/></dt>
+                <dd>返回<br/>顶部</dd>
+            </dl>
+        </a>
+        <a href="#" class="dh">
+            <dl>
+                <dt><img src="res/image/gt2.png"/></dt>
+                <dd>联系<br/>客服</dd>
+            </dl>
+        </a>
+        <p>400-800-8200</p>
     </div>
     <div class="footer">
     </div>

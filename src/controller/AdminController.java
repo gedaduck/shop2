@@ -1,10 +1,7 @@
 package controller;
 
 import service.admin.AdminServiceImpl;
-import vo.Admin;
-import vo.Businessman;
-import vo.Goods;
-import vo.User;
+import vo.*;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -49,19 +46,51 @@ public class AdminController extends HttpServlet {
             adminLoginOut(request, response);
         else if (method.equals("deleteGoods"))
             deleteGoods(request, response);
+        else if(method.equals("deletePost"))
+            deletePost(request,response);
+        else if(method.equals("getAllPost"))
+            getAllPost(request,response);
+        else if(method.equals("getAllOrder"))
+            getAllOrder(request,response);
+        else if(method.equals("deleteOrder"))
+            deleteOrder(request,response);
+    }
+    public void deleteOrder(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        AdminServiceImpl adminService = new AdminServiceImpl();
+        boolean bool = adminService.deleteOrder(Integer.parseInt( request.getParameter("order_id")));
+        response.setContentType("text/html; charset=UTF-8");
+        response.setCharacterEncoding("UTF-8");
+        PrintWriter out=response.getWriter();
+        if (bool) {
+            request.setAttribute("res", "删除成功");
+        } else
+            request.setAttribute("res", "删除失败");
+        getAllOrder(request,response);
+    }
+    public void deletePost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        AdminServiceImpl adminService = new AdminServiceImpl();
+        boolean bool = adminService.deleteForum(Integer.parseInt( request.getParameter("forum_id")));
+        response.setContentType("text/html; charset=UTF-8");
+        response.setCharacterEncoding("UTF-8");
+        PrintWriter out=response.getWriter();
+        if (bool) {
+            request.setAttribute("res", "删除成功");
+        } else
+            request.setAttribute("res", "删除失败");
+        getAllPost(request,response);
 
     }
-
     public void deleteUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         AdminServiceImpl adminService = new AdminServiceImpl();
         boolean bool = adminService.deleteUser(request.getParameter("user_account"));
+        response.setContentType("text/html; charset=UTF-8");
+        response.setCharacterEncoding("UTF-8");
+        PrintWriter out=response.getWriter();
         if (bool) {
             request.setAttribute("res", "删除成功");
-
         } else
             request.setAttribute("res", "删除失败");
-        getAllUser(request, response);
-        //request.getRequestDispatcher("admin_show_user.jsp").forward(request, response);
+        getAllUser(request,response);
     }
 
     public void deleteBusinessman(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -81,6 +110,21 @@ public class AdminController extends HttpServlet {
         list = adminService.getAllUser();
         request.setAttribute("user1", list);
         request.getRequestDispatcher("admin_show_user.jsp").forward(request, response);
+    }
+    public void getAllOrder(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        AdminServiceImpl adminService = new AdminServiceImpl();
+        List<Orders> list = new ArrayList<>();
+        list = adminService.getAllOrder();
+        System.out.println(list.size());
+        request.setAttribute("order", list);
+        request.getRequestDispatcher("admin_show_orders.jsp").forward(request, response);
+    }
+    public void getAllPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        AdminServiceImpl adminService = new AdminServiceImpl();
+        List<Forum>list=new ArrayList<>();
+        list=adminService.getAllPost();
+        request.setAttribute("post",list);
+        request.getRequestDispatcher("admin_show_post.jsp").forward(request, response);
     }
 
     public void getAllBusinessman(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

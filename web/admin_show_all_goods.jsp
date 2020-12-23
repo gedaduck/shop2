@@ -37,8 +37,8 @@
                     <li><a href="AdminController?method=getAllUser">管理用户</a></li>
                     <li><a href="AdminController?method=getAllBusinessman">管理商家</a></li>
                     <li><a href="AdminController?method=getAllGoods">管理商品</a></li>
-                    <li><a href="#">管理帖子</a></li>
-                    <li><a href="#">管理订单</a></li>
+                    <li><a href="AdminController?method=getAllPost">管理帖子</a></li>
+                    <li><a href="AdminController?method=getAllOrder">管理订单</a></li>
                 </ul>
             </div>
         </div>
@@ -58,12 +58,12 @@
             <div class="bott">
                 <table class="table3"  cellspacing="0" border="1" bordercolor="#b7bebe" style="text-align: center;border:1px solid #b7bebe;">
                     <tr>
-                        <td class="td1">编号</td>
-                        <td class="td1">名称</td>
-                        <td class="td1">介绍</td>
-                        <td class="td1">商品种类</td>
-                        <td class="td2">价格</td>
-                        <td class="td1">操作</td>
+                        <td class="td1" style="width: 100px;">商品编号</td>
+                        <td class="td1" style="width: 200px;">商品名称</td>
+                        <td class="td1" style="width: 200px;">商品介绍</td>
+                        <td class="td1" style="width: 90px;">商品种类</td>
+                        <td class="td2" style="width: 100px;">价格</td>
+                        <td class="td1"style="width: 120px;">操作</td>
                     </tr>
                     <%
 
@@ -90,28 +90,17 @@
 </div>
 <!--返回顶部-->
 <div class="gotop">
-    <a href="cart.html">
+
+    <a href="#" class="toptop">
         <dl>
-            <dt><img src="res/image/gt1.png"/></dt>
-            <dd>去购<br/>物车</dd>
+            <dt><img src="res/image/gt4.png"/></dt>
+            <dd>返回<br/>顶部</dd>
         </dl>
     </a>
     <a href="#" class="dh">
         <dl>
             <dt><img src="res/image/gt2.png"/></dt>
             <dd>联系<br/>客服</dd>
-        </dl>
-    </a>
-    <a href="mygxin.html">
-        <dl>
-            <dt><img src="res/image/gt3.png"/></dt>
-            <dd>个人<br/>中心</dd>
-        </dl>
-    </a>
-    <a href="#" class="toptop" style="display: none">
-        <dl>
-            <dt><img src="res/image/gt4.png"/></dt>
-            <dd>返回<br/>顶部</dd>
         </dl>
     </a>
     <p>400-800-8200</p>

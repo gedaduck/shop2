@@ -5,15 +5,32 @@ import java.util.Date;
 public class Orders {
     private int order_id;
     private String user_account;
-    private String goods_name;
     private int goods_id;
     private int goods_num;
     private double price;
+    private String goods_name;
     private String order_date;
     private String order_send;
     private String order_get;
-    private String goods_comment;
-    private int businessman_id;
+    private String order_comment;
+    private String businessman_account;
+
+    public Orders() {
+    }
+
+    public Orders(int order_id, String user_account, int goods_id, int goods_num, double price, String goods_name, String order_date, String order_send, String order_get, String order_comment, String businessman_account) {
+        this.order_id = order_id;
+        this.user_account = user_account;
+        this.goods_id = goods_id;
+        this.goods_num = goods_num;
+        this.price = price;
+        this.goods_name = goods_name;
+        this.order_date = order_date;
+        this.order_send = order_send;
+        this.order_get = order_get;
+        this.order_comment = order_comment;
+        this.businessman_account = businessman_account;
+    }
 
     public int getOrder_id() {
         return order_id;
@@ -87,20 +104,20 @@ public class Orders {
         this.order_get = order_get;
     }
 
-    public String getGoods_comment() {
-        return goods_comment;
+    public String getOrder_comment() {
+        return order_comment;
     }
 
-    public void setGoods_comment(String goods_comment) {
-        this.goods_comment = goods_comment;
+    public void setOrder_comment(String order_comment) {
+        this.order_comment = order_comment;
     }
 
-    public int getBusinessman_id() {
-        return businessman_id;
+    public String getBusinessman_account() {
+        return businessman_account;
     }
 
-    public void setBusinessman_id(int businessman_id) {
-        this.businessman_id = businessman_id;
+    public void setBusinessman_account(String businessman_account) {
+        this.businessman_account = businessman_account;
     }
 
     @Override
@@ -108,17 +125,15 @@ public class Orders {
         return "Orders{" +
                 "order_id=" + order_id +
                 ", user_account='" + user_account + '\'' +
-                ", goods_name='" + goods_name + '\'' +
                 ", goods_id=" + goods_id +
                 ", goods_num=" + goods_num +
                 ", price=" + price +
-                ", order_date='" + order_date + '\'' +
+                ", goods_name='" + goods_name + '\'' +
+                ", order_date=" + order_date +
                 ", order_send='" + order_send + '\'' +
                 ", order_get='" + order_get + '\'' +
-                ", goods_comment='" + goods_comment + '\'' +
-                ", businessman_id=" + businessman_id +
+                ", order_comment='" + order_comment + '\'' +
+                ", businessman_account='" + businessman_account + '\'' +
                 '}';
     }
-
-
 }

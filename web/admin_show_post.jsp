@@ -1,4 +1,6 @@
-<%--
+
+<%@ page import="java.util.List" %>
+<%@ page import="vo.Forum" %><%--
   Created by IntelliJ IDEA.
   User: 陈旭龙
   Date: 2020/12/22
@@ -22,6 +24,14 @@
     <div class="wrapper clearfix"><a href="index.jsp" class="fl">首页</a><span>/</span><a href="admin_menu.jsp" class="on">控制台</a></div>
 </div>
 <!------------------------------Bott------------------------------>
+<%
+    object=request.getAttribute("post");
+    List<Forum> listPost=null;
+    if(object instanceof List){
+        listPost=(List<Forum>)object;
+    }
+    if(listPost!=null){
+%>
 <div class="Bott">
     <div class="wrapper clearfix">
         <div class="zuo fl">
@@ -35,42 +45,36 @@
                     <li><a href="AdminController?method=getAllUser">管理用户</a></li>
                     <li><a href="AdminController?method=getAllBusinessman">管理商家</a></li>
                     <li><a href="AdminController?method=getAllGoods">管理商品</a></li>
-                    <li><a href="#">管理帖子</a></li>
-                    <li><a href="#">管理订单</a></li>
+                    <li><a href="AdminController?method=getAllPost">管理帖子</a></li>
+                    <li><a href="AdminController?method=getAllOrder">管理订单</a></li>
                 </ul>
             </div>
         </div>
         <div class="you fl">
             <div class="tx clearfix">
-                已查找到<em style="color: red"></em>帖子
+                已查找到<em style="color: red"><%=listPost.size()%></em>帖子
             </div>
             <div class="bott">
                 <table class="table2"  cellspacing="0" border="1" bordercolor="#b7bebe" style="text-align: center;border:1px solid #b7bebe;">
                     <tr>
-                        <td class="td1">账号</td>
-                        <td class="td1">密码</td>
-                        <td class="td1">名称</td>
-                        <td class="td2">地址</td>
-                        <td class="td1">电话号码</td>
-                        <td class="td1">店铺名称</td>
-                        <td class="td1">店铺编号</td>
+                        <td class="td1">编号</td>
+                        <td class="td1">标题</td>
+                        <td class="td1">发帖人</td>
+                        <td class="td2">发帖时间</td>
+                        <td class="td1">发帖账号</td>
                         <td class="td1">操作</td>
                     </tr>
                     <%
-
-
-                        for(Businessman businessman1:listBusinessman){
+                        for(Forum post1:listPost){
                     %>
                     <tr>
-                        <td class="td1"><%=businessman1.getBusinessman_account()%></td>
-                        <td class="td1"><%=businessman1.getBusinessman_password()%></td>
-                        <td class="td1"><%=businessman1.getBusinessman_name()%></td>
-                        <td class="td2"><%=businessman1.getBusinessman_address()%></td>
-                        <td class="td1"><%=businessman1.getBusinessman_telephone()%></td>
-                        <td class="td1"><%=businessman1.getStore_name()%></td>
-                        <td class="td1"><%=businessman1.getStore_id()%></td>
+                        <td class="td1"><%=post1.getForum_id()%></td>
+                        <td class="td1"><%=post1.getTitle()%></td>
+                        <td class="td1"><%=post1.getUser_name()%></td>
+                        <td class="td2"><%=post1.getRelease_time()%></td>
+                        <td class="td1"><%=post1.getUser_account()%></td>
                         <td class="td1">
-                            <a style="color: #A10000" href="AdminController?method=deleteBusinessman&businessman_account=<%=businessman1.getBusinessman_account()%>">删除该用户</a>
+                            <a style="color: #A10000" href="AdminController?method=deletePost&forum_id=<%=post1.getForum_id()%>">删除该帖子</a>
                         </td>
                     </tr>
                     <%
@@ -85,28 +89,17 @@
 </div>
 <!--返回顶部-->
 <div class="gotop">
-    <a href="cart.html">
+
+    <a href="#" class="toptop">
         <dl>
-            <dt><img src="res/image/gt1.png"/></dt>
-            <dd>去购<br/>物车</dd>
+            <dt><img src="res/image/gt4.png"/></dt>
+            <dd>返回<br/>顶部</dd>
         </dl>
     </a>
     <a href="#" class="dh">
         <dl>
             <dt><img src="res/image/gt2.png"/></dt>
             <dd>联系<br/>客服</dd>
-        </dl>
-    </a>
-    <a href="mygxin.html">
-        <dl>
-            <dt><img src="res/image/gt3.png"/></dt>
-            <dd>个人<br/>中心</dd>
-        </dl>
-    </a>
-    <a href="#" class="toptop" style="display: none">
-        <dl>
-            <dt><img src="res/image/gt4.png"/></dt>
-            <dd>返回<br/>顶部</dd>
         </dl>
     </a>
     <p>400-800-8200</p>

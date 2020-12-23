@@ -110,15 +110,17 @@ public class BusinessmanImpl implements BusinessmanDao {
             while(res.next()){
                 System.out.println(1);
                 Orders orders=new Orders();
+                orders.setOrder_id(res.getInt("order_id"));
+                orders.setUser_account(res.getString("user_account"));
                 orders.setGoods_id(res.getInt("goods_id"));
                 orders.setGoods_num(res.getInt("goods_num"));
                 orders.setPrice(res.getDouble("price"));
                 orders.setUser_account(res.getString("user_account"));
                 orders.setOrder_date(res.getString("order_date"));
                 orders.setOrder_send(res.getString("order_send"));
-                orders.setOrder_get(null);
-                orders.setOrder_id(res.getInt("order_id"));
-                orders.setGoods_comment(null);
+                orders.setOrder_get(res.getString("order_get"));
+                orders.setGoods_comment(res.getString("order_comment"));
+                orders.setBusinessman_account(res.getString("businessman_account"));
                 ordersList.add(orders);
             }
             return ordersList;
@@ -129,15 +131,15 @@ public class BusinessmanImpl implements BusinessmanDao {
     }
 
     @Override
-    public int goods_send(int goods_id) {
+    public int goods_send(int order_id) {
         Connection connection=null;
         PreparedStatement preparedStatement=null;
         ResultSet res=null;
         try{
             connection=JDBCUtil.getConnection();
-            String sql="update orders set order_send='已发货',order_get='待收货' where goods_id=?";
+            String sql="update orders set order_send='已发货',order_get='未收货' where order_id=?";
             preparedStatement=connection.prepareStatement(sql);
-            preparedStatement.setInt(1,goods_id);
+            preparedStatement.setInt(1,order_id);
             return preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
