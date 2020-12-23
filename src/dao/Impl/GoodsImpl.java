@@ -87,15 +87,14 @@ public class GoodsImpl implements GoodsDao {
         PreparedStatement preparedStatement=null;
         try{
             connection= JDBCUtil.getConnection();
-            String sql="insert into goods(goods_id,goods_name,goods_img,goods_introduce,goods_category,price,businessman_account) values(?,?,?,?,?,?,?)";
+            String sql="insert into goods(goods_name,goods_img,goods_introduce,goods_category,price,businessman_account) values(?,?,?,?,?,?)";
             preparedStatement=connection.prepareStatement(sql);
-            preparedStatement.setInt(1,goods.getGoods_id());
-            preparedStatement.setString(2,goods.getGoods_name());
-            preparedStatement.setString(3,goods.getGoods_img());
-            preparedStatement.setString(4,goods.getGoods_introduce());
-            preparedStatement.setInt(5,goods.getGoods_category());
-            preparedStatement.setDouble(6,goods.getPrice());
-            preparedStatement.setString(7,goods.getBusinessman_account());
+            preparedStatement.setString(1,goods.getGoods_name());
+            preparedStatement.setString(2,goods.getGoods_img());
+            preparedStatement.setString(3,goods.getGoods_introduce());
+            preparedStatement.setInt(4,goods.getGoods_category());
+            preparedStatement.setDouble(5,goods.getPrice());
+            preparedStatement.setString(6,goods.getBusinessman_account());
             if(preparedStatement.executeUpdate()==1)
                 return true;
         } catch (SQLException e) {

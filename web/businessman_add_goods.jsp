@@ -55,10 +55,6 @@
             <form name="form1" method="post" action="businessmanController?method=addGoods" enctype ="multipart/form-data">
                 <table class="AddGoodsTable" style="border: solid 1px #f3f3f3">
                     <tr>
-                        <td class="td1">商品编号：</td>
-                        <td class="td3"><input style="width: 400px;" type="text" name="good_id" /></td>
-                    </tr>
-                    <tr>
                         <td class="td1">商品名称：</td>
                         <td class="td3">
                             <input style="width: 400px;" name="good_name">

@@ -157,7 +157,6 @@ public class BusinessmanController extends HttpServlet {
             e.printStackTrace();
         }
         goods.setBusinessman_account(smartUpload.getRequest().getParameter("businessman_account"));
-        goods.setGoods_id(Integer.valueOf(smartUpload.getRequest().getParameter("good_id")));
         goods.setPrice(Double.valueOf(smartUpload.getRequest().getParameter("good_price")));
         goods.setGoods_category(Integer.valueOf(smartUpload.getRequest().getParameter("good_category")));
         goods.setGoods_introduce(smartUpload.getRequest().getParameter("good_introduce"));
