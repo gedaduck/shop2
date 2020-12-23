@@ -8,11 +8,29 @@ public class Orders {
     private int goods_id;
     private int goods_num;
     private double price;
+    private String goods_name;
     private Date order_date;
-    private String order_pay;
     private String order_send;
     private String order_get;
-    private String goods_evaluation;
+    private String order_comment;
+    private String businessman_account;
+
+    public Orders() {
+    }
+
+    public Orders(int order_id, String user_account, int goods_id, int goods_num, double price, String goods_name, Date order_date, String order_send, String order_get, String order_comment, String businessman_account) {
+        this.order_id = order_id;
+        this.user_account = user_account;
+        this.goods_id = goods_id;
+        this.goods_num = goods_num;
+        this.price = price;
+        this.goods_name = goods_name;
+        this.order_date = order_date;
+        this.order_send = order_send;
+        this.order_get = order_get;
+        this.order_comment = order_comment;
+        this.businessman_account = businessman_account;
+    }
 
     public int getOrder_id() {
         return order_id;
@@ -54,20 +72,20 @@ public class Orders {
         this.price = price;
     }
 
+    public String getGoods_name() {
+        return goods_name;
+    }
+
+    public void setGoods_name(String goods_name) {
+        this.goods_name = goods_name;
+    }
+
     public Date getOrder_date() {
         return order_date;
     }
 
     public void setOrder_date(Date order_date) {
         this.order_date = order_date;
-    }
-
-    public String getOrder_pay() {
-        return order_pay;
-    }
-
-    public void setOrder_pay(String order_pay) {
-        this.order_pay = order_pay;
     }
 
     public String getOrder_send() {
@@ -86,12 +104,20 @@ public class Orders {
         this.order_get = order_get;
     }
 
-    public String getGoods_evaluation() {
-        return goods_evaluation;
+    public String getOrder_comment() {
+        return order_comment;
     }
 
-    public void setGoods_evaluation(String goods_evaluation) {
-        this.goods_evaluation = goods_evaluation;
+    public void setOrder_comment(String order_comment) {
+        this.order_comment = order_comment;
+    }
+
+    public String getBusinessman_account() {
+        return businessman_account;
+    }
+
+    public void setBusinessman_account(String businessman_account) {
+        this.businessman_account = businessman_account;
     }
 
     @Override
@@ -102,11 +128,12 @@ public class Orders {
                 ", goods_id=" + goods_id +
                 ", goods_num=" + goods_num +
                 ", price=" + price +
+                ", goods_name='" + goods_name + '\'' +
                 ", order_date=" + order_date +
-                ", order_pay='" + order_pay + '\'' +
                 ", order_send='" + order_send + '\'' +
                 ", order_get='" + order_get + '\'' +
-                ", goods_evaluation='" + goods_evaluation + '\'' +
+                ", order_comment='" + order_comment + '\'' +
+                ", businessman_account='" + businessman_account + '\'' +
                 '}';
     }
 }

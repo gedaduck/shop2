@@ -2,10 +2,7 @@ package service.admin;
 
 import dao.dao.AdminDao;
 import dao.Impl.AdminDaoImpl;
-import vo.Admin;
-import vo.Businessman;
-import vo.Goods;
-import vo.User;
+import vo.*;
 
 import java.util.List;
 
@@ -38,8 +35,28 @@ public class AdminServiceImpl implements AdminService{
     }
 
     @Override
+    public boolean deleteForum(int forum_id) {
+        return admin.deleteForum(forum_id);
+    }
+
+    @Override
+    public boolean deleteOrder(int order_id) {
+        return admin.deleteOrder(order_id);
+    }
+
+    @Override
     public List<Goods> getAllGoods() {
         return admin.getAllGoods();
+    }
+
+    @Override
+    public List<Forum> getAllPost() {
+        return admin.getAllPost();
+    }
+
+    @Override
+    public List<Orders> getAllOrder() {
+        return admin.getAllOrder();
     }
 
     @Override

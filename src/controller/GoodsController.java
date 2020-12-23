@@ -37,7 +37,6 @@ public class GoodsController extends HttpServlet {
         GoodsService goodsService=new GoodsServiceImpl();
         Goods goods=goodsService.getGoods(id);
         List<Orders> goodsEvaluationList=goodsService.getGoodsEvaluation(id);
-        System.out.println(goodsEvaluationList.size());
         request.setAttribute("goods",goods);
         request.setAttribute("goodsEvaluationList",goodsEvaluationList);
         request.getRequestDispatcher("goodsIntroduce.jsp").forward(request, response);

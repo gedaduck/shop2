@@ -36,8 +36,8 @@
                         <li><a href="AdminController?method=getAllUser">管理用户</a></li>
                         <li><a href="AdminController?method=getAllBusinessman">管理商家</a></li>
                         <li><a href="AdminController?method=getAllGoods">管理商品</a></li>
-                        <li><a href="#">管理帖子</a></li>
-                        <li><a href="#">管理订单</a></li>
+                        <li><a href="AdminController?method=getAllPost">管理帖子</a></li>
+                        <li><a href="AdminController?method=getAllOrder">管理订单</a></li>
                     </ul>
                 </div>
             </div>
@@ -51,19 +51,19 @@
                     if(listBusinessman!=null){
                 %>
                 <div class="tx clearfix">
-                    已查找到<em style="color: red"><%=listBusinessman.size()%></em> 个用户
+                    已查找到<em style="color: red"><%=listBusinessman.size()%></em> 个商家
                 </div>
                 <div class="bott">
                     <table class="table2"  cellspacing="0" border="1" bordercolor="#b7bebe" style="text-align: center;border:1px solid #b7bebe;">
                         <tr>
-                            <td class="td1">账号</td>
-                            <td class="td1">密码</td>
-                            <td class="td1">名称</td>
-                            <td class="td2">地址</td>
-                            <td class="td1">电话号码</td>
-                            <td class="td1">店铺名称</td>
-                            <td class="td1">店铺编号</td>
-                            <td class="td1">操作</td>
+                            <td class="td1" style="width: 150px;">账号</td>
+                            <td class="td1" style="width: 100px;">密码</td>
+                            <td class="td1" style="width: 100px;">名称</td>
+                            <td class="td2" style="width: 200px;">地址</td>
+                            <td class="td1" style="width: 150px;">电话号码</td>
+                            <td class="td1" style="width: 150px;">店铺名称</td>
+                            <td class="td1" style="width: 90px;">店铺编号</td>
+                            <td class="td1" style="width: 150px;">操作</td>
                         </tr>
                         <%
 
@@ -94,28 +94,17 @@
     </div>
     <!--返回顶部-->
     <div class="gotop">
-        <a href="cart.html">
+
+        <a href="#" class="toptop">
             <dl>
-                <dt><img src="res/image/gt1.png"/></dt>
-                <dd>去购<br/>物车</dd>
+                <dt><img src="res/image/gt4.png"/></dt>
+                <dd>返回<br/>顶部</dd>
             </dl>
         </a>
         <a href="#" class="dh">
             <dl>
                 <dt><img src="res/image/gt2.png"/></dt>
                 <dd>联系<br/>客服</dd>
-            </dl>
-        </a>
-        <a href="mygxin.html">
-            <dl>
-                <dt><img src="res/image/gt3.png"/></dt>
-                <dd>个人<br/>中心</dd>
-            </dl>
-        </a>
-        <a href="#" class="toptop" style="display: none">
-            <dl>
-                <dt><img src="res/image/gt4.png"/></dt>
-                <dd>返回<br/>顶部</dd>
             </dl>
         </a>
         <p>400-800-8200</p>

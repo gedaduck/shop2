@@ -65,7 +65,7 @@
                 <div class="per clearfix"><img class="fl" src="img/temp/per01.jpg">
                     <div class="perR fl">
                         <p><%=orders.getUser_account()%></p>
-                        <p><%=orders.getGoods_evaluation()%></p>
+                        <p><%=orders.getOrder_comment()%></p>
                         <p><span><%=orders.getOrder_date()%></span></p>
                     </div>
                 </div>

@@ -51,27 +51,23 @@ a:link{text-decoration: none; color: #262626}
 /*查看全部用户*/
 
 .table1 .td1{
-	width: 120px;
 	text-align: center;
 }
 .table1 .td2{
-	width: 250px;
+
 	text-align: center;
 }
 .table2 .td1{
-	width: 120px;
 	text-align: center;
 }
 .table2 .td2{
-	width: 250px;
+
 	text-align: center;
 }
 .table3 .td1{
-	width: 120px;
 	text-align: center;
 }
 .table3 .td2{
-	width: 250px;
 	text-align: center;
 }
 /*顶部*/

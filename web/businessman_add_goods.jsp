@@ -20,7 +20,7 @@
     <div class="wrapper clearfix">
         <a href="index.jsp" class="fl">首页</a>
         <span>/</span>
-        <a href="admin_menu.jsp" class="on">商家中心</a>
+        <a href="businessman_menu.jsp" class="on">商家中心</a>
     </div>
 </div>
 <!------------------------------Bott------------------------------>
@@ -91,7 +91,7 @@
                         <td class="td3" style="text-align: center">
                             <div style="border-bottom:none; position: relative;">
                                 <h4>
-                                    <input style="color: #A10000; border: solid 2px #f3f3f3;background-color: #fff" type="submit" value="提交修改">
+                                    <input style="color: #A10000; border: solid 2px #f3f3f3;background-color: #fff" type="submit" value="添加">
                                 </h4>
                             </div>
                         </td>
@@ -102,6 +102,22 @@
         </div>
 
     </div>
+</div>
+<div class="gotop">
+
+    <a href="#" class="toptop">
+        <dl>
+            <dt><img src="res/image/gt4.png"/></dt>
+            <dd>返回<br/>顶部</dd>
+        </dl>
+    </a>
+    <a href="#" class="dh">
+        <dl>
+            <dt><img src="res/image/gt2.png"/></dt>
+            <dd>联系<br/>客服</dd>
+        </dl>
+    </a>
+    <p>400-800-8200</p>
 </div>
 <div class="footer">
 </div>

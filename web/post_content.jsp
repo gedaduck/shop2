@@ -150,7 +150,7 @@
 
                 <div class="fly-panel">
                     <div class="fly-panel-main">
-                        <a href="##" target="_blank" class="fly-zanzhu" style="background-color: #393D49;">我要发帖</a>
+                        <a href="post_add.jsp" target="_blank" class="fly-zanzhu" style="background-color: #393D49;">我要发帖</a>
                     </div>
                 </div>
 

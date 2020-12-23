@@ -1,4 +1,5 @@
-<%--
+<%@ page import="vo.Orders" %>
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: 陈旭龙
   Date: 2020/12/22
@@ -22,6 +23,7 @@
     <div class="wrapper clearfix"><a href="index.jsp" class="fl">首页</a><span>/</span><a href="admin_menu.jsp" class="on">控制台</a></div>
 </div>
 <!------------------------------Bott------------------------------>
+
 <div class="Bott">
     <div class="wrapper clearfix">
         <div class="zuo fl">
@@ -35,47 +37,57 @@
                     <li><a href="AdminController?method=getAllUser">管理用户</a></li>
                     <li><a href="AdminController?method=getAllBusinessman">管理商家</a></li>
                     <li><a href="AdminController?method=getAllGoods">管理商品</a></li>
-                    <li><a href="#">管理帖子</a></li>
-                    <li><a href="#">管理订单</a></li>
+                    <li><a href="AdminController?method=getAllPost">管理帖子</a></li>
+                    <li><a href="AdminController?method=getAllOrder">管理订单</a></li>
                 </ul>
             </div>
         </div>
+        <%
+            object=request.getAttribute("order");
+            List<Orders> listOrder=null;
+            if(object instanceof List){
+                listOrder=(List<Orders>)object;
+            }
+            System.out.println(listOrder.size());
+            if(listOrder!=null){
+        %>
         <div class="you fl">
             <div class="tx clearfix">
-                已查找到<em style="color: red"></em>帖子
+                已查找到<em style="color: red"><%=listOrder.size()%></em>&nbsp;订单
             </div>
             <div class="bott">
                 <table class="table2"  cellspacing="0" border="1" bordercolor="#b7bebe" style="text-align: center;border:1px solid #b7bebe;">
                     <tr>
-                        <td class="td1">账号</td>
-                        <td class="td1">密码</td>
-                        <td class="td1">名称</td>
-                        <td class="td2">地址</td>
-                        <td class="td1">电话号码</td>
-                        <td class="td1">店铺名称</td>
-                        <td class="td1">店铺编号</td>
-                        <td class="td1">操作</td>
+                        <td class="td1" style="width: 80px;">订单编号</td>
+                        <td class="td1" style="width: 150px;">商品名</td>
+                        <td class="td1" style="width: 80px;">商品编号</td>
+                        <td class="td2" style="width: 80px;">订单价格</td>
+                        <td class="td1" style="width: 100px;">顾客登录名</td>
+                        <td class="td1" style="width: 150px;">商家登录名</td>
+                        <td class="td1"style="width: 120px;">订单时间</td>
+
+                        <td class="td1"style="width: 100px;">操作</td>
                     </tr>
                     <%
 
 
-                        for(Businessman businessman1:listBusinessman){
+                        for(Orders orders:listOrder){
                     %>
                     <tr>
-                        <td class="td1"><%=businessman1.getBusinessman_account()%></td>
-                        <td class="td1"><%=businessman1.getBusinessman_password()%></td>
-                        <td class="td1"><%=businessman1.getBusinessman_name()%></td>
-                        <td class="td2"><%=businessman1.getBusinessman_address()%></td>
-                        <td class="td1"><%=businessman1.getBusinessman_telephone()%></td>
-                        <td class="td1"><%=businessman1.getStore_name()%></td>
-                        <td class="td1"><%=businessman1.getStore_id()%></td>
+                        <td class="td1"><%=orders.getOrder_id()%></td>
+                        <td class="td1"><%=orders.getGoods_name()%></td>
+                        <td class="td1"><%=orders.getGoods_id()%></td>
+                        <td class="td2"><%=orders.getPrice()*orders.getGoods_num()%></td>
+                        <td class="td1"><%=orders.getUser_account()%></td>
+                        <td class="td1"><%=orders.getBusinessman_account()%></td>
+                        <td class="td1"><%=orders.getOrder_date()%></td>
                         <td class="td1">
-                            <a style="color: #A10000" href="AdminController?method=deleteBusinessman&businessman_account=<%=businessman1.getBusinessman_account()%>">删除该用户</a>
+                            <a style="color: #A10000" href="AdminController?method=deleteOrder&order_id=<%=orders.getOrder_id()%>">删除该订单</a>
                         </td>
                     </tr>
                     <%
                         }
-                        }
+                    }
                     %>
                 </table>
             </div>
@@ -85,28 +97,17 @@
 </div>
 <!--返回顶部-->
 <div class="gotop">
-    <a href="cart.html">
+
+    <a href="#" class="toptop">
         <dl>
-            <dt><img src="res/image/gt1.png"/></dt>
-            <dd>去购<br/>物车</dd>
+            <dt><img src="res/image/gt4.png"/></dt>
+            <dd>返回<br/>顶部</dd>
         </dl>
     </a>
     <a href="#" class="dh">
         <dl>
             <dt><img src="res/image/gt2.png"/></dt>
             <dd>联系<br/>客服</dd>
-        </dl>
-    </a>
-    <a href="mygxin.html">
-        <dl>
-            <dt><img src="res/image/gt3.png"/></dt>
-            <dd>个人<br/>中心</dd>
-        </dl>
-    </a>
-    <a href="#" class="toptop" style="display: none">
-        <dl>
-            <dt><img src="res/image/gt4.png"/></dt>
-            <dd>返回<br/>顶部</dd>
         </dl>
     </a>
     <p>400-800-8200</p>
@@ -116,9 +117,5 @@
 <script src="res/js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="res/js/public.js" type="text/javascript" charset="utf-8"></script>
 <script src="res/js/user.js" type="text/javascript" charset="utf-8"></script>
-
-
-
-<%@include file="block/buttom.jsp"%>
 </body>
 </html>

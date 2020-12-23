@@ -2,10 +2,7 @@ package dao.Impl;
 
 import dao.JDBCUtil;
 import dao.dao.AdminDao;
-import vo.Admin;
-import vo.Businessman;
-import vo.Goods;
-import vo.User;
+import vo.*;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -152,6 +149,71 @@ public class AdminDaoImpl implements AdminDao {
     }
 
     @Override
+    public List<Forum> getAllPost() {
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet res = null;
+        List<Forum> list=new ArrayList<Forum>();
+        try {
+            connection = JDBCUtil.getConnection();
+            String sql = "select* FROM discuss";
+            preparedStatement = connection.prepareStatement(sql);
+            //preparedStatement.setString(1, goods_introduce);
+            res = preparedStatement.executeQuery();
+            while(res.next()) {
+                Forum forum=new Forum();
+                forum.setForum_id(res.getInt("forum_id"));
+                forum.setUser_account(res.getString("user_account"));
+                forum.setTitle(res.getString("title"));
+                forum.setContent(res.getString("content"));
+                forum.setRelease_time(res.getString("time"));
+                forum.setUser_name(res.getString("user_name"));
+
+                list.add(forum);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("数据库查询错误！");
+        }
+        return list;
+    }
+
+    @Override
+    public List<Orders> getAllOrder() {
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet res = null;
+        List<Orders> list=new ArrayList<Orders>();
+        try {
+            connection = JDBCUtil.getConnection();
+            String sql = "select* FROM orders";
+            preparedStatement = connection.prepareStatement(sql);
+            //preparedStatement.setString(1, goods_introduce);
+            res = preparedStatement.executeQuery();
+            while(res.next()) {
+                Orders orders=new Orders();
+                orders.setOrder_id(res.getInt("order_id"));
+                orders.setUser_account(res.getString("user_account"));
+                orders.setGoods_id(res.getInt("goods_id"));
+                orders.setGoods_num(res.getInt("goods_num"));
+                orders.setPrice(res.getDouble("price"));
+                orders.setGoods_name(res.getString("goods_name"));
+                orders.setOrder_date(res.getDate("order_date"));
+                orders.setOrder_send(res.getString("order_send"));
+                orders.setOrder_get(res.getString("order_get"));
+                orders.setOrder_comment(res.getString("order_comment"));
+                orders.setBusinessman_account(res.getString("businessman_account"));
+                list.add(orders);
+            }
+            System.out.println(list.size());
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("数据库查询错误！");
+        }
+        return list;
+    }
+
+    @Override
     public boolean deleteGoods(int goods_id) {
         Connection connection=null;
         PreparedStatement preparedStatement=null;
@@ -168,6 +230,50 @@ public class AdminDaoImpl implements AdminDao {
                 return true;
             }
             else System.out.println("删除商品失败");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    @Override
+    public boolean deleteForum(int forum_id) {
+        Connection connection=null;
+        PreparedStatement preparedStatement=null;
+        int res;
+        try{
+            connection= JDBCUtil.getConnection();
+            String sql="delete from discuss where forum_id=?";
+            preparedStatement=connection.prepareStatement(sql);
+            preparedStatement.setInt(1,forum_id);
+            res=preparedStatement.executeUpdate();
+            if(res==1){
+                System.out.println("删除帖子成功");
+                return true;
+            }
+            else System.out.println("删除帖子失败");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    @Override
+    public boolean deleteOrder(int order_id) {
+        Connection connection=null;
+        PreparedStatement preparedStatement=null;
+        int res;
+        try{
+            connection= JDBCUtil.getConnection();
+            String sql="delete from orders where order_id=?";
+            preparedStatement=connection.prepareStatement(sql);
+            preparedStatement.setInt(1,order_id);
+            res=preparedStatement.executeUpdate();
+            if(res==1){
+                System.out.println("删除订单成功");
+                return true;
+            }
+            else System.out.println("删除订单失败");
         } catch (SQLException e) {
             e.printStackTrace();
         }
