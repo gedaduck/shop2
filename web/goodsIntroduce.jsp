@@ -20,7 +20,7 @@
 <!-----------------address------------------------------->
 <div class="address">
     <div class="wrapper clearfix">
-        <a href="index.html">首页</a><span>/${requestScope.goods.goods_name}</span></a>
+        <a href="index.jsp">首页</a><span>/${requestScope.goods.goods_name}</span></a>
     </div>
 </div>
 <!-----------------------Detail------------------------------>
@@ -42,7 +42,7 @@
                     <a href="#2">
                         <p class="buy fl">立即购买</p>
                     </a>
-                    <a href="Addservlet">
+                    <a href="Addservlet?goods_id=${requestScope.goods.goods_id}">
                         <p class="cart fr">加入购物车</p>
                     </a>
                 </div>

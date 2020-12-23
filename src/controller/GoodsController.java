@@ -16,13 +16,11 @@ import java.util.List;
 public class GoodsController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String method=request.getParameter("method");
-        System.out.println(method);
         selectFun(request,response,method);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String method=request.getParameter("method");
-        System.out.println(method);
         selectFun(request,response,method);
     }
 

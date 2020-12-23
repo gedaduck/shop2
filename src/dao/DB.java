@@ -6,7 +6,7 @@ public class DB {
 	private Connection con;
 	private Statement sta;
 	private ResultSet rs;
-	/********************¾²Ì¬¿é¿ÉÒÔÌá¸ßĞ§ÂÊ***********/
+	/********************é™æ€å—å¯ä»¥æé«˜æ•ˆç‡***********/
 	static {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -16,20 +16,20 @@ public class DB {
 		}
 	}
 	/**
-	 * ¼ÓÔØÇı¶¯³ÌĞò
+	 * åŠ è½½é©±åŠ¨ç¨‹åº
 	 */
 	
 	public Connection getConnection(){
-/****1433ÊÇÄã×Ô¼ºµÄSQLserver¶Ë¿ÚºÅ(Ä¬ÈÏÊÇ1433)*********/
-/**************DatabaseNameÊÇÄãÒªÁ¬½ÓµÄÊı¾İ¿âÃû³Æ*********/
+/****1433æ˜¯ä½ è‡ªå·±çš„SQLserverç«¯å£å·(é»˜è®¤æ˜¯1433)*********/
+/**************DatabaseNameæ˜¯ä½ è¦è¿æ¥çš„æ•°æ®åº“åç§°*********/
 		String url = "jdbc:mysql://localhost:3306/shop?serverTimezone=UTC";
 		try {
-/**µÚÒ»¸ösaÊÇÄãµÄSQLserverÓÃ»§Ãû,µÚ¶ş¸öÊÇ´ËÓÃ»§ÃûËù¶ÔÓ¦µÄÃÜÂë***/
+/**ç¬¬ä¸€ä¸ªsaæ˜¯ä½ çš„SQLserverç”¨æˆ·å,ç¬¬äºŒä¸ªæ˜¯æ­¤ç”¨æˆ·åæ‰€å¯¹åº”çš„å¯†ç ***/
 			con = DriverManager.getConnection(url, "root", "123456");
 			sta = con.createStatement();
-			System.out.println("Á¬½Ó³É¹¦");
+			System.out.println("è¿æ¥æˆåŠŸ");
 		} catch (SQLException e) {
-			System.out.println("Á¬½ÓÊ§°Ü");
+			System.out.println("è¿æ¥å¤±è´¥");
 			e.printStackTrace();
 		}
 		

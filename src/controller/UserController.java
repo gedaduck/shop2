@@ -60,7 +60,6 @@ public class UserController extends HttpServlet {
             out.write("alert('登陆失败！');");
             out.write("window.location='login.jsp';");
             out.write("</script>");
-
         }
         out.write("</body>");
     }

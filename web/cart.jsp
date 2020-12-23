@@ -34,7 +34,7 @@
 
 <div class="cart mt">
     <div class="site">
-        <p class="wrapper"><a class="fl" href="myImformation.jsp">返回</a></p>
+        <p class="wrapper"><a href="javascript:history.back(-1)" class="fl">返回</a></p>
     </div>
     <div class="site">
         <p class=" wrapper clearfix"><span class="fl">购物车</span><a href="index.jsp" class="fr">继续购物&gt;</a></p>

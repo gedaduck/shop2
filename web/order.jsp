@@ -60,11 +60,8 @@
             GetOrder orderGet=new GetOrder();
             List<Orders> aorder = new ArrayList();
             aorder=orderGet.getOrder(user.getUser_account());
-            System.out.println(aorder.size());
             for(Orders order:aorder){
-                System.out.println(order.getOrder_send());
-                System.out.println(order.getOrder_get());
-            	if(order.getOrder_get().equals("已收货") && order.getGoods_comment().equals("暂无")){
+            	if(order.getOrder_get().equals("已收货") && order.getOrder_comment().equals("暂无")){
             %>
             <div class="dkuang">
                 <p class="one">已收货</p>
@@ -81,7 +78,7 @@
             </div>
             <%
             	}
-            	if(!order.getGoods_comment().equals("暂无")){%>
+            	if(!order.getOrder_comment().equals("暂无")){%>
                     <div class="dkuang">
                         <p class="one">已评价</p>
                         <div class="word clearfix">
@@ -126,7 +123,7 @@
                         <li><%=order.getUser_account() %></li>
                         <li>订单号：<%=order.getOrder_id() %></li>
                     </ul>
-                    <p class="fr">订单金额：<span><%=order.getPrice() %></span>元</p></div>
+                    <p class="fr">订单金额：<span><%=order.getPrice()*order.getGoods_num()%></span>元</p></div>
                 <div class="shohou clearfix"><a href="#" class="fl"><img src="img/g1.jpg"/></a>
                     <p class="fl"><a href="#"><%=order.getGoods_name() %></a><a href="#">¥<%=order.getPrice() %>×<%=order.getGoods_num() %></a></p>
                     <p class="fr"><a href="#">付款成功</a></p></div>
