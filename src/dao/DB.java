@@ -25,7 +25,7 @@ public class DB {
         String url = "jdbc:mysql://localhost:3306/shop?serverTimezone=UTC";
         try {
 /**第一个sa是你的SQLserver用户名,第二个是此用户名所对应的密码***/
-            con = DriverManager.getConnection(url, "root", "cxl123123.");
+            con = DriverManager.getConnection(url, "root", "123456");
             sta = con.createStatement();
             System.out.println("连接成功");
         } catch (SQLException e) {

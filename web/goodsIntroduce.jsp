@@ -42,7 +42,7 @@
                     if(session.getAttribute("user")!=null){
                 %>
                 <div class="btns clearfix">
-                    <a href="#2">
+                    <a href="paynow.jsp?goods_id=${requestScope.goods.goods_id}">
                         <p class="buy fl">立即购买</p>
                     </a>
                     <a href="Addservlet?goods_id=${requestScope.goods.goods_id}">
