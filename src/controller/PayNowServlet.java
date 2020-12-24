@@ -28,7 +28,6 @@ public class PayNowServlet extends HttpServlet {
         User user=(User)session.getAttribute("user");
         String user_account=user.getUser_account();
         String number=request.getParameter("number");
-        System.out.println(number);
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Goods goods=(Goods)session.getAttribute("goods");
         DB Manager = new DB();

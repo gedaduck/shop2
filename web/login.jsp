@@ -16,7 +16,7 @@
     <h2>用户登录</h2>
     <form action="userController?method=login" method="post">
         <div class="inputBox">
-            <input type="email" name="account" required="">
+            <input type="email" name="account" required="" >
             <label>用户名</label>
         </div>
         <div class="inputBox">

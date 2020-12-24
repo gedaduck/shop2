@@ -16,7 +16,6 @@ public class SearchController extends javax.servlet.http.HttpServlet {
         String goods_introduce=request.getParameter("keyword");
         List<Goods> list=searchService.Search(goods_introduce);
         request.setAttribute("goods",list);
-
         request.getRequestDispatcher("search.jsp").forward(request,response);
     }
 }

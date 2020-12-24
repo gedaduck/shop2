@@ -35,17 +35,20 @@
                     <h4>${requestScope.goods.goods_name}</h4>
                     <p>${requestScope.goods.goods_introduce}</p><span>${requestScope.goods.price}</span></div>
                 <div class="proIntro">
-
-
+                    <div class="num clearfix">
+                        <img class="fl sub" src="res/image/sub.jpg">
+                        <span class="fl" contentEditable="true" id="number">1</span>
+                        <img class="fl add" src="res/image/add.jpg">
+                    </div>
                 </div>
                 <%
                     if(session.getAttribute("user")!=null){
                 %>
                 <div class="btns clearfix">
-                    <a href="paynow.jsp?goods_id=${requestScope.goods.goods_id}">
+                    <a href="javascript:buynow()">
                         <p class="buy fl">立即购买</p>
                     </a>
-                    <a href="Addservlet?goods_id=${requestScope.goods.goods_id}">
+                    <a href="javascript:addcart()">
                         <p class="cart fr">加入购物车</p>
                     </a>
                 </div>
@@ -87,7 +90,17 @@
         </div>
     </div>
 </div>
+<script>
+    function  buynow() {
+        var number=document.getElementById('number').innerHTML;
+        window.location.href='paynow.jsp?goods_id=${requestScope.goods.goods_id}&number='+number;
+    }
+    function addcart() {
+        var number=document.getElementById('number').innerHTML;
+        window.location.href='Addservlet?goods_id=${requestScope.goods.goods_id}&number='+number;
 
+    }
+</script>
 <script src="res/js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="res/js/jquery.SuperSlide.2.1.1.js" type="text/javascript" charset="utf-8"></script>
 <script src="res/js/public.js" type="text/javascript" charset="utf-8"></script>

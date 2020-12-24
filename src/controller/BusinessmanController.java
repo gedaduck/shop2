@@ -130,7 +130,6 @@ public class BusinessmanController extends HttpServlet {
         int goods_id=Integer.valueOf(request.getParameter("goods_id"));
         BusinessmanService BusinessmanServiceImpl=new BusinessmanServiceImpl();
         Goods goods=BusinessmanServiceImpl.getaGood(goods_id);
-        System.out.println(goods.toString());
         request.setAttribute("good",goods);
         request.getRequestDispatcher("goods_modify.jsp").forward(request, response);
     }
@@ -225,16 +224,13 @@ public class BusinessmanController extends HttpServlet {
 
     public void regist(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
         request.setCharacterEncoding("UTF-8");
-        HttpSession session=request.getSession();
         String businessman_account=request.getParameter("businessman_account");
         String businessman_name=request.getParameter("businessman_name");
-        int store_id=1233;
         String store_name=request.getParameter("store_name");
         String businessman_address=request.getParameter("businessman_address");
         String businessman_telephone=request.getParameter("businessman_telephone");
         String businessman_password=request.getParameter("password");
-        Businessman businessman=new Businessman(businessman_account,businessman_password,businessman_name,businessman_address,businessman_telephone,store_id,store_name);
-        businessman.toString();
+        Businessman businessman=new Businessman(businessman_account,businessman_password,businessman_name,businessman_address,businessman_telephone,store_name);
         BusinessmanService businessmanServiceImpl=new BusinessmanServiceImpl();
         response.setContentType("text/html; charset=UTF-8");
         response.setCharacterEncoding("UTF-8");

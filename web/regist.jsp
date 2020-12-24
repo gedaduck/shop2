@@ -17,7 +17,7 @@
     <h2>注册会员</h2>
     <form action="userController?method=regist" method="post">
         <div class="inputBox">
-            <input type="email" name="account" required="">
+            <input type="email" name="account" required="" placeholder="           请输入邮箱">
             <label>用户名</label>
         </div>
         <div class="inputBox">

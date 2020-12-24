@@ -46,6 +46,7 @@
             <div class="msg">
                 <h3>订单内容<a href="index.jsp" class="fr">返回首页</a></h3><!--------ul---------------->
                 <%  int goods_id=Integer.valueOf(request.getParameter("goods_id"));
+                    int number=Integer.valueOf(request.getParameter("number"));
                     Goods goods=new Goods();
                     GoodsDao goodsImpl=new GoodsImpl();
                     goods=goodsImpl.getGoods(goods_id);
@@ -55,16 +56,17 @@
                     <li class="fl">
                         <img style="width: 150px; height: 150px;" src="<%=goods.getGoods_img()%>">
                     </li>
-                    <li class="fl"><p><%=goods.getGoods_name() %></p><p>数量：1</p></li>
-                    <li class="fr">￥<%=goods.getPrice() %></li>
+                    <li class="fl"><p><%=goods.getGoods_name() %></p><p>数量：<%=number%></p></li>
+                    <li class="fr">￥<%=goods.getPrice()*number %></li>
+
                 </ul>
             </div><!--------tips---------------->
             <div class="tips">
-                <p><span class="fl">商品金额：</span><span class="fr">￥<%=goods.getPrice()%></span></p>
+                <p><span class="fl">商品金额：</span><span class="fr">￥<%=goods.getPrice()*number%></span></p>
                 <p><span class="fl">运费：</span><span class="fr">免运费</span></p>
             </div>
             <div class="count tips">
-                <p><span class="fl">合计：</span><span class="fr">￥<%=goods.getPrice() %></span></p>
+                <p><span class="fl">合计：</span><span class="fr">￥<%=goods.getPrice()*number %></span></p>
             </div>
             <a href="payNowServlet?number=1" class="pay">去支付</a>
         </div>
@@ -98,9 +100,11 @@
     </a>
 </div>
 
-<script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
-<script src="js/pro.js" type="text/javascript" charset="utf-8"></script>
-<script src="js/user.js" type="text/javascript" charset="utf-8"></script>
+<script src="res/js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="res/js/jquery.SuperSlide.2.1.1.js" type="text/javascript" charset="utf-8"></script>
+<script src="res/js/public.js" type="text/javascript" charset="utf-8"></script>
+<script src="res/js/nav.js" type="text/javascript" charset="utf-8"></script>
+<script src="res/js/pro.js" type="text/javascript" charset="utf-8"></script>
+<script src="res/js/cart.js" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>

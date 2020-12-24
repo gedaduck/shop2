@@ -39,6 +39,7 @@ public class SearchDaoImpl implements SearchDao {
                 list.add(goods);
 
             }
+            JDBCUtil.closeConnection(connection);
         } catch (SQLException e) {
             e.printStackTrace();
             System.out.println("数据库查询错误！");
@@ -73,6 +74,7 @@ public class SearchDaoImpl implements SearchDao {
                 list.add(goods);
 
             }
+            JDBCUtil.closeConnection(connection);
         } catch (SQLException e) {
             e.printStackTrace();
             System.out.println("数据库查询错误！");

@@ -150,7 +150,7 @@ public class AdminController extends HttpServlet {
             response.sendRedirect("admin_menu.jsp");
         } else {
             out.write("<script>");
-            out.write("alert('登陆失败！');");
+            out.write("alert('密码错误！');");
             out.write("window.location='admin_login.jsp';");
             out.write("</script>");
         }
