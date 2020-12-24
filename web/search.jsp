@@ -24,6 +24,9 @@
     %>
     <div>
         <div style="margin-left: 160px;margin-top: 20px;margin-bottom: 20px;">
+            <% if(request.getParameter("keyword")!=null){%>
+            关键词：<em style="color: red"><%=request.getParameter("keyword")%></em>
+            <%}%>
             已搜索到<em style="color: red"><%=listGoods.size()%></em> 件商品
         </div>
         <div style="display: flex; flex-wrap: wrap; margin-left: 155px;margin-right: 155px;margin-bottom: 20px;">

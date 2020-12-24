@@ -38,6 +38,9 @@
 
 
                 </div>
+                <%
+                    if(session.getAttribute("user")!=null){
+                %>
                 <div class="btns clearfix">
                     <a href="#2">
                         <p class="buy fl">立即购买</p>
@@ -46,6 +49,16 @@
                         <p class="cart fr">加入购物车</p>
                     </a>
                 </div>
+                <%}else{%>
+                <div class="btns clearfix">
+                    <a href="login.jsp">
+                        <p class="buy fl">立即购买</p>
+                    </a>
+                    <a href="login.jsp">
+                        <p class="cart fr">加入购物车</p>
+                    </a>
+                </div>
+                <%}%>
             </div>
         </div>
     </div>

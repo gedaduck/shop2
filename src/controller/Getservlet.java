@@ -19,7 +19,7 @@ public class Getservlet extends HttpServlet {
 		String goods_id=request.getParameter("goods_id");
 		String user_account=request.getParameter("user_account");
 		DB Manager = new DB();
-		String sql="update orders set order_get='ÒÑÊÕ»õ' Where goods_id='"+goods_id+"' and `order_send`='ÒÑ·¢»õ'";
+		String sql="update orders set order_get='å·²æ”¶è´§' Where goods_id='"+goods_id+"' and `order_send`='å·²å‘è´§'";
 		Manager.update(sql);
 		response.sendRedirect("order.jsp?user_account="+user_account);
 	}

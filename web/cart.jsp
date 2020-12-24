@@ -30,14 +30,17 @@
 }</style>
 </head>
 <body>
-<%@include file="block/top-main.jsp"%><!--------------------------------------cart--------------------->
+<%@include file="block/top-main.jsp"%>
+<!--------------------------------------cart--------------------->
 
-<div class="cart mt">
+<div class="cart mt" style="margin-top: 20px;">
     <div class="site">
-        <p class="wrapper"><a href="javascript:history.back(-1)" class="fl">返回</a></p>
+        <p class="wrapper"><span class="fl">购物车</span></p>
     </div>
     <div class="site">
-        <p class=" wrapper clearfix"><span class="fl">购物车</span><a href="index.jsp" class="fr">继续购物&gt;</a></p>
+        <p class=" wrapper clearfix">
+            <a href="javascript:history.back(-1)" class="fl">返回</a>
+            <a href="index.jsp" class="fr">继续购物&gt;</a></p>
     </div><!-----------------table------------------->
     <div class="table wrapper">
         <div class="tr">
@@ -64,7 +67,7 @@
             <div class="pro clearfix"style="text-align: center">
                 <table>
                     <tr>
-                        <td><img src="images/<%=cart.getGoods_img()%>" style="height: 40px;width: 40px"></td>
+                        <td><img src="<%=cart.getGoods_img()%>" style="height: 40px;width: 40px"></td>
                         <td><p><%=cart.getGoods_name()%></p></td>
                     </tr>
                 </table>
@@ -117,30 +120,33 @@
 </div>
 <!--返回顶部-->
 <div class="gotop">
-    <a href="cart.html">
+    <a href="cart.jsp">
         <dl>
-            <dt><img src="img/gt1.png"/></dt>
+            <dt><img src="res/image/gt1.png"/></dt>
             <dd>去购<br/>物车</dd>
         </dl>
     </a>
     <a href="#" class="dh">
         <dl>
-            <dt><img src="img/gt2.png"/></dt>
+            <dt><img src="res/image/gt2.png"/></dt>
             <dd>联系<br/>客服</dd>
         </dl>
     </a>
-    <a href="mygxin.html">
-    <dl>
-        <dt><img src="img/gt3.png"/></dt>
-        <dd>个人<br/>中心</dd>
-    </dl>
-</a><a href="#" class="toptop" style="display: none;">
-    <dl>
-        <dt><img src="img/gt4.png"/></dt>
-        <dd>返回<br/>顶部</dd>
-    </dl>
-</a>
-    <p>400-800-8200</p></div><!--footer-->
+    <a href="myImformation.jsp">
+        <dl>
+            <dt><img src="res/image/gt3.png"/></dt>
+            <dd>个人<br/>中心</dd>
+        </dl>
+    </a>
+    <a href="#" class="toptop" style="display: none;">
+        <dl>
+            <dt><img src="img/gt4.png"/></dt>
+            <dd>返回<br/>顶部</dd>
+        </dl>
+    </a>
+    <p>400-800-8200</p>
+</div>
+<!--footer-->
 <div class="footer">
     <div class="top">
         <div class="wrapper">

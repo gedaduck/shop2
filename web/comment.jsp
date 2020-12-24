@@ -21,7 +21,7 @@
 <div class="Bott">
     <div class="wrapper clearfix">
         <div class="zuo fl">
-            <h3><a href="#"><img src="img/tx.png"/></a>
+            <h3>
                 <p class="clearfix"><span class="fl"><%=user.getUser_name()%></span><span class="fr"><a href="userController?method=logout">退出登陆</a> </span></p></h3>
             <div>
                 <h4>我的交易</h4>
@@ -51,10 +51,10 @@
                     aorder=orderGet.getOrder(user.getUser_account());
                     for(Orders order:aorder){
                 	    if(order.getOrder_id()==order_id){
-                	        if(order.getOrder_get().equals("已收货") && order.getGoods_comment().equals("暂无")){
+                	        if(order.getOrder_get().equals("已收货") && order.getOrder_comment().equals("暂无")){
                 	%>
                     <dl class="fl">
-                        <dt><a href="#"><img src="img/nav3.jpg"/></a></dt>
+                        <dt><a href="#"><img style="height: 150px;width: 150px;" src="<%=order.getGoods_img()%>"/></a></dt>
                         <dd><a href="#"><%=order.getGoods_name() %></a></dd>
                         <dd><%=order.getPrice() %></dd>
                         <dd><a href="#">评价</a></dd>
@@ -69,13 +69,13 @@
 <!--遮罩-->
 <div class="mask"></div><!--评价弹框-->
 <div class="pj">
-    <div class="clearfix"><a href="#" class="fr gb"><img src="img/icon4.png"/></a></div>
+    <div class="clearfix"><a href="#" class="fr gb"><img src="res/image/icon4.png"/></a></div>
     <h3>商品评分</h3>
     <form action="Commentservlet" method="post">
         <div class="clearfix"><p class="fl">请打分：</p>
-            <p class="fl" id=""><a href="#2"><img src="img/xin.png"/></a><a href="#2"><img src="img/xin.png"/></a><a
-                    href="#2"><img src="img/xin.png"/></a><a href="#2"><img src="img/xin.png"/></a><a href="#2"><img
-                    src="img/xin.png"/></a></p></div>
+            <p class="fl" id=""><a href="#2"><img src="res/image/hxin.png"/></a><a href="#2"><img src="res/image/hxin.png"/></a><a
+                    href="#2"><img src="res/image/hxin.png"/></a><a href="#2"><img src="res/image/hxin.png"/></a><a href="#2"><img
+                    src="res/image/hxin.png"/></a></p></div>
         <textarea name="comment" rows="" cols="" placeholder="请输入评价"></textarea>
         <input type="hidden" name="order_id" value="<%=order_id %>">
         <input type="hidden" name="user_account" value="<%=user.getUser_account()%>">
@@ -83,40 +83,36 @@
     </form>
 </div>
 <!--返回顶部-->
-<div class="gotop"><a href="cart.html">
-    <dl>
-        <dt><img src="img/gt1.png"/></dt>
-        <dd>去购<br/>物车</dd>
-    </dl>
-</a><a href="#" class="dh">
-    <dl>
-        <dt><img src="img/gt2.png"/></dt>
-        <dd>联系<br/>客服</dd>
-    </dl>
-</a><a href="mygxin.html">
-    <dl>
-        <dt><img src="img/gt3.png"/></dt>
-        <dd>个人<br/>中心</dd>
-    </dl>
-</a><a href="#" class="toptop" style="display: none">
-    <dl>
-        <dt><img src="img/gt4.png"/></dt>
-        <dd>返回<br/>顶部</dd>
-    </dl>
-</a>
-    <p>400-800-8200</p></div><!--footer-->
+<div class="gotop">
+    <a href="cart.jsp">
+        <dl>
+            <dt><img src="res/image/gt1.png"/></dt>
+            <dd>去购<br/>物车</dd>
+        </dl>
+    </a>
+    <a href="#" class="dh">
+        <dl>
+            <dt><img src="res/image/gt2.png"/></dt>
+            <dd>联系<br/>客服</dd>
+        </dl>
+    </a>
+    <a href="myImformation.jsp">
+        <dl>
+            <dt><img src="res/image/gt3.png"/></dt>
+            <dd>个人<br/>中心</dd>
+        </dl>
+    </a>
+    <a href="#" class="toptop" style="display: none;">
+        <dl>
+            <dt><img src="img/gt4.png"/></dt>
+            <dd>返回<br/>顶部</dd>
+        </dl>
+    </a>
+    <p>400-800-8200</p>
+</div>
+<!--footer-->
 <div class="footer">
     <div class="top">
-        <div class="wrapper">
-            <div class="clearfix"><a href="#2" class="fl"><img src="img/foot1.png"/></a><span class="fl">7天无理由退货</span>
-            </div>
-            <div class="clearfix"><a href="#2" class="fl"><img src="img/foot2.png"/></a><span class="fl">15天免费换货</span>
-            </div>
-            <div class="clearfix"><a href="#2" class="fl"><img src="img/foot3.png"/></a><span class="fl">满599包邮</span>
-            </div>
-            <div class="clearfix"><a href="#2" class="fl"><img src="img/foot4.png"/></a><span class="fl">手机特色服务</span>
-            </div>
-        </div>
     </div>
     <p class="dibu">最家家居&copy;2013-2017公司版权所有 京ICP备080100-44备0000111000号<br/>
         违法和不良信息举报电话：400-800-8200，本网站所列数据，除特殊说明，所有数据均出自我司实验室测试</p></div>

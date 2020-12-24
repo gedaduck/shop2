@@ -23,15 +23,16 @@
 <!------------------------------idea------------------------------>
 
 <div class="address mt">
-    <div class="wrapper clearfix"><a href="#" class="fl">首页</a><span>/</span><a href="myImformation.jsp">个人中心</a><span>/</span><a href="order.jsp" class="on">我的订单</a></div>
+    <div class="wrapper clearfix"><a href="index.jsp" class="fl">首页</a><span>/</span><a href="myImformation.jsp">个人中心</a><span>/</span><a href="order.jsp" class="on">我的订单</a></div>
 </div>
 <!------------------------------Bott------------------------------>
 <div class="Bott">
     <div class="wrapper clearfix">
         <div class="zuo fl">
             <h3>
-                <a href="#"><img src="img/tx.png"/></a>
-                <p class="clearfix"><span class="fl"><%=user.getUser_name()%></span><span class="fr"><a href="userController?method=logout">退出登陆</a> </span></p></h3>
+                <a href="#"></a>
+                <p class="clearfix"><span class="fl">[<%=user.getUser_name()%>]</span>
+                    <span class="fr"><a href="userController?method=logout">[退出登陆]</a> </span></p></h3>
             <div>
                 <h4>我的交易</h4>
                 <ul>
@@ -72,9 +73,12 @@
                         <li>订单号：<%=order.getOrder_id() %></li>
                     </ul>
                     <p class="fr">订单金额：<span><%=order.getPrice() %></span>元</p></div>
-                <div class="shohou clearfix"><a href="#" class="fl"><img src="img/g1.jpg"/></a>
+                <div class="shohou clearfix">
+                    <a href="#" class="fl">
+                        <img src="<%=order.getGoods_img()%>"/>
+                    </a>
                     <p class="fl"><a href="#"><%=order.getGoods_name() %></a><a href="#">¥<%=order.getPrice() %>×<%=order.getGoods_num() %></a></p>
-                    <p class="fr"><a href="comment.jsp?order_id=<%=order.getOrder_id() %>&user_account=<%=user.getUser_name()%>">去评价</a></p></div>
+                    <p class="fr"><a href="comment.jsp?order_id=<%=order.getOrder_id() %>">去评价</a></p></div>
             </div>
             <%
             	}
@@ -90,9 +94,9 @@
                             <p class="fr">订单金额：<span><%=order.getPrice() %></span>元</p>
                         </div>
                     <div class="shohou clearfix">
-                        <a href="#" class="fl"><img src="img/g1.jpg"/></a>
+                        <a href="#" class="fl"><img src="<%=order.getGoods_img()%>"/></a>
                         <p class="fl"><a href="#"><%=order.getGoods_name() %></a><a href="#">¥<%=order.getPrice() %>×<%=order.getGoods_num() %></a></p>
-                        <p class="fr"><a href="comment.jsp?goods_id=<%=order.getGoods_id() %>&user_account=<%=user.getUser_name()%>">已评价</a></p>
+                        <p class="fr"><a href="#">已评价</a></p>
                     </div>
                 </div>
                 <%
@@ -109,9 +113,9 @@
                         <li>订单号：<%=order.getOrder_id() %></li>
                     </ul>
                     <p class="fr">订单金额：<span><%=order.getPrice() %></span>元</p></div>
-                <div class="shohou clearfix"><a href="#" class="fl"><img src="img/g1.jpg"/></a>
+                <div class="shohou clearfix"><a href="#" class="fl"><img src="<%=order.getGoods_img()%>"/></a>
                     <p class="fl"><a href="#"><%=order.getGoods_name() %></a><a href="#">¥<%=order.getPrice() %>×<%=order.getGoods_num() %></a></p>
-                    <p class="fr"><a href="Getservlet?goods_id=<%=order.getGoods_id() %>&user_account=<%=user.getUser_name()%>">确认收货</a></p></div>
+                    <p class="fr"><a href="Getservlet?goods_id=<%=order.getGoods_id() %>&user_account=<%=user.getUser_account()%>">确认收货</a></p></div>
             </div>
             <%} 
             	if(order.getOrder_send().equals("待发货")){
@@ -124,7 +128,7 @@
                         <li>订单号：<%=order.getOrder_id() %></li>
                     </ul>
                     <p class="fr">订单金额：<span><%=order.getPrice()*order.getGoods_num()%></span>元</p></div>
-                <div class="shohou clearfix"><a href="#" class="fl"><img src="img/g1.jpg"/></a>
+                <div class="shohou clearfix"><a href="#" class="fl"><img src="<%=order.getGoods_img()%>"/></a>
                     <p class="fl"><a href="#"><%=order.getGoods_name() %></a><a href="#">¥<%=order.getPrice() %>×<%=order.getGoods_num() %></a></p>
                     <p class="fr"><a href="#">付款成功</a></p></div>
             </div>

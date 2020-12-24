@@ -26,7 +26,7 @@
     <div class="wrapper clearfix">
         <div class="zuo fl">
             <h3>
-                <a href="#"><img src="#" /></a>
+                <a href="#"></a>
                 <p class="clearfix"><span class="fl">[${sessionScope.user.user_name}]</span><span class="fr"><a href="userController?method=logout">[退出登录]</a></span></p>
             </h3>
             <div>
@@ -49,7 +49,7 @@
         <div class="you fl"><h2>个人信息</h2>
             <div class="gxin">
                 <div class="tx">
-                    <a href="#"><img src="img/tx.png" /></a>
+                    <a href="#"><img src="res/image/user_icon.jpg" style="width: 90px;height: 90px;border-radius: 45px;"/></a>
                 </div>
                 <div class="xx">
                     <h3 class="clearfix"><strong class="fl">基础资料</strong><a href="#" class="fr" id="edit1">编辑</a></h3>
@@ -63,7 +63,7 @@
     </div>
 </div>
 <div class="gotop">
-    <a href="cart.html">
+    <a href="cart.jsp">
         <dl>
             <dt><img src="res/image/gt1.png"/></dt>
             <dd>去购<br/>物车</dd>
@@ -75,7 +75,7 @@
             <dd>联系<br/>客服</dd>
         </dl>
     </a>
-    <a href="mygxin.html">
+    <a href="myImformation.jsp">
         <dl>
             <dt><img src="res/image/gt3.png"/></dt>
             <dd>个人<br/>中心</dd>

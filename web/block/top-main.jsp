@@ -14,8 +14,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-    <link rel="stylesheet"  type="text/css" href="./res/css/index.css">
-    <link rel="shortcut icon" href="./res/image/logo.jpg" type="image/x-icon" />
+    <link rel="stylesheet"  type="text/css" href="res/css/index.css">
+    <link rel="shortcut icon" href="res/image/logo.jpg" type="image/x-icon" />
     <script type="text/javascript"></script>
 </head>
 <body>
@@ -39,9 +39,9 @@
 
                         if(user.getUser_name()==null){
                     %>
-                    <a href="login.jsp">亲，请登录</a>
+                    <a style="color: #a10000" href="login.jsp">亲，请登录</a>
                     <%}else{%>
-                    <a href="myImformation.jsp"><%=user.getUser_name()%></a>
+                    <a style="color: #262626" href="myImformation.jsp"><%=user.getUser_name()%></a>
                     <%}%>
 
                 </li>
@@ -53,7 +53,7 @@
                 <%
                     String businessmanUrl;
                     if(businessman.getStore_name()==null){
-                        businessmanUrl="html/business_login.html";
+                        businessmanUrl="business_login.html";
                     }else {
                         businessmanUrl="businessman_menu.jsp";
                     }
@@ -64,14 +64,28 @@
                 </li>
 
                 <li>|</li>
+                <%
+                    String cartUrl;
+                    String orderUrl;
+                    String postUrl;
+                    if(user.getUser_name()==null){
+                        postUrl="login.jsp";
+                        cartUrl="login.jsp";
+                        orderUrl="login.jsp";
+                    }else {
+                        postUrl = "forumController?method=getForumView&page=1";
+                        cartUrl="cart.jsp";
+                        orderUrl="myImformation.jsp";
+                    }
+                %>
                 <li>
-                    <a href="cart.jsp" id="cars">购物车</a>
+                    <a href="<%=cartUrl%>" id="cars">购物车</a>
                 </li>
                 <li>
-                    <a href="order.jsp">我的订单</a>
+                    <a href="<%=orderUrl%>">个人中心</a>
                 </li>
                 <li>
-                    <a href="/forumController?method=getForumView&page=1">讨论中心</a>
+                    <a href="<%=postUrl%>">讨论中心</a>
                 </li>
             </ul>
         </div>

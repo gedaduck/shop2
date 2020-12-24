@@ -21,16 +21,9 @@
 <body>
 
 <!----------------------------------------order------------------>
-<div class="head ding">
-    <div class="wrapper clearfix">
-        <ul class="clearfix" id="bott">
-            <li><a href="index.jsp">首页</a></li>
-            <li><a href="cart.jsp">购物车</a></li>
-        </ul>
-    </div>
-</div>
-<% User user=(User)session.getAttribute("user");%>
-<div class="order cart mt">
+<%@include file="block/top-main.jsp"%>
+<% user=(User)session.getAttribute("user");%>
+<div class="order cart mt" style="margin-bottom: 20px;">
     <div class="site">
         <p class="wrapper clearfix"><span class="fl">订单确认</span></p>
     </div>
@@ -59,7 +52,9 @@
                 for(int i=0;i<acart.size();i++){
                     Cart cart=(Cart)acart.get(i); %>
                     <ul class="clearfix">
-                        <li class="fl"><img src="<%=cart.getGoods_img()%>"></li>
+                        <li class="fl">
+                            <img style="width: 150px; height: 150px;" src="<%=cart.getGoods_img()%>">
+                        </li>
                         <li class="fl"><p><%=cart.getGoods_name() %></p><p>数量：<%=cart.getNumber() %></p></li>
                         <li class="fr">￥<%=cart.getPrice() %></li>
                     </ul>

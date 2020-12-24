@@ -23,7 +23,7 @@
     <div class="wrapper clearfix">
         <div class="zuo fl">
             <h3>
-                <a href="#"><img src="#" /></a>
+                <a href="#"></a>
                 <p class="clearfix"><span class="fl">[${sessionScope.user.user_name}]</span><span class="fr"><a href="userController?method=logout">[退出登录]</a></span></p>
             </h3>
             <div>
@@ -47,9 +47,9 @@
             <h2>修改密码</h2>
             <form action="userController?method=rePwd" method="post" class="remima">
                 <p><span>登录名：</span><input type="text"  name="account"/></p>
-                <p><span>原密码：</span><input type="text" name="oldPwd"/></p>
+                <p><span>原密码：</span><input type="password" name="oldPwd"/></p>
                 <p class="op">输入原密码</p>
-                <p><span>新密码：</span><input type="text" name="newPwd"/></p>
+                <p><span>新密码：</span><input type="password" name="newPwd"/></p>
                 <p class="op">6-16 个字符，需使用字母、数字或符号组合，不能使用纯数字、纯字母、纯符号</p>
                 <input type="submit" value="提交">
             </form>

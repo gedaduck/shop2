@@ -10,8 +10,8 @@
 <head>
     <title>Title</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet"  type="text/css" href="./res/css/index.css">
-    <link rel="shortcut icon" href="./res/image/logo.jpg" type="image/x-icon" />
+    <link rel="stylesheet"  type="text/css" href="res/css/index.css">
+    <link rel="shortcut icon" href="res/image/logo.jpg" type="image/x-icon" />
 </head>
 <body>
 <!-- 搜索区 -->

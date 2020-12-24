@@ -36,7 +36,7 @@
     <div class="wrapper clearfix">
         <div class="zuo fl">
             <h3>
-                <a href="#"><img style="width: 50px;height: 50px;" src="res/image/admin.jpg" /></a>
+                <a href="#"><img style="width: 90px;height: 90px;border-radius: 45px;" src="res/image/admin.jpg" /></a>
                 <p class="clearfix"><span class="fl">[管理员]</span><span class="fr"><a href="AdminController?method=adminLoginOut">[退出登录]</a></span></p>
             </h3>
             <div>
@@ -57,12 +57,12 @@
             <div class="bott">
                 <table class="table2"  cellspacing="0" border="1" bordercolor="#b7bebe" style="text-align: center;border:1px solid #b7bebe;">
                     <tr>
-                        <td class="td1">编号</td>
-                        <td class="td1">标题</td>
-                        <td class="td1">发帖人</td>
-                        <td class="td2">发帖时间</td>
-                        <td class="td1">发帖账号</td>
-                        <td class="td1">操作</td>
+                        <td class="td1" style="width: 90px;">编号</td>
+                        <td class="td1" style="width: 150px;">标题</td>
+                        <td class="td1" style="width: 90px;">发帖人</td>
+                        <td class="td2" style="width: 200px;">发帖时间</td>
+                        <td class="td1" style="width: 120px;">发帖账号</td>
+                        <td class="td1" style="width: 120px;">操作</td>
                     </tr>
                     <%
                         for(Forum post1:listPost){

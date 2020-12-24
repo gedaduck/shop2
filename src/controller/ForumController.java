@@ -78,7 +78,7 @@ public class ForumController extends HttpServlet {
         String time=df.format(new Date());
         Forum forum=new Forum(user.getUser_name(),title,content,user.getE_mail(),time,user.getUser_account());
         if(forumServiceImpl.addForum(forum)==1){
-            response.sendRedirect("/forumController?method=getForumView&page=1");
+            response.sendRedirect("forumController?method=getForumView&page=1");
         }
 
     }
@@ -109,7 +109,7 @@ public class ForumController extends HttpServlet {
         String time = df.format(new Date());
         comment.setComment_time(time);
         if (forumServiceImpl.addComment(comment) == 1)
-            response.sendRedirect("/forumController?method=getCView&forum_id="+forum_id);
+            response.sendRedirect("forumController?method=getCView&forum_id="+forum_id);
 
     }
 }

@@ -14,8 +14,17 @@ public class Orders {
     private String order_get;
     private String order_comment;
     private String businessman_account;
+    private String goods_img;
 
     public Orders() {
+    }
+
+    public String getGoods_img() {
+        return goods_img;
+    }
+
+    public void setGoods_img(String goods_img) {
+        this.goods_img = goods_img;
     }
 
     public Orders(int order_id, String user_account, int goods_id, int goods_num, double price, String goods_name, String order_date, String order_send, String order_get, String order_comment, String businessman_account) {

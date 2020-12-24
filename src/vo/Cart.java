@@ -8,6 +8,16 @@ public class Cart {
 	private int number;
 	private String user_account;
 	private int businessman_id;
+	private String businessman_account;
+
+	public String getBusinessman_account() {
+		return businessman_account;
+	}
+
+	public void setBusinessman_account(String businessman_account) {
+		this.businessman_account = businessman_account;
+	}
+
 	public int getGoods_id() {
 		return goods_id;
 	}

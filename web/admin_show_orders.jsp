@@ -28,7 +28,7 @@
     <div class="wrapper clearfix">
         <div class="zuo fl">
             <h3>
-                <a href="#"><img style="width: 50px;height: 50px;" src="res/image/admin.jpg" /></a>
+                <a href="#"><img style="width: 90px;height: 90px;border-radius: 45px;" src="res/image/admin.jpg" /></a>
                 <p class="clearfix"><span class="fl">[管理员]</span><span class="fr"><a href="AdminController?method=adminLoginOut">[退出登录]</a></span></p>
             </h3>
             <div>

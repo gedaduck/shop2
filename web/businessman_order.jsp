@@ -48,7 +48,7 @@
     <div class="wrapper clearfix">
         <div class="zuo fl">
             <h3>
-                <a href="#"><img style="width: 50px;height: 50px;" src="res/image/businessman.jpg" /></a>
+                <a href="#"><img style="width: 90px;height: 90px;border-radius: 45px;" src="res/image/businessman.jpg" /></a>
                 <p class="clearfix"><span class="fl">[<%=businessman.getBusinessman_name()%>]</span><span class="fr">
                     <a href="businessmanController?method=loginOut">[退出登录]</a></span></p>
             </h3>
@@ -57,7 +57,7 @@
                 <ul>
                     <li><a href="businessman_store.jsp">查看店铺</a></li>
                     <li><a href="businessman_add_goods.jsp">添加商品</a></li>
-                    <li><a href="businessman_order.jsp">查看订单</a></li>
+                    <li><a href="businessmanController?method=getOrders">查看订单</a></li>
                 </ul>
             </div>
         </div>
@@ -104,7 +104,7 @@
                         <a href="#">评论：<%=ordersList.get(i).getOrder_comment()%></a>
                     </p>
                     <%
-                        if(order_str.equals("未发货")){
+                        if(order_str.equals("待发货")){
                     %>
                     <p class="fr"><a href="businessmanController?method=sendGoods&order_id=<%=ordersList.get(i).getOrder_id()%>" style="background: #A10000;color: #fff;border: 1px solid #A10000;">确认发货</a></p>
                     <%}else if(order_str.equals("未收货")){%>

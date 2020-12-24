@@ -1,4 +1,9 @@
-<%@ page import="vo.User" %><%--
+<%@ page import="java.util.List" %>
+<%@ page import="dao.get.GetCart" %>
+<%@ page import="dao.get.GetUser" %>
+<%@ page import="dao.get.GetOrder" %>
+<%@ page import="vo.*" %>
+<%@ page import="com.mysql.cj.x.protobuf.MysqlxCrud" %><%--
   Created by IntelliJ IDEA.
   User: 张翔1
   Date: 2020/12/16
@@ -24,8 +29,11 @@
     <div class="wrapper clearfix">
         <div class="zuo fl">
             <h3>
-                <a href="#"><img src="#" /></a>
-                <p class="clearfix"><span class="fl">[${sessionScope.user.user_name}]</span><span class="fr"><a href="userController?method=logout">[退出登录]</a></span></p>
+
+                <p class="clearfix">
+                    <span class="fl">[${sessionScope.user.user_name}]</span>
+                    <span class="fr"><a href="userController?method=logout">[退出登录]</a></span>
+                </p>
             </h3>
             <div>
                 <h4>我的交易</h4>
@@ -47,27 +55,25 @@
         <div class="you fl">
             <div class="tx clearfix">
                 <div class="fl clearfix">
-                    <a href="#" class="fl"><img src="#" /></a>
+                    <a href="#" class="fl"><img src="res/image/user_icon.jpg" style="width: 90px;height: 90px;border-radius: 45px;"/></a>
                     <p class="fl"><span>${sessionScope.user.user_name}</span><a href="modify.jsp">修改个人信息></a></p>
                 </div>
 
             </div>
+            <%
+                GetCart getCart=new GetCart();
+                List<Cart> cartList=getCart.getCart(user.getUser_account());
+                GetOrder getOrder=new GetOrder();
+                List<Orders> ordersList=getOrder.getOrder(user.getUser_account());
+            %>
             <div class="bott">
                 <div class="clearfix">
                     <a href="#" class="fl"><img src="res/image/gxin1.jpg" /></a>
-                    <p class="fl"><span>待支付的订单：<strong>0</strong></span><a href="#">查看待支付订单></a></p>
+                    <p class="fl"><span>我的订单：<strong><%=ordersList.size()%></strong></span><a href="order.jsp">查看我的订单></a></p>
                 </div>
                 <div class="clearfix">
                     <a href="#" class="fl"><img src="res/image/gxin2.jpg" /></a>
-                    <p class="fl"><span>待收货的订单：<strong>0</strong></span><a href="#">查看待收货订单></a></p>
-                </div>
-                <div class="clearfix">
-                    <a href="#" class="fl"><img src="res/image/gxin3.jpg" /></a>
-                    <p class="fl"><span>待评价的订单：<strong>0</strong></span><a href="#">查看待评价订单></a></p>
-                </div>
-                <div class="clearfix">
-                    <a href="#" class="fl"><img src="res/image/gxin4.jpg" /></a>
-                    <p class="fl"><span>喜欢的商品：<strong>0</strong></span><a href="#">查看喜欢的商品></a></p>
+                    <p class="fl"><span>我的购物车：<strong><%=cartList.size()%></strong></span><a href="cart.jsp">查看购物车></a></p>
                 </div>
             </div>
         </div>
@@ -75,7 +81,7 @@
 </div>
 <!--返回顶部-->
 <div class="gotop">
-    <a href="cart.html">
+    <a href="cart.jsp">
         <dl>
             <dt><img src="res/image/gt1.png"/></dt>
             <dd>去购<br/>物车</dd>
@@ -87,7 +93,7 @@
             <dd>联系<br/>客服</dd>
         </dl>
     </a>
-    <a href="mygxin.html">
+    <a href="myImformation.jsp">
         <dl>
             <dt><img src="res/image/gt3.png"/></dt>
             <dd>个人<br/>中心</dd>
@@ -101,8 +107,7 @@
     </a>
     <p>400-800-8200</p>
 </div>
-<div class="footer">
-</div>
+
 <script src="res/js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="res/js/public.js" type="text/javascript" charset="utf-8"></script>
 <script src="res/js/user.js" type="text/javascript" charset="utf-8"></script>

@@ -34,6 +34,7 @@ public class GetOrder {
 			order.setOrder_get(rs.getString("order_get"));
 			order.setOrder_comment(rs.getString("order_comment"));
 			order.setBusinessman_account(rs.getString("businessman_account"));
+			order.setGoods_img(rs.getString("goods_img"));
 			lists.add(order);
 		 }
 	

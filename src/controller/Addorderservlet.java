@@ -32,8 +32,8 @@ public class Addorderservlet extends HttpServlet {
 		String sql1="delete from cart where user_account='"+user_account+"'";
 		Manager.update(sql1);
 		for(Cart cart:acart){
-        	String sql="insert into orders (user_account,goods_id,goods_name,goods_num,price,order_date,order_send,order_get,order_comment,businessman_account) values ('"
-        	+cart.getUser_account()+ "','"+cart.getGoods_id()+"','"+cart.getGoods_name()+"','"+cart.getNumber()+"','"+cart.getPrice()+"','"+df.format(new Date())+"','待发货','"+"未收货','暂无','"+cart.getBusinessman_id()+"')";
+        	String sql="insert into orders (user_account,goods_id,goods_name,goods_num,price,order_date,order_send,order_get,order_comment,businessman_account,goods_img) values ('"
+        	+cart.getUser_account()+ "','"+cart.getGoods_id()+"','"+cart.getGoods_name()+"','"+cart.getNumber()+"','"+cart.getPrice()+"','"+df.format(new Date())+"','待发货','"+"未收货','暂无','"+cart.getBusinessman_account()+"','"+cart.getGoods_img()+"')";
         	Manager.update(sql);
         	}
 		response.sendRedirect("order.jsp?user_account="+user_account);

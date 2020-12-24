@@ -19,7 +19,7 @@
         }
     </style>
 <body>
-    <a href="/"><img src="images/a1.jpeg" width="30" height="30"></a><br>
+    <a href=""><img src="images/a1.jpeg" width="30" height="30"></a><br>
       <%Object object=request.getAttribute("commentList");
         String forum_id=(String)request.getParameter("forum_id");
         List<Comment> commentList=new ArrayList<>();
@@ -36,7 +36,7 @@
             </tr>
         </table>
       <%}%>
-    <form name="form2" action="/forumController?method=addComment&forum_id=<%=forum_id%>" method="post">
+    <form name="form2" action="forumController?method=addComment&forum_id=<%=forum_id%>" method="post">
         <table border="1">
             <tr>
                 <td>输入你要回复的内容</td>

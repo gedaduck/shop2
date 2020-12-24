@@ -22,7 +22,7 @@
             <div class="head">
                 <div style="display: flex;flex-wrap: wrap" class="wrape">
                     <div class="logo">
-                        <a class="img" href="#">
+                        <a class="img" href="index.jsp">
                             <img src="res/image/logo.jpg" alt="sb">
                         </a>
                     </div>
@@ -57,20 +57,20 @@
                                 for(Forum forum:forumList){
                                 %>
                             <li>
-                                <a href="post_content.jsp" class="fly-avatar">
+                                <a href="" class="fly-avatar">
                                     <img src="res/image/user_icon.jpg" alt="用户">
                                 </a>
                                 <h2>
                                     <a class="layui-badge">动态</a>
-                                    <a href="/forumController?method=getCView&forum_id=<%=forum.getForum_id()%>"><%=forum.getTitle()%></a>
+                                    <a href="forumController?method=getCView&forum_id=<%=forum.getForum_id()%>"><%=forum.getTitle()%></a>
                                 </h2>
                                 <div class="fly-list-info">
-                                    <a href="post_content.jsp" link>
+                                    <a href="" link>
                                         <cite><%=forum.getUser_name()%></cite>
                                     </a>
                                     <span>发表时间：<%=forum.getRelease_time()%></span>
 
-                                    <span class="fly-list-kiss layui-hide-xs" title="discuss"><i class="iconfont icon-pinglun1"></i>帖子回复数</span>
+                                    <span class="fly-list-kiss layui-hide-xs" title="discuss"><i class="iconfont icon-pinglun1"></i></span>
 
                                 </div>
                                 <div class="fly-list-badge">
@@ -84,14 +84,14 @@
                             <div class="laypage-main">
                                 <span class="laypage-curr">
                                     <%if(nowPage!=1){%>
-                                        <a href="/forumController?method=getForumView&page=<%=nowPage-1%>">上一页</a>
+                                        <a href="forumController?method=getForumView&page=<%=nowPage-1%>">上一页</a>
                                     <%}%>
                                     <a href="##">第<%=nowPage%>页</a>
                                     <%if(nowPage!=maxPage){%>
-                                    <a href="/forumController?method=getForumView&page=<%=nowPage+1%>">下一页</a>
+                                    <a href="forumController?method=getForumView&page=<%=nowPage+1%>">下一页</a>
                                     <%}%>
-                                    <a href="/forumController?method=getForumView&page=1">首页</a>
-                                    <a href="/forumController?method=getForumView&page=<%=maxPage%>">尾页</a>
+                                    <a href="forumController?method=getForumView&page=1">首页</a>
+                                    <a href="forumController?method=getForumView&page=<%=maxPage%>">尾页</a>
                                 </span>
                             </div>
                         </div>

@@ -21,7 +21,7 @@ public class ForumDaoImpl implements ForumDao {
         ResultSet res=null;
         try{
             connection= JDBCUtil.getConnection();
-            String sql="select* from discuss";
+            String sql="select* from discuss order by forum_id desc";
             preparedStatement=connection.prepareStatement(sql);
             res=preparedStatement.executeQuery();
             List<Forum> forumList=new ArrayList<>();

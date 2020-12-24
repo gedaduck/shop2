@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>登录页面</title>
+        <link rel="stylesheet" href="res/css/Login.css">
+    </head>
+    <body>
+        <div class="box">
+            <h2>商家登录</h2>
+            <form action="businessmanController?method=login" method="post">
+                <div class="inputBox">
+                    <input type="text" name="name" required="">
+                    <label>用户名：</label>
+                </div>
+                <div class="inputBox">
+                    <input type="password" name="password" required="">
+                    <label>用户密码：</label>
+                </div>
+                <input type="submit" name="" value="登录">
+                <input type="button" value="注册" onclick="window.location.href='business_regist.html'">
+            </form>
+        </div>
+
+    </body>
+</html>

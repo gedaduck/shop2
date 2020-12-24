@@ -19,7 +19,7 @@
 <body>
 <%@include file="block/top-main.jsp"%>
 <div class="PostMain">
-    <div id="div5">
+    <div id="div5" style="margin-bottom: 30px;">
         <div class="head">
             <div style="display: flex;flex-wrap: wrap" class="wrape">
                 <div class="logo">
@@ -30,8 +30,7 @@
                 <!-- 搜索框 -->
                 <div class="search" style="margin-left: 100px;">
                     <h2>购物论坛</h2>
-                    用户：<em>100</em>
-                    帖子：<em>20</em>
+
                 </div>
             </div>
         </div>
@@ -49,7 +48,7 @@
         <div class="layui-row layui-col-space15">
             <div class="layui-col-md8 content detail">
                 <div class="fly-panel detail-box">
-                    <a href="/forumController?method=getForumView&page=1">返回</a>
+                    <a href="forumController?method=getForumView&page=1">返回</a>
                     <h1><%=forum.getTitle()%></h1>
                     <div class="fly-detail-info">
                         <!-- <span class="layui-badge">审核中</span> -->
@@ -60,8 +59,11 @@
                             <a href="##"><i class="iconfont" title="回答">&#xe60c;</i> <%=commentList.size()%></a>
                         </span>
                         <div>
-                            <span><%=forum.getContent()%></span>
+                            <div style="margin-top: 30px;height: 150px;width: 800px;border-top:solid 2px #f3f3f3 ">
+                                <span><%=forum.getContent()%></span>
+                            </div>
                         </div>
+
                     </div>
                     <%for (Comment comment:commentList){%>
                     <div class="detail-about">
@@ -80,16 +82,45 @@
                     </div>
                     <%}%>
                 </div>
+                <div class="layui-row layui-col-space15" ><span>回复：</span></div>
+                <div class="layui-row layui-col-space15">
+                    <form action="forumController?method=addComment&forum_id=<%=forum_id%>" method="post">
+                        <div>
+                            <textarea rows="10" cols="104" name="content"></textarea>
+                            <div style="position: relative;left: 300px;top: 10px;">
+                                <input type="submit" value="回复" name="send">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <input type="reset" value="清空">
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+            <div class="layui-col-md4">
+                <dl class="fly-panel fly-list-one">
+                    <dt class="fly-panel-title">本周热议</dt>
+                    <div class="fly-none">没有相关数据</div>
+                </dl>
+
+                <div class="fly-panel">
+                    <div class="fly-panel-main">
+                        <a href="post_add.jsp" target="_blank" class="fly-zanzhu" style="background-color: #393D49;">我要发帖</a>
+                    </div>
+                </div>
+
+                <div class="fly-panel fly-link">
+                    <h3 class="fly-panel-title">友情链接</h3>
+                    <dl class="fly-panel-main">
+                        <dd><a href="https://www.baidu.com/" target="_blank">Baidu</a><dd>
+                        <dd><a href="https://www.google.com/" target="_blank">Google</a><dd>
+                        <dd><a href="https://blog.csdn.net/" target="_blank">csdn</a><dd>
+                        <dd><a href="https://www.cnblogs.com/" target="_blank">cnblogs</a><dd>
+                    </dl>
+                </div>
+
             </div>
         </div>
-        <div class="layui-row layui-col-space15" ><span>回复：</span></div>
-        <div class="layui-row layui-col-space15">
-            <form action="/forumController?method=addComment&forum_id=<%=forum_id%>" method="post">
-                <div><textarea rows="15" cols="110" name="content"></textarea></div>
-                <input type="submit" value="回复" name="send">
-                <input type="reset" value="清空">
-            </form>
-        </div>
+
         <div class="fly-footer">
             <p>帖子社区 2020 &copy; 芜湖起飞组 版权所有</p>
         </div>

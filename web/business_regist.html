@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>注册页面</title>
+    <link rel="stylesheet" href="res/css/Login.css">
+</head>
+<body>
+<div class="box">
+    <h2>商家注册</h2>
+    <form action="businessmanController?method=regist" method="post">
+        <div class="inputBox">
+            <input type="text" name="businessman_account" required="">
+            <label>用户名：</label>
+        </div>
+        <div class="inputBox">
+            <input type="text" name="businessman_name" required="">
+            <label>真实姓名：</label>
+        </div>
+        <div class="inputBox">
+            <input type="text" name="store_name" required="">
+            <label>店铺名称：</label>
+        </div>
+        <div class="inputBox">
+            <input type="text" name="businessman_address" required="">
+            <label>店铺地址：</label>
+        </div>
+        <div class="inputBox">
+            <input type="text" name="businessman_telephone" required="">
+            <label>店铺电话：</label>
+        </div>
+        <div class="inputBox">
+            <input type="password" name="name" required="">
+            <label>设置密码：</label>
+        </div>
+        <div class="inputBox">
+            <input type="password" name="password1" required="">
+            <label>确认密码：</label>
+        </div>
+        <input type="submit" name="" value="注册">
+    </form>
+</div>
+
+</body>
+</html>

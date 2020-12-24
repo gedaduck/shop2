@@ -23,7 +23,7 @@ public class GetCart {
 			cart.setPrice(rs.getDouble(4));
 			cart.setNumber(rs.getInt(5));
 			cart.setUser_account(rs.getString(6));
-			cart.setBusinessman_id(rs.getInt(7));
+			cart.setBusinessman_account(rs.getString(7));
 			lists.add(cart);
 		}
 		System.out.println(lists.size());

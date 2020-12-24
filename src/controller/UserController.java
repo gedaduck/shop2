@@ -43,6 +43,8 @@ public class UserController extends HttpServlet {
 
     public void LoginController(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
         UserServiceImpl userService=new UserServiceImpl();
+        HttpSession session1=request.getSession();
+        session1.invalidate();
         HttpSession session=request.getSession();
         String account = request.getParameter("account");
         String password = request.getParameter("password");
@@ -67,7 +69,7 @@ public class UserController extends HttpServlet {
     public void LogoutController(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
         HttpSession session=request.getSession();
         session.invalidate();
-        request.getRequestDispatcher("/index.jsp").forward(request, response);
+        request.getRequestDispatcher("index.jsp").forward(request, response);
     }
     public void ModifyController(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
         HttpSession session=request.getSession();

@@ -160,7 +160,7 @@ public class AdminController extends HttpServlet {
     public void adminLoginOut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         session.invalidate();
-        request.getRequestDispatcher("/index.jsp").forward(request, response);
+        request.getRequestDispatcher("index.jsp").forward(request, response);
     }
 
     public void getAllGoods(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
