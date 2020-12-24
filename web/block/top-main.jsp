@@ -58,12 +58,6 @@
                         businessmanUrl="businessman_menu.jsp";
                     }
                 %>
-
-                <li>
-                    <a href="<%=businessmanUrl%>">卖家中心</a>
-                </li>
-
-                <li>|</li>
                 <%
                     String cartUrl;
                     String orderUrl;
@@ -78,6 +72,16 @@
                         orderUrl="myImformation.jsp";
                     }
                 %>
+
+                <li>
+                    <a href="<%=businessmanUrl%>">卖家中心</a>
+                </li>
+                <li>
+                    <a href="<%=postUrl%>">讨论中心</a>
+                </li>
+
+                <li>|</li>
+
                 <li>
                     <a href="<%=cartUrl%>" id="cars">购物车</a>
                 </li>
@@ -85,7 +89,7 @@
                     <a href="<%=orderUrl%>">个人中心</a>
                 </li>
                 <li>
-                    <a href="<%=postUrl%>">讨论中心</a>
+                    <a href="index.jsp">首页</a>
                 </li>
             </ul>
         </div>

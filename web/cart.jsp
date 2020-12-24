@@ -33,13 +33,14 @@
 <%@include file="block/top-main.jsp"%>
 <!--------------------------------------cart--------------------->
 
-<div class="cart mt" style="margin-top: 20px;">
-    <div class="site">
+<div class="cart mt" style="margin-top: 0px;">
+    <div class="site" style="border-bottom: solid 2px #f3f3f3">
         <p class="wrapper"><span class="fl">购物车</span></p>
     </div>
     <div class="site">
         <p class=" wrapper clearfix">
             <a href="javascript:history.back(-1)" class="fl">返回</a>
+            <img class="top" src="res/image/cartTop01.png">
             <a href="index.jsp" class="fr">继续购物&gt;</a></p>
     </div><!-----------------table------------------->
     <div class="table wrapper">
@@ -66,8 +67,9 @@
         <div class="th">
             <div class="pro clearfix"style="text-align: center">
                 <table>
-                    <tr>
-                        <td><img src="<%=cart.getGoods_img()%>" style="height: 40px;width: 40px"></td>
+                    <tr >
+                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                        <td><img src="<%=cart.getGoods_img()%>" style="height: 120px;width: 120px;padding:11px;"></td>
                         <td><p><%=cart.getGoods_name()%></p></td>
                     </tr>
                 </table>
@@ -105,8 +107,14 @@
         pricesum+=cart.getPrice()*cart.getNumber();
         i++; }
         if(numsum==0){%>
-        <div><p style="font-size: 15px">空空如也~</p></div>
-        <div class="goOn1a"><a href="index.jsp">去逛逛</a></div>
+        <div style="margin:20px 0px 20px 100px">
+            <p style="font-size: 35px">
+                <h3>空空如也~</h3>
+            </p>
+        </div>
+        <div class="goOn1a" style="margin:20px 0px 20px 100px;color: #A10000;">
+            <a href="index.jsp" style="color: #A10000;" > 去逛逛</a>
+        </div>
    		<%}%>
         <div class="tr clearfix">
             <label class="fl"><input class="checkAll" type="checkbox"/><span></span></label>
@@ -152,8 +160,10 @@
         <div class="wrapper">
         </div>
     </div>
-    </div><!----------------mask------------------->
-<div class="mask"></div><!-------------------mask内容------------------->
+    </div>
+<!----------------mask------------------->
+<div class="mask"></div>
+<!-------------------mask内容------------------->
 <div class="proDets"><img class="off" src="img/temp/off.jpg"/>
     <div class="proCon clearfix">
         <div class="proImg fr"><img class="list" src="img/temp/proDet.jpg"/>
@@ -177,9 +187,9 @@
         </div>
     </div>
 </div>
-<script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
-<script src="js/pro.js" type="text/javascript" charset="utf-8"></script>
-<script src="js/cart.js" type="text/javascript" charset="utf-8"></script>
+<script src="res/js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="res/js/public.js" type="text/javascript" charset="utf-8"></script>
+<script src="res/js/pro.js" type="text/javascript" charset="utf-8"></script>
+<script src="res/js/user.js" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>

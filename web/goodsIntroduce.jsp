@@ -14,6 +14,7 @@
     <title>详情页</title>
     <link rel="stylesheet" type="text/css" href="res/css/public.css"/>
     <link rel="stylesheet" type="text/css" href="res/css/proList.css"/>
+    <link rel="stylesheet" type="text/css" href="res/css/mygxin.css"/>
 </head>
 <body>
 <%@include file="block/top-main.jsp"%>
@@ -27,8 +28,8 @@
 <div class="detCon">
     <div class="proDet wrapper">
         <div class="proCon clearfix">
-            <div class="proImg fl">
-                <img class="det" src="${requestScope.goods.goods_img}" />
+            <div class="proImg fl" style="padding-left: 130px;">
+                <img style="width: 320px;height: 320px;" class="det" src="${requestScope.goods.goods_img}" />
             </div>
             <div class="fr intro">
                 <div class="title">
@@ -64,7 +65,7 @@
     </div>
 </div>
 <div class="introMsg wrapper clearfix">
-    <div class="msgL fl">
+    <div style="width: 1200px;" class="msgL fl">
         <div class="msgTit clearfix"><p>所有评价</p></div>
         <div class="">
             <div class="eva">
@@ -74,15 +75,26 @@
                     if(object1 instanceof List){
                         ordersList=(List<Orders>) object1;
                     }
+                    if(ordersList==null){%>
+                <div>
+                    暂无评论
+                </div>
+                <%
+                    }
                     for(Orders orders:ordersList){%>
-                <div class="per clearfix"><img class="fl" src="img/temp/per01.jpg">
+                <div class="per clearfix"><img style="width: 50px;height: 50px;border-radius: 25px;" class="fl" src="res/image/user_icon.jpg">
                     <div class="perR fl">
                         <p><%=orders.getUser_account()%></p>
                         <p><%=orders.getOrder_comment()%></p>
                         <p><span><%=orders.getOrder_date()%></span></p>
                     </div>
                 </div>
-                <%}%>
+                <%
+                    }
+                %>
+                <div>
+                    暂无评论
+                </div>
             </div>
         </div>
     </div>

@@ -25,7 +25,10 @@
 <% user=(User)session.getAttribute("user");%>
 <div class="order cart mt" style="margin-bottom: 20px;">
     <div class="site">
-        <p class="wrapper clearfix"><span class="fl">订单确认</span></p>
+        <p class="wrapper clearfix">
+            <span class="fl">订单确认</span>
+            <img class="top" src="res/image/cartTop02.png">
+        </p>
     </div>
     <div class="orderCon wrapper clearfix">
         <div class="orderL fl"><h3>收件信息</h3>
@@ -40,10 +43,21 @@
                     </div>
                 </div>
             </div>
+            <h3>支付方式</h3><!--------way---------------->
+            <div class="way clearfix">
+                <img class="on" src="res/image/way01.jpg">
+                <img src="res/image/way02.jpg">
+                <img src="res/image/way03.jpg">
+                <img src="res/image/way04.jpg">
+            </div>
+            <h3>选择快递</h3><!--------dis---------------->
+            <div class="dis clearfix"><span class="on">顺风快递</span><span>百世汇通</span><span>圆通快递</span><span>中通快递</span>
+            </div>
         </div>
         <div class="orderR fr">
             <div class="msg">
-                <h3>订单内容<a href="cart.jsp" class="fr">返回购物车</a></h3><!--------ul---------------->
+                <h3>订单内容<a href="cart.jsp" class="fr">返回购物车</a></h3>
+                <!--------ul---------------->
                 <%GetCart cartController=new GetCart();
                 List<Cart> acart = new ArrayList();
                 acart=cartController.getCart(user.getUser_account());
@@ -100,9 +114,9 @@
     </a>
 </div>
 
-<script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
-<script src="js/pro.js" type="text/javascript" charset="utf-8"></script>
-<script src="js/user.js" type="text/javascript" charset="utf-8"></script>
+<script src="res/js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="res/js/public.js" type="text/javascript" charset="utf-8"></script>
+<script src="res/js/pro.js" type="text/javascript" charset="utf-8"></script>
+<script src="res/js/user.js" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>

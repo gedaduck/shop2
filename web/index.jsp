@@ -19,7 +19,7 @@
 
           <li><a href="SearchByCategoryController?goods_category=1">手机</a></li>
           <li class="fgf">|</li>
-          <li><a href="SearchByCategoryController?goods_category=2">电脑</a></li>
+          <li><a href="SearchByCategoryController?goods_category=2">台式电脑</a></li>
           <li class="fgf">|</li>
           <li><a href="SearchByCategoryController?goods_category=3">笔记本</a></li>
           <li class="fgf">|</li>
@@ -46,13 +46,13 @@
                   <li><a href="SearchController?keyword=小米">小米</a></li>
                   <li><a href="SearchController?keyword=OPPO">OPPO</a></li>
                   <li><a href="SearchController?keyword=vivo">vivo</a></li>
-                  <h5>平板</h5>
-                  <li><a href="SearchController?keyword=ipad">ipad</a></li>
-                  <li><a href="SearchController?keyword=MatePad">MatePad</a></li>
-                  <li><a href="SearchController?keyword=安卓">安卓</a></li>
+                  <h5>台式电脑</h5>
+                  <li><a href="SearchController?keyword=惠普">惠普</a></li>
+                  <li><a href="SearchController?keyword=戴尔">戴尔</a></li>
+                  <li><a href="SearchController?keyword=雷神">雷神</a></li>
+                  <li><a href="SearchController?keyword=外星人">外星人</a></li>
                   <h5>笔记本</h5>
                   <li><a href="SearchController?keyword=MacBook">MacBook</a></li>
-                  <li><a href="SearchController?keyword=MateBook">MateBook</a></li>
                   <li><a href="SearchController?keyword=华硕">华硕</a></li>
                   <li><a href="SearchController?keyword=联想">联想</a></li>
                   <li><a href="SearchController?keyword=戴尔">戴尔</a></li>
@@ -68,7 +68,7 @@
             </li>
 
             <li>
-              <a style="position: relative;left: 18px;" href="##" target="_blank">平板</a>
+              <a style="position: relative;left: 18px;" href="##" target="_blank">台式电脑</a>
               <div class="none">
                 <ul>
                   <h5>手机</h5>
@@ -77,13 +77,13 @@
                   <li><a href="SearchController?keyword=小米">小米</a></li>
                   <li><a href="SearchController?keyword=OPPO">OPPO</a></li>
                   <li><a href="SearchController?keyword=vivo">vivo</a></li>
-                  <h5>平板</h5>
-                  <li><a href="SearchController?keyword=ipad">ipad</a></li>
-                  <li><a href="SearchController?keyword=MatePad">MatePad</a></li>
-                  <li><a href="SearchController?keyword=安卓">安卓</a></li>
+                  <h5>台式电脑</h5>
+                  <li><a href="SearchController?keyword=惠普">惠普</a></li>
+                  <li><a href="SearchController?keyword=戴尔">戴尔</a></li>
+                  <li><a href="SearchController?keyword=雷神">雷神</a></li>
+                  <li><a href="SearchController?keyword=外星人">外星人</a></li>
                   <h5>笔记本</h5>
                   <li><a href="SearchController?keyword=MacBook">MacBook</a></li>
-                  <li><a href="SearchController?keyword=MateBook">MateBook</a></li>
                   <li><a href="SearchController?keyword=华硕">华硕</a></li>
                   <li><a href="SearchController?keyword=联想">联想</a></li>
                   <li><a href="SearchController?keyword=戴尔">戴尔</a></li>
@@ -108,13 +108,13 @@
                   <li><a href="SearchController?keyword=小米">小米</a></li>
                   <li><a href="SearchController?keyword=OPPO">OPPO</a></li>
                   <li><a href="SearchController?keyword=vivo">vivo</a></li>
-                  <h5>平板</h5>
-                  <li><a href="SearchController?keyword=ipad">ipad</a></li>
-                  <li><a href="SearchController?keyword=MatePad">MatePad</a></li>
-                  <li><a href="SearchController?keyword=安卓">安卓</a></li>
+                  <h5>台式电脑</h5>
+                  <li><a href="SearchController?keyword=惠普">惠普</a></li>
+                  <li><a href="SearchController?keyword=戴尔">戴尔</a></li>
+                  <li><a href="SearchController?keyword=雷神">雷神</a></li>
+                  <li><a href="SearchController?keyword=外星人">外星人</a></li>
                   <h5>笔记本</h5>
                   <li><a href="SearchController?keyword=MacBook">MacBook</a></li>
-                  <li><a href="SearchController?keyword=MateBook">MateBook</a></li>
                   <li><a href="SearchController?keyword=华硕">华硕</a></li>
                   <li><a href="SearchController?keyword=联想">联想</a></li>
                   <li><a href="SearchController?keyword=戴尔">戴尔</a></li>
@@ -139,13 +139,13 @@
                   <li><a href="SearchController?keyword=小米">小米</a></li>
                   <li><a href="SearchController?keyword=OPPO">OPPO</a></li>
                   <li><a href="SearchController?keyword=vivo">vivo</a></li>
-                  <h5>平板</h5>
-                  <li><a href="SearchController?keyword=ipad">ipad</a></li>
-                  <li><a href="SearchController?keyword=MatePad">MatePad</a></li>
-                  <li><a href="SearchController?keyword=安卓">安卓</a></li>
+                  <h5>台式电脑</h5>
+                  <li><a href="SearchController?keyword=惠普">惠普</a></li>
+                  <li><a href="SearchController?keyword=戴尔">戴尔</a></li>
+                  <li><a href="SearchController?keyword=雷神">雷神</a></li>
+                  <li><a href="SearchController?keyword=外星人">外星人</a></li>
                   <h5>笔记本</h5>
                   <li><a href="SearchController?keyword=MacBook">MacBook</a></li>
-                  <li><a href="SearchController?keyword=MateBook">MateBook</a></li>
                   <li><a href="SearchController?keyword=华硕">华硕</a></li>
                   <li><a href="SearchController?keyword=联想">联想</a></li>
                   <li><a href="SearchController?keyword=戴尔">戴尔</a></li>
@@ -170,13 +170,13 @@
                   <li><a href="SearchController?keyword=小米">小米</a></li>
                   <li><a href="SearchController?keyword=OPPO">OPPO</a></li>
                   <li><a href="SearchController?keyword=vivo">vivo</a></li>
-                  <h5>平板</h5>
-                  <li><a href="SearchController?keyword=ipad">ipad</a></li>
-                  <li><a href="SearchController?keyword=MatePad">MatePad</a></li>
-                  <li><a href="SearchController?keyword=安卓">安卓</a></li>
+                  <h5>台式电脑</h5>
+                  <li><a href="SearchController?keyword=惠普">惠普</a></li>
+                  <li><a href="SearchController?keyword=戴尔">戴尔</a></li>
+                  <li><a href="SearchController?keyword=雷神">雷神</a></li>
+                  <li><a href="SearchController?keyword=外星人">外星人</a></li>
                   <h5>笔记本</h5>
                   <li><a href="SearchController?keyword=MacBook">MacBook</a></li>
-                  <li><a href="SearchController?keyword=MateBook">MateBook</a></li>
                   <li><a href="SearchController?keyword=华硕">华硕</a></li>
                   <li><a href="SearchController?keyword=联想">联想</a></li>
                   <li><a href="SearchController?keyword=戴尔">戴尔</a></li>
@@ -210,24 +210,24 @@
           <div class="center-bot">
             <!-- 左 -->
             <div class="left">
-              <a href=""><img src="res/image/lunbo6.jpg" id="img"></a>
+              <a href="SearchByCategoryController?goods_category=5"><img src="res/image/lunbo6.jpg" id="img"></a>
             </div>
             <!-- 中 -->
             <div class="center">
               <div class="center-top">
-                <a href="##"><img src="res/image/lunbo5.jpg"></a>
+                <a href="SearchController?keyword=vivo"><img src="res/image/lunbo5.jpg"></a>
               </div>
               <div class="center-bot">
-                <a href="##"><img src="res/image/lunbo2.jpg"></a>
+                <a href="SearchController?keyword=电脑"><img src="res/image/lunbo2.jpg"></a>
               </div>
             </div>
             <!-- 右 -->
             <div class="right">
               <div class="right-top">
-                <a href="##"><img src="res/image/lunbo3.jpg"></a>
+                <a href="SearchController?keyword=华硕"><img src="res/image/lunbo3.jpg"></a>
               </div>
               <div class="right-bot">
-                <a href="##"><img src="res/image/lunbo4.jpg"></a>
+                <a href="SearchController?keyword=雷蛇"><img src="res/image/lunbo4.jpg"></a>
               </div>
             </div>
           </div>
@@ -244,17 +244,32 @@
                     url="myImformation.jsp";
                   }
                 %>
-                <a href="<%=url%>"><img src="res/image/tx.jpg"></a>
+                <a href="<%=url%>"><img style="border-radius: 25px;" src="res/image/tx.jpg"></a>
               </div>
             </div>
             <div class="bot">
-              <div class="bot-div">
+              <div class="bot-div" style="margin-top: -6px;">
                 <%
                   if(user.getUser_name()!=null){
                 %>
-                <p>您好！<%=user.getUser_name()%>!</p>
+
                 <div style="position: relative;top: 5px;">
-                  <a href="userController?method=logout">退出</a>
+                  <table style="text-align: center">
+                    <tr>
+                      <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                      <td>
+                        <p>您好！<%=user.getUser_name()%></p>
+                      </td>
+                      <td>&nbsp;&nbsp;</td>
+                      <td>
+                        <a style="width: 64px; color: #A10000;" href="userController?method=logout">退出登录</a>
+                      </td>
+                    </tr>
+                  </table>
+                  <div style="position: relative;padding-top: 6px;">
+                    <a style="width: 64px; " href="myImformation.jsp">个人中心</a>
+                    <a style="width: 64px; " href="cart.jsp">购物车</a>
+                  </div>
                 </div>
 
                 <%}else {%>
@@ -264,12 +279,11 @@
               </div>
             </div>
           </div>
-          <!-- 举报 -->
           <div class="notice">
-            <ul class="not">
+            <ul class="not" style="padding-top: 30px;">
               <li class="lli" style="border-bottom:2px solid #6ac1d4;">公告</li>
               <li class="lli">规则</li>
-              <li class="lli"><a href="forumController?method=getForumView&page=1">论坛</a> </li>
+              <li class="lli">论坛</li>
               <li class="lli">安全</li>
               <li class="lli">公益</li>
             </ul>
@@ -280,6 +294,10 @@
                 </li>
                 <li>
                   <a href="##">芜湖网激活传统商圈
+                  </a>
+                </li>
+                <li>
+                  <a href="##">开发团队：芜湖，起飞小组全体成员
                   </a>
                 </li>
               </ul>
@@ -298,10 +316,10 @@
             <div class="nr">
               <ul class="nei-rong">
                 <li>
-                  <a href="##">关于新增订单产询服务</a>
+                  <a href="##">欢迎大家在置顶帖中留下自己的建议</a>
                 </li>
                 <li>
-                  <a href="##">云标签工具，30秒打标
+                  <a href="##">震惊，两男子竟在大半夜干这事...
                   </a>
                 </li>
               </ul>
@@ -329,58 +347,6 @@
                 </li>
               </ul>
             </div>
-          </div>
-          <div class="xiaoge">
-            <ul class="xg">
-              <li><a href="##">
-                <span class="span1"></span>
-                <p>充话费</p>
-              </a></li>
-              <li><a href="##">
-                <span class="span2"></span>
-                <p>旅行</p>
-              </a></li>
-              <li><a href="##">
-                <span class="span3"></span>
-                <p>车险</p>
-              </a></li>
-              <li><a href="##">
-                <span class="span4"></span>
-                <p>游戏</p>
-              </a></li>
-              <li><a href="##">
-                <span class="span5"></span>
-                <p>彩票</p>
-              </a></li>
-              <li><a href="##">
-                <span class="span6"></span>
-                <p>电影</p>
-              </a></li>
-              <li><a href="##">
-                <span class="span7"></span>
-                <p>酒店</p>
-              </a></li>
-              <li><a href="##">
-                <span class="span8"></span>
-                <p>理财</p>
-              </a></li>
-              <li><a href="##">
-                <span class="span9"></span>
-                <p>找服务</p>
-              </a></li>
-              <li><a href="##">
-                <span class="span10"></span>
-                <p>演出</p>
-              </a></li>
-              <li><a href="##">
-                <span class="span11"></span>
-                <p>水电煤</p>
-              </a></li>
-              <li><a href="##">
-                <span class="span12"></span>
-                <p>火车票</p>
-              </a></li>
-            </ul>
           </div>
           <div class="bot">
           </div>

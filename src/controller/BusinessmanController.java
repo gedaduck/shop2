@@ -120,7 +120,7 @@ public class BusinessmanController extends HttpServlet {
             out.write("<script>alert('登陆成功！');window.location.href='businessman_menu.jsp';</script>");
         }
         else{
-            out.write("<script>alert('登陆失败！');window.location.href='html/business_login.html';</script>");
+            out.write("<script>alert('登陆失败！');window.location.href='business_login.html';</script>");
         }
     }
 
@@ -240,9 +240,9 @@ public class BusinessmanController extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         PrintWriter out=response.getWriter();
         if(businessmanServiceImpl.regist(businessman)==1)
-            out.write("<body><script>alert('注册成功');window.location.href='html/business_login.html';</script></body>");
+            out.write("<body><script>alert('注册成功');window.location.href='business_login.html';</script></body>");
         else
-            out.write("<body><script>alert('注册失败');window.location.href='html/business_regist.html';</script></body>");
+            out.write("<body><script>alert('注册失败');window.location.href='business_regist.html';</script></body>");
     }
 
 }
