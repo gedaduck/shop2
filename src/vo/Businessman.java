@@ -12,13 +12,12 @@ public class Businessman {
     public Businessman() {
     }
 
-    public Businessman(String businessman_account, String businessman_password, String businessman_name, String businessman_address, String businessman_telephone, int store_id, String store_name) {
+    public Businessman(String businessman_account, String businessman_password, String businessman_name, String businessman_address, String businessman_telephone, String store_name) {
         this.businessman_account = businessman_account;
         this.businessman_password = businessman_password;
         this.businessman_name = businessman_name;
         this.businessman_address = businessman_address;
         this.businessman_telephone = businessman_telephone;
-        this.store_id = store_id;
         this.store_name = store_name;
     }
 

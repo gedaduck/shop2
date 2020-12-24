@@ -54,8 +54,6 @@ public class ForumController extends HttpServlet {
         ForumService forumServiceImpl=new ForumServiceImpl();
         List<Forum> forumList=forumServiceImpl.getForum();
         int maxPage=(int)Math.ceil(forumList.size()/8d);
-        System.out.println(forumList.size()/8d);
-        System.out.println((int)Math.ceil(forumList.size()/8d));
         List<Forum> forumList1=new ArrayList<>();
         if(page==maxPage)
             forumList1=forumList.subList((page-1)*8,forumList.size());

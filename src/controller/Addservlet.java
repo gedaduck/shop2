@@ -18,13 +18,12 @@ import java.sql.SQLException;
 public class Addservlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String goods_id=request.getParameter("goods_id");
-		System.out.println(goods_id);
 		HttpSession session=request.getSession();
 		User user=(User)session.getAttribute("user");
 		String goods_name=null;
 		String goods_img=null;
 		int price=0;
-		int number=0;
+		int number=Integer.valueOf(request.getParameter("number"));
 		String businessman_account=null;
 		DB Manager = new DB();
 		String sql1="select * from goods where goods_id="+goods_id;
@@ -44,13 +43,13 @@ public class Addservlet extends HttpServlet {
 		ResultSet rs2 =Manager.query(sql2);
 		try {
 			if(rs2.next()) {
-				number = rs2.getInt("number");
-				number++;
+				int number1 = rs2.getInt("number");
+				number+=number1;
 				String sql3="update cart set number='"+number+"' where goods_id='"+goods_id+"' and user_account='"+user.getUser_account()+"'" ;
 				Manager.update(sql3);
 			}
 			else {
-				String sql = "insert into cart values('"+goods_id+"','"+goods_name+"','"+goods_img+"','"+price+"','"+1+"','"+user.getUser_account()+"','"+businessman_account+"')";
+				String sql = "insert into cart values('"+goods_id+"','"+goods_name+"','"+goods_img+"','"+price+"','"+number+"','"+user.getUser_account()+"','"+businessman_account+"')";
 				Manager.update(sql);}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

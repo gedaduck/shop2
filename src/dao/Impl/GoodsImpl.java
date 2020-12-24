@@ -94,8 +94,11 @@ public class GoodsImpl implements GoodsDao {
             preparedStatement.setInt(4,goods.getGoods_category());
             preparedStatement.setDouble(5,goods.getPrice());
             preparedStatement.setString(6,goods.getBusinessman_account());
-            if(preparedStatement.executeUpdate()==1)
+            if(preparedStatement.executeUpdate()==1){
+                JDBCUtil.closeConnection(connection);
                 return true;
+            }
+
         } catch (SQLException e) {
             e.printStackTrace();
         }

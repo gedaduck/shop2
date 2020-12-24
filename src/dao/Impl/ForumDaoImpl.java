@@ -36,7 +36,7 @@ public class ForumDaoImpl implements ForumDao {
                 forum.setUser_account(res.getString("user_account"));
                 forumList.add(forum);
             }
-            System.out.println(forumList.size());
+            JDBCUtil.closeConnection(connection);
             return  forumList;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -58,6 +58,7 @@ public class ForumDaoImpl implements ForumDao {
             preparedStatement.setString(4,forum.getContent());
             preparedStatement.setString(5,forum.getRelease_time());
             preparedStatement.setString(6,forum.getUser_account());
+            JDBCUtil.closeConnection(connection);
             return preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -86,6 +87,7 @@ public class ForumDaoImpl implements ForumDao {
                 comment.setComment_id(res.getInt("id"));
                 commentList.add(comment);
             }
+            JDBCUtil.closeConnection(connection);
             return commentList;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -105,6 +107,7 @@ public class ForumDaoImpl implements ForumDao {
             preparedStatement.setString(2,comment.getComment_content());
             preparedStatement.setString(3,comment.getComment_time());
             preparedStatement.setInt(4,comment.getForum_id());
+            JDBCUtil.closeConnection(connection);
             return preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -132,6 +135,7 @@ public class ForumDaoImpl implements ForumDao {
                 forum.setRelease_time(res.getString("time"));
                 forum.setForum_id(res.getInt("forum_id"));
                 forum.setUser_account(res.getString("user_account"));
+                JDBCUtil.closeConnection(connection);
                 return forum;
             }
         } catch (SQLException e) {

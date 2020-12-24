@@ -60,7 +60,7 @@ public class UserController extends HttpServlet {
             response.setHeader("Refresh","3,URL=index.jsp");
         }else {
             out.write("<script>");
-            out.write("alert('登陆失败！');");
+            out.write("alert('账号或密码错误！');");
             out.write("window.location='login.jsp';");
             out.write("</script>");
         }

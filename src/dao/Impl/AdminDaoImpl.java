@@ -25,12 +25,14 @@ public class AdminDaoImpl implements AdminDao {
             boolean bool =preparedStatement.execute();
             if(!bool){
                 System.out.println("删除成功");
+                JDBCUtil.closeConnection(connection);
                 return true;
             }
             else System.out.println("删除失败");
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        JDBCUtil.closeConnection(connection);
         return false;
     }
 
@@ -48,12 +50,14 @@ public class AdminDaoImpl implements AdminDao {
             res=preparedStatement.executeUpdate();
             if(res==1){
                 System.out.println("删除商家成功");
+                JDBCUtil.closeConnection(connection);
                 return true;
             }
             else System.out.println("删除商家失败");
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        JDBCUtil.closeConnection(connection);
         return false;
     }
 
@@ -84,6 +88,7 @@ public class AdminDaoImpl implements AdminDao {
             e.printStackTrace();
             System.out.println("数据库查询错误！");
         }
+        JDBCUtil.closeConnection(connection);
         return list;
     }
 
@@ -115,6 +120,7 @@ public class AdminDaoImpl implements AdminDao {
             e.printStackTrace();
             System.out.println("数据库查询错误！");
         }
+        JDBCUtil.closeConnection(connection);
         return list;
     }
 
@@ -145,6 +151,7 @@ public class AdminDaoImpl implements AdminDao {
             e.printStackTrace();
             System.out.println("数据库查询错误！");
         }
+        JDBCUtil.closeConnection(connection);
         return list;
     }
 
@@ -174,6 +181,7 @@ public class AdminDaoImpl implements AdminDao {
             e.printStackTrace();
             System.out.println("数据库查询错误！");
         }
+        JDBCUtil.closeConnection(connection);
         return list;
     }
 
@@ -208,6 +216,7 @@ public class AdminDaoImpl implements AdminDao {
             e.printStackTrace();
             System.out.println("数据库查询错误！");
         }
+        JDBCUtil.closeConnection(connection);
         return list;
     }
 
@@ -224,10 +233,11 @@ public class AdminDaoImpl implements AdminDao {
             preparedStatement.setInt(1,goods_id);
             res=preparedStatement.executeUpdate();
             if(res==1){
-                System.out.println("删除商品成功");
+                JDBCUtil.closeConnection(connection);
                 return true;
             }
-            else System.out.println("删除商品失败");
+            else
+                JDBCUtil.closeConnection(connection);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -246,10 +256,11 @@ public class AdminDaoImpl implements AdminDao {
             preparedStatement.setInt(1,forum_id);
             res=preparedStatement.executeUpdate();
             if(res==1){
-                System.out.println("删除帖子成功");
+                JDBCUtil.closeConnection(connection);
                 return true;
             }
-            else System.out.println("删除帖子失败");
+            else
+                JDBCUtil.closeConnection(connection);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -260,21 +271,24 @@ public class AdminDaoImpl implements AdminDao {
     public boolean deleteOrder(int order_id) {
         Connection connection=null;
         PreparedStatement preparedStatement=null;
-        int res;
         try{
             connection= JDBCUtil.getConnection();
             String sql="delete from orders where order_id=?";
             preparedStatement=connection.prepareStatement(sql);
             preparedStatement.setInt(1,order_id);
-            res=preparedStatement.executeUpdate();
-            if(res==1){
+            if(preparedStatement.executeUpdate()==1){
                 System.out.println("删除订单成功");
+                JDBCUtil.closeConnection(connection);
                 return true;
             }
-            else System.out.println("删除订单失败");
+            else {
+                System.out.println("删除订单失败");
+                JDBCUtil.closeConnection(connection);
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        JDBCUtil.closeConnection(connection);
         return false;
     }
 
@@ -294,8 +308,10 @@ public class AdminDaoImpl implements AdminDao {
                 System.out.println("登陆成功！");
                 admin.setAdmin_account(res.getString("admin_account"));
                 admin.setAdmin_password(res.getString("admin_password"));
+                JDBCUtil.closeConnection(connection);
                 return admin;
             } else {
+                JDBCUtil.closeConnection(connection);
                 System.out.println("登陆失败！");
                 return null;
             }
@@ -303,6 +319,7 @@ public class AdminDaoImpl implements AdminDao {
             e.printStackTrace();
             System.out.println("数据库查询错误！");
         }
+        JDBCUtil.closeConnection(connection);
         return null;
     }
 }
