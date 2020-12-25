@@ -256,7 +256,7 @@
                 <div style="position: relative;top: 5px;">
                   <table style="text-align: center">
                     <tr>
-                      <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                      <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                       <td>
                         <p>您好！<%=user.getUser_name()%></p>
                       </td>

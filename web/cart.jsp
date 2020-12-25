@@ -10,7 +10,7 @@
 <html>
 <head lang="en">
     <meta charset="utf-8"/>
-    <title>cart</title>
+    <title>购物车</title>
     <link rel="stylesheet" type="text/css" href="res/css/public.css"/>
     <link rel="stylesheet" type="text/css" href="res/css/proList.css"/>
     <style type="text/css">

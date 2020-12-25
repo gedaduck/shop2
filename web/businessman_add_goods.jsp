@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=gb2312" language="java" %>
 <html>
 <head>
-    <title>个人信息</title>
+    <title>添加商品</title>
     <link rel="stylesheet" type="text/css" href="res/css/public.css" />
     <link rel="stylesheet" type="text/css" href="res/css/mygxin.css" />
 </head>

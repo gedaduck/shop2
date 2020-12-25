@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>帖子内容</title>
+    <title>发帖</title>
     <link rel="stylesheet" href="res/css/post.css">
     <link rel="stylesheet" href="res/css/layui.css">
     <link rel="stylesheet" href="res/css/global.css">

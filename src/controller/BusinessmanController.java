@@ -230,7 +230,9 @@ public class BusinessmanController extends HttpServlet {
         String businessman_address=request.getParameter("businessman_address");
         String businessman_telephone=request.getParameter("businessman_telephone");
         String businessman_password=request.getParameter("password");
+        System.out.println(businessman_password);
         Businessman businessman=new Businessman(businessman_account,businessman_password,businessman_name,businessman_address,businessman_telephone,store_name);
+        System.out.println(businessman.toString());
         BusinessmanService businessmanServiceImpl=new BusinessmanServiceImpl();
         response.setContentType("text/html; charset=UTF-8");
         response.setCharacterEncoding("UTF-8");

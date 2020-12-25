@@ -9,7 +9,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>查看订单</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="shortcut icon" href="./res/image/logo.jpg" type="image/x-icon" />
     <link rel="stylesheet"  type="text/css" href="./res/css/index.css">

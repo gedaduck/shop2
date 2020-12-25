@@ -13,7 +13,7 @@
 <html>
 <head lang="en">
     <meta charset="utf-8"/>
-    <title>pay</title>
+    <title>支付订单</title>
     <link rel="stylesheet" type="text/css" href="res/css/public.css"/>
     <link rel="stylesheet" type="text/css" href="res/css/proList.css"/>
     <link rel="stylesheet" type="text/css" href="res/css/mygxin.css"/>
@@ -88,7 +88,7 @@
 </div>
 <!--返回顶部-->
 <div class="gotop">
-    <a href="cart.html">
+    <a href="cart.jsp">
         <dl>
             <dt><img src="res/image/gt1.png"/></dt>
             <dd>去购<br/>物车</dd>
@@ -100,7 +100,7 @@
             <dd>联系<br/>客服</dd>
         </dl>
     </a>
-    <a href="mygxin.html">
+    <a href="myImformation.jsp">
         <dl>
             <dt><img src="res/image/gt3.png"/></dt>
             <dd>个人<br/>中心</dd>
@@ -112,6 +112,7 @@
             <dd>返回<br/>顶部</dd>
         </dl>
     </a>
+    <p>400-800-8200</p>
 </div>
 
 <script src="res/js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>

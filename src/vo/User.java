@@ -5,9 +5,17 @@ public class User {
     private String password;
     private String user_name;
     private String address;
-    private int telephone;
+    private String telephone;
     private String id_card;
     private String e_mail;
+
+    public String getTelephone() {
+        return telephone;
+    }
+
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
+    }
 
     public String getE_mail() {
         return e_mail;
@@ -53,13 +61,6 @@ public class User {
 
     }
 
-    public int getTelephone() {
-        return telephone;
-    }
-
-    public void setTelephone(int telephone) {
-        this.telephone = telephone;
-    }
 
     public String getId_card() {
         return id_card;

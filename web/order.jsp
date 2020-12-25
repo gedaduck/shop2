@@ -13,7 +13,7 @@
 <html>
 <head lang="en">
     <meta charset="utf-8"/>
-    <title>最家</title>
+    <title>个人订单</title>
     <link rel="stylesheet" type="text/css" href="res/css/public.css"/>
     <link rel="stylesheet" type="text/css" href="res/css/myorder.css"/>
 </head>

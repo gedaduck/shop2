@@ -7,7 +7,7 @@
 <html>
 <head lang="en">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>最家</title>
+    <title>评论</title>
     <link rel="stylesheet" type="text/css" href="res/css/public.css"/>
     <link rel="stylesheet" type="text/css" href="res/css/myorder.css"/>
 </head>
@@ -114,8 +114,8 @@
 <div class="footer">
     <div class="top">
     </div>
-    <p class="dibu">最家家居&copy;2013-2017公司版权所有 京ICP备080100-44备0000111000号<br/>
-        违法和不良信息举报电话：400-800-8200，本网站所列数据，除特殊说明，所有数据均出自我司实验室测试</p></div>
+    <p class="dibu">芜湖，起飞小组版权所有<br/>
+        违法和不良信息举报电话：110-119-2333</p></div>
 <script src="res/js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="res/js/public.js" type="text/javascript" charset="utf-8"></script>
 <script src="res/js/user.js" type="text/javascript" charset="utf-8"></script>

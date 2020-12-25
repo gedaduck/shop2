@@ -11,7 +11,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>详情页</title>
+    <title>商品详情</title>
     <link rel="stylesheet" type="text/css" href="res/css/public.css"/>
     <link rel="stylesheet" type="text/css" href="res/css/proList.css"/>
     <link rel="stylesheet" type="text/css" href="res/css/mygxin.css"/>

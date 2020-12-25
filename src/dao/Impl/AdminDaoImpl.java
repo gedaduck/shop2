@@ -81,7 +81,7 @@ public class AdminDaoImpl implements AdminDao {
                 user.setAddress(res.getString("address"));
                 user.setId_card(res.getString("id_card"));
                 user.setPassword(res.getString("password"));
-                user.setTelephone(res.getInt("telephone"));
+                user.setTelephone(res.getString("telephone"));
                 list.add(user);
             }
         } catch (SQLException e) {

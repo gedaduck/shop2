@@ -21,7 +21,7 @@ public class GetUser {
 			user.setPassword(rs.getString(2));
 			user.setUser_name(rs.getString(3));
 			user.setAddress(rs.getString(4));
-			user.setTelephone(rs.getInt(5));
+			user.setTelephone(rs.getString(5));
 			user.setId_card(rs.getString(6));
 			lists.add(user);
 		}

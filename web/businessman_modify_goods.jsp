@@ -10,7 +10,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>商品信息</title>
+    <title>修改商品</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="res/css/public.css" />
     <link rel="stylesheet" type="text/css" href="res/css/mygxin.css" />

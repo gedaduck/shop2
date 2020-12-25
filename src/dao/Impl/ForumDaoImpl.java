@@ -58,7 +58,6 @@ public class ForumDaoImpl implements ForumDao {
             preparedStatement.setString(4,forum.getContent());
             preparedStatement.setString(5,forum.getRelease_time());
             preparedStatement.setString(6,forum.getUser_account());
-            JDBCUtil.closeConnection(connection);
             return preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -107,7 +106,6 @@ public class ForumDaoImpl implements ForumDao {
             preparedStatement.setString(2,comment.getComment_content());
             preparedStatement.setString(3,comment.getComment_time());
             preparedStatement.setInt(4,comment.getForum_id());
-            JDBCUtil.closeConnection(connection);
             return preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

@@ -26,7 +26,7 @@ public class UserImpl implements UserDao {
                 user.setAddress(res.getString("address"));
                 user.setId_card(res.getString("id_card"));
                 user.setPassword(res.getString("password"));
-                user.setTelephone(res.getInt("telephone"));
+                user.setTelephone(res.getString("telephone"));
                 JDBCUtil.closeConnection(connection);
                 return user;
             } else {
@@ -45,7 +45,7 @@ public class UserImpl implements UserDao {
 
 
     @Override
-    public User UserRegist(String user_account, String user_password, String user_name, String address, int telephone, String id_card) {
+    public User UserRegist(String user_account, String user_password, String user_name, String address, String telephone, String id_card) {
         User user=new User();
         Connection connection=null;
         PreparedStatement preparedStatement=null;
@@ -58,24 +58,19 @@ public class UserImpl implements UserDao {
             preparedStatement.setString(2,user_password);
             preparedStatement.setString(3,user_name);
             preparedStatement.setString(4,address);
-            preparedStatement.setInt(5,telephone);
+            preparedStatement.setString(5,telephone);
             preparedStatement.setString(6,id_card);
-            try{
-                if(preparedStatement.executeUpdate()==1){
-                    JDBCUtil.closeConnection(connection);
-                    System.out.println("注册成功");
-                    user.setUser_account(user_account);
-                    user.setPassword(user_password);
-                    user.setUser_name(user_name);
-                    user.setAddress(address);
-                    user.setTelephone(telephone);
-                    user.setId_card(id_card);
-                }
-                else System.out.println("注册失败");
-            }catch (SQLIntegrityConstraintViolationException e){
-                System.out.println("注册失败");
+            if(preparedStatement.executeUpdate()==1){
+                JDBCUtil.closeConnection(connection);
+                System.out.println("注册成功");
+                user.setUser_account(user_account);
+                user.setPassword(user_password);
+                user.setUser_name(user_name);
+                user.setAddress(address);
+                user.setTelephone(telephone);
+                user.setId_card(id_card);
             }
-
+            else System.out.println("注册失败1");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -125,7 +120,7 @@ public class UserImpl implements UserDao {
             preparedStatement.setString(1,user.getUser_name());
             preparedStatement.setString(2,user.getAddress());
             preparedStatement.setString(3,user.getId_card());
-            preparedStatement.setInt(4,user.getTelephone());
+            preparedStatement.setString(4,user.getTelephone());
             preparedStatement.setString(5,user.getUser_account());
             if(preparedStatement.executeUpdate()==1){
                 JDBCUtil.closeConnection(connection);

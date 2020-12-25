@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>忘记密码</title>
     <link rel="stylesheet" type="text/css" href="res/css/public.css" />
     <link rel="stylesheet" type="text/css" href="res/css/mygrxx.css" />
 </head>

@@ -78,7 +78,7 @@ public class UserController extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         user.setUser_name(request.getParameter("name"));
         user.setAddress(request.getParameter("address"));
-        user.setTelephone(Integer.valueOf(request.getParameter("telephone")));
+        user.setTelephone(request.getParameter("telephone"));
         user.setId_card(request.getParameter("id_card"));
 
         System.out.println(user.toString());
@@ -94,7 +94,7 @@ public class UserController extends HttpServlet {
         else {
             out.write("alert('修改失败！');");
         }
-        out.write("window.location.href='index.jsp'");
+        out.write("window.location.href='modify.jsp'");
         out.write("</script>");
         out.write("</body>");
     }
@@ -145,7 +145,7 @@ public class UserController extends HttpServlet {
         String name=request.getParameter("name");
         System.out.println(name);
         String address=request.getParameter("address");
-        int telephone=Integer.parseInt(request.getParameter("telephone"));
+        String telephone=request.getParameter("telephone");
         String id_card=request.getParameter("id_card");
         User user=userService.userRegist(account,password,name,address,telephone,id_card);
         response.setContentType("text/html; charset=UTF-8");
